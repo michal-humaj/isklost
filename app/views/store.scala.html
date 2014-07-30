@@ -61,6 +61,7 @@
                                                 <li><a href='@routes.Store.editModal(item.id)' data-toggle="modal" data-target="#modal-item-edit" >Upravit</a></li>
                                                 <li class="divider"></li>
                                                 <li><a href='@routes.Store.deleteModal(item.id)' data-toggle="modal" data-target="#modal-item-delete" >Vymazat</a></li>
+                                                <li><a href='@routes.Store.newModal()' data-toggle="modal" data-target="#modal-item-create" >Create</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -76,7 +77,7 @@
     </div><!-- /.row -->
 } {
     <script type="text/javascript">
-       $(document).ready(function() {
+        $(document).ready(function() {
             $('#scroll-table').height($(window).height() - 196);
             $("body").toggleClass("fixed");
             fix_sidebar();

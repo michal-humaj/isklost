@@ -11,11 +11,11 @@
 )
 @inputText(itemForm("name"), '_label -> "Názov", 'class -> "form-control", 'placeholder -> "Stolička ratan", 'required -> "true")
 <div class="form-group">
-    <label class="col-sm-2 control-label">Počet</label>
+    <label class="col-sm-2 control-label" id="amountLabel">Počet</label>
     <div class="col-sm-4">
         <div class="input-group">
-            <input name="amount" type="number" min="1" step="1" max="9999" required class="form-control" placeholder="45" value="@itemForm.apply("amount").value">
-            <span class="input-group-addon">ks</span>
+            <input id="amountInput" name="amount" type="number" min="1" step="1" max="9999" required class="form-control" placeholder="45" value="@itemForm.apply("amount").value">
+            <span class="input-group-addon" id="amountUnits">ks</span>
         </div>
     </div>
 </div>
@@ -24,7 +24,40 @@
     <div class="col-sm-4">
         <div class="input-group">
             <input name="weight" type="number" min="0.01" step="0.01" max="9999" required class="form-control" placeholder="2,35" value="@itemForm.apply("weight").value">
-            <span class="input-group-addon">kg</span>
+            <span class="input-group-addon" id="weightUnits">kg</span>
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    function changeForm() {
+        var e = document.getElementById("categorySelect");
+        //category changed to carpets
+        if (e.options[e.selectedIndex].value == 'CARPETS'){
+            document.getElementById("amountUnits").innerHTML = 'm';
+            document.getElementById("weightUnits").innerHTML = 'kg/m';
+            document.getElementById("amountLabel").innerHTML = 'Dĺžka';
+            var amountInput = document.getElementById("amountInput");
+            amountInput.min = 0.01;
+            amountInput.step = 0.01;
+            amountInput.placeholder = 24,55;
+        //category changed to not carpet
+        }else{
+            document.getElementById("amountUnits").innerHTML = 'ks';
+            document.getElementById("weightUnits").innerHTML = 'kg';
+            document.getElementById("amountLabel").innerHTML = 'Počet';
+            var amountInput = document.getElementById("amountInput");
+            amountInput.min = 1;
+            amountInput.step = 1;
+            amountInput.placeholder = 45;
+        }
+        return;
+    }
+
+    $(document).ready(function() {
+        changeForm();
+    });
+    $("#categorySelect").change(function() {
+        changeForm();
+    });
+</script>
