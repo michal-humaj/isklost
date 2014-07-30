@@ -11,6 +11,7 @@ import play.mvc.Security;
 import views.html.store;
 import views.html.modals.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import static play.data.Form.form;
@@ -67,9 +68,9 @@ public class Store extends Controller {
 
     public static Result increase(long id) {
         DynamicForm data = form().bindFromRequest();
-        int amount = Integer.parseInt(data.get("amount"));
+        BigDecimal amount = new BigDecimal(data.get("amount"));
         StoredItem item = StoredItem.find.ref(id);
-        //item.amount = item.amount + amount;
+        item.amount = item.amount.add(amount);
         item.update(id);
         return STORE_HOME;
     }
@@ -81,9 +82,9 @@ public class Store extends Controller {
 
     public static Result decrease(long id) {
         DynamicForm data = form().bindFromRequest();
-        int amount = Integer.parseInt(data.get("amount"));
+        BigDecimal amount = new BigDecimal(data.get("amount"));
         StoredItem item = StoredItem.find.ref(id);
-        //item.amount = item.amount - amount;
+        item.amount = item.amount.subtract(amount);
         item.update(id);
         return STORE_HOME;
     }
