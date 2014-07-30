@@ -1,6 +1,7 @@
-@(title: String)
+@(title: String)(stylesheets: Html)(content: Html)(javascripts : Html)
 
 @masters.main(title) {
+    @stylesheets
 } {
 
     <div class="wrapper row-offcanvas row-offcanvas-left">
@@ -17,10 +18,11 @@
         <aside class="right-side">
                 <!-- Main content -->
             <section class="content">
-
+                @content
             </section><!-- /.content -->
         </aside><!-- /.right-side -->
     </div> <!-- ./wrapper -->
 
 } {
+    @javascripts
 }

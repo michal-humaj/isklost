@@ -1,0 +1,28 @@
+
+
+- !!models.StoredItem
+    name: stol velky
+    category: TABLES
+    amount: 250
+    weight: 3.8
+- !!models.StoredItem
+    name: stol maly
+    category: TABLES
+    amount: 40
+    weight: 2.45
+- !!models.StoredItem
+    name: lano červené
+    category: ACCESSORIES
+    amount: 20
+    weight: 0.31
+- !!models.StoredItem
+    name: rebrík malý
+    category: TOOLS
+    amount: 2
+    weight: 10.8
+- !!models.StoredItem
+    name: nastrelovačka vzduchová
+    category: TOOLS
+    amount: 1
+    weight: 4.2
+

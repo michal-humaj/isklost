@@ -1,9 +1,16 @@
 package models;
 
+import com.avaje.ebean.Ebean;
 import models.*;
 import org.junit.*;
 import static org.junit.Assert.*;
+
+import play.libs.Yaml;
 import play.test.WithApplication;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+
 import static play.test.Helpers.*;
 
 /**
@@ -17,7 +24,7 @@ public class ModelsTest extends WithApplication {
 
     @Test
     public void createAndRetrieveUser() {
-
+        assertEquals(40, StoredItem.find.findRowCount());
     }
 }
 

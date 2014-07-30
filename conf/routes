@@ -3,6 +3,10 @@ GET         /                                     controllers.Calendar.list()
 
 #Store main page
 GET         /store/items                          controllers.Store.list()
+
+#Tents main page
+GET         /tents                                controllers.Tents.list()
+
 # StoredItem
 POST        /store/item                           controllers.Store.create()
 GET         /store/item                           controllers.Store.newModal()

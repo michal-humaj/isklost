@@ -1,6 +1,6 @@
 package models;
 
-import play.data.validation.Constraints;
+import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
 
 import javax.persistence.*;
@@ -15,6 +15,6 @@ public abstract class Item extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
-    @Constraints.Required
+    @Required
     public String name;
 }
