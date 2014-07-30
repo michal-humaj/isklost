@@ -1,0 +1,57 @@
+@(title: String)(stylesheets: Html)(content: Html)(javascripts : Html)
+
+@masters.main(title) {
+    <!-- Datepicker for bootstrap -->
+    <link href='@routes.Assets.at("css/datepicker3.css")' rel="stylesheet" type="text/css" />
+    @stylesheets
+} {
+
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+        <aside class="left-side sidebar-offcanvas">
+                <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar" id="scroll-target">
+                    <!-- Inline datepicker -->
+                <div id="datepicker"></div>
+
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu nav">
+                    @for(cat <- Category.values()) {
+                        <li>
+                            <a href="#@cat">
+                                <span>@Messages(cat.toString())</span>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </section>
+                <!-- /.sidebar -->
+        </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+        <aside class="right-side">
+                <!-- Main content -->
+            <section class="content">
+                @content
+            </section><!-- /.content -->
+        </aside><!-- /.right-side -->
+    </div><!-- ./wrapper -->
+
+} {
+    <!-- Datepicker for bootstrap -->
+    <script src='@routes.Assets.at("js/bootstrap-datepicker.js")' type='text/javascript'></script>
+    <script src='@routes.Assets.at("js/bootstrap-datepicker.sk.js")' type='text/javascript'></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+           // $('#modal-create-stored-item').modal('show');
+            $('#datepicker').datepicker({
+                format: "mm.dd. yyyy",
+                weekStart: 1,
+                todayBtn: true,
+                language: "sk",
+                todayHighlight: true
+            });
+        });
+    </script>
+    @javascripts
+}

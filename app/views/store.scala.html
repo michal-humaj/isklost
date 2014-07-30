@@ -1,0 +1,96 @@
+@(items: List[StoredItem])
+
+@import helper._
+
+@masters.store("IS Klost | Sklad") {
+    <link href='@routes.Assets.at("css/custom.css")' rel="stylesheet" type="text/css" />
+} {
+    <!-- MODALS -->
+    <!-- Modal for creating StoredItem -->
+    <div class="modal" id="modal-item-create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+    <!-- Modal for StoredItem editing -->
+    <div class="modal" id="modal-item-edit" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"></div>
+    <!-- Modal asking to delete StoredItem -->
+    <div class="modal" id="modal-item-delete" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"></div>
+    <!-- Modal for new item pieces to store -->
+    <div class="modal" id="modal-item-inc" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"></div>
+    <!-- Modal for item pieces removal from store -->
+    <div class="modal" id="modal-item-dec" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"></div>
+
+    <!-- Page content -->
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Položky</h3>
+                    <div class="pull-right box-tools">
+                            <!-- Button trigger for modal creating items -->
+                        <button class="btn btn-primary" href='@routes.Store.newModal()' data-toggle="modal" data-target="#modal-item-create">
+                            Vytvoriť položku
+                        </button>
+                    </div>
+                </div><!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Kategória</th>
+                                <th>Položka</th>
+                                <th>Hmotnosť</th>
+                                <th>Počet</th>
+                                <th>Akcia</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scroll-table" data-spy="scroll" data-target="#scroll-target">
+                            @for(item <- items){
+                                <tr id='@item.category'>
+                                    <td>@Messages(item.category.toString)</td>
+                                    <td>@item.name</td>
+                                    <td>@item.weight</td>
+                                    <td>@item.amount</td>
+                                    <td>
+                                        <div class="btn-group btn-group-xs">
+                                            <button href='@routes.Store.increaseModal(item.id)' type="button" class="btn btn-primary"  data-toggle="modal" data-target="#modal-item-inc" >Naskladniť</button>
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                <span class="caret"></span>
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href='@routes.Store.decreaseModal(item.id)' data-toggle="modal" data-target="#modal-item-dec" >Vyskladnit</a></li>
+                                                <li><a href='@routes.Store.editModal(item.id)' data-toggle="modal" data-target="#modal-item-edit" >Upravit</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href='@routes.Store.deleteModal(item.id)' data-toggle="modal" data-target="#modal-item-delete" >Vymazat</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+
+
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+} {
+    <script type="text/javascript">
+       $(document).ready(function() {
+            $('#scroll-table').height($(window).height() - 196);
+            $("body").toggleClass("fixed");
+            fix_sidebar();
+        });
+
+        $(window).resize(function() {
+            $('#scroll-table').height($(window).height() -196);
+        });
+
+        $('#scroll-table').scrollspy({ target: '#scroll-target' });
+
+        $('body').on('hidden.bs.modal', '.modal', function () {
+            $(this).removeData('bs.modal');
+        });
+    </script>
+}
+

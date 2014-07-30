@@ -1,0 +1,8 @@
+@(itemForm: Form[StoredItem])
+
+@import views.html.masters.modal
+@import views.html.forms.item
+
+@modal("Nová položka")("Vytvoriť")(routes.Store.create()){
+    @item(itemForm)
+}

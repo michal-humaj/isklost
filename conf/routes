@@ -1,0 +1,29 @@
+# Home page
+GET         /                                     controllers.Calendar.list()
+
+#Store main page
+GET         /store/items                          controllers.Store.list()
+# StoredItem
+POST        /store/item                           controllers.Store.create()
+GET         /store/item                           controllers.Store.newModal()
+
+POST        /store/item/:id                       controllers.Store.update(id:Long)
+GET         /store/item/:id                       controllers.Store.editModal(id:Long)
+
+POST        /store/item/:id/delete                controllers.Store.delete(id:Long)
+GET         /store/item/:id/delete                controllers.Store.deleteModal(id:Long)
+
+POST        /store/item/:id/inc                   controllers.Store.increase(id:Long)
+GET         /store/item/:id/inc                   controllers.Store.increaseModal(id:Long)
+
+POST        /store/item/:id/dec                   controllers.Store.decrease(id:Long)
+GET         /store/item/:id/dec                   controllers.Store.decreaseModal(id:Long)
+
+# Play-authenticate routes
+GET         /login                                controllers.Application.login()
+GET         /logout                               com.feth.play.module.pa.controllers.Authenticate.logout
+GET         /authenticate/:provider               com.feth.play.module.pa.controllers.Authenticate.authenticate(provider: String)
+GET         /authenticate/:provider/denied        controllers.Application.oAuthDenied(provider: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file                         controllers.Assets.at(path="/public", file)

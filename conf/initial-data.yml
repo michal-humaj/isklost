@@ -1,0 +1,207 @@
+- !!models.StoredItem
+    name: stolička ratan
+    category: CHAIRS
+    amount: 35
+    weight: 95
+- !!models.StoredItem
+    name: stol velky
+    category: TABLES
+    amount: 48
+    weight: 580
+- !!models.StoredItem
+    name: lano červené
+    category: ACCESSORIES
+    amount: 12
+    weight: 8
+- !!models.StoredItem
+    name: rebrík malý
+    category: TOOLS
+    amount: 2
+    weight: 850
+- !!models.StoredItem
+    name: nastrelovačka vzduchová
+    category: TOOLS
+    amount: 1
+    weight: 420
+- !!models.StoredItem
+    name: Ø120cm s kobercom
+    category: TABLES
+    amount: 10
+    weight: 355
+- !!models.StoredItem
+    name: 120x80cm bez nôh
+    category: TABLES
+    amount: 800
+    weight: 350
+- !!models.StoredItem
+    name: stolička čalúnená C
+    category: CHAIRS
+    amount: 232
+    weight: 130
+- !!models.StoredItem
+    name: stolička čalúnená N
+    category: CHAIRS
+    amount: 50
+    weight: 230
+- !!models.StoredItem
+    name: klimatizácia
+    category: HEATING
+    amount: 1
+    weight: 1150
+- !!models.StoredItem
+    name: kooberec indický
+    category: CARPETS
+    amount: 12100
+    weight: 35
+- !!models.StoredItem
+    name: koberec modrý
+    category: CARPETS
+    amount: 1540
+    weight: 85
+- !!models.StoredItem
+    name: žltý chlpatý koberec
+    category: CARPETS
+    amount: 3865
+    weight: 43
+- !!models.StoredItem
+    name: tenký ultrasil fialový
+    category: CARPETS
+    amount: 24050
+    weight: 84
+- !!models.StoredItem
+    name: nafukovací tiger
+    category: INFLATABLES
+    amount: 2
+    weight: 3500
+- !!models.StoredItem
+    name: trampolína velka
+    category: INFLATABLES
+    amount: 1
+    weight: 4850
+- !!models.StoredItem
+    name: krov RO 10m
+    category: CONSTRUCTIONS
+    amount: 28
+    weight: 2350
+- !!models.StoredItem
+    name: noha dlhá HTS
+    category: CONSTRUCTIONS
+    amount: 45
+    weight: 130
+- !!models.StoredItem
+    name: predna stena FBS 5m
+    category: TARPS
+    amount: 50
+    weight: 230
+- !!models.StoredItem
+    name: tyč zadná RO /50m/
+    category: CONSTRUCTIONS
+    amount: 85
+    weight: 110
+- !!models.StoredItem
+    name: stolička hliníková
+    category: CHAIRS
+    amount: 35
+    weight: 95
+- !!models.StoredItem
+    name: stôl s jednou nohou
+    category: TABLES
+    amount: 48
+    weight: 580
+- !!models.StoredItem
+    name: stlpik holluwood
+    category: ACCESSORIES
+    amount: 12
+    weight: 8
+- !!models.StoredItem
+    name: rebrík hliníkový
+    category: TOOLS
+    amount: 2
+    weight: 850
+- !!models.StoredItem
+    name: teplovzdušná pištoľ
+    category: TOOLS
+    amount: 1
+    weight: 420
+- !!models.StoredItem
+    name: stol dubový
+    category: TABLES
+    amount: 10
+    weight: 355
+- !!models.StoredItem
+    name: stol detsky plastovy
+    category: TABLES
+    amount: 800
+    weight: 350
+- !!models.StoredItem
+    name: stolička záhradná
+    category: CHAIRS
+    amount: 232
+    weight: 130
+- !!models.StoredItem
+    name: stolička plastova
+    category: CHAIRS
+    amount: 50
+    weight: 230
+- !!models.StoredItem
+    name: vykurovaci agregat velký
+    category: HEATING
+    amount: 1
+    weight: 1150
+- !!models.StoredItem
+    name: krov MO 4x2
+    category: CONSTRUCTIONS
+    amount: 12100
+    weight: 35
+- !!models.StoredItem
+    name: stan noha dlha
+    category: CONSTRUCTIONS
+    amount: 1540
+    weight: 85
+- !!models.StoredItem
+    name: Okruhly stôl 180
+    category: TABLES
+    amount: 3865
+    weight: 43
+- !!models.StoredItem
+    name: koberec tmavy obliaty
+    category: CARPETS
+    amount: 24050
+    weight: 84
+- !!models.StoredItem
+    name: karbobruska BOSCH
+    category: TOOLS
+    amount: 2
+    weight: 3500
+- !!models.StoredItem
+    name: plavajuca podlaha
+    category: FLOORS
+    amount: 1
+    weight: 4850
+- !!models.StoredItem
+    name: podlaha parkety tisic
+    category: FLOORS
+    amount: 28
+    weight: 2350
+- !!models.StoredItem
+    name: obrus zamatovy 50
+    category: COVERS
+    amount: 35
+    weight: 130
+- !!models.StoredItem
+    name: baldachyn maly
+    category: BALDACHINS
+    amount: 35
+    weight: 230
+- !!models.StoredItem
+    name: plachta velka
+    category: TARPS
+    amount: 85
+    weight: 110
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+@(itemForm: Form[StoredItem])
+
+@import helper._
+@import views.html.helpers._
+@implicitFieldConstructor = @{ FieldConstructor(bootstrapInput.render) }
+
+@select(
+    itemForm("category"),
+    options(Category.options),
+    '_label -> "Kategória", 'class -> "form-control", 'required -> "true"
+)
+@inputText(itemForm("name"), '_label -> "Názov", 'class -> "form-control", 'placeholder -> "Stolička ratan", 'required -> "true")
+<div class="form-group">
+    <label class="col-sm-2 control-label">Počet</label>
+    <div class="col-sm-4">
+        <div class="input-group">
+            <input name="amount" type="number" min="1" step="1" required class="form-control" placeholder="45" value="@itemForm.apply("amount").value">
+            <span class="input-group-addon">ks</span>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">Hmotnosť</label>
+    <div class="col-sm-4">
+        <div class="input-group">
+            <input name="weight" type="number" min="0.01" step="0.01" required class="form-control" placeholder="2,35" value="@itemForm.apply("weight").value">
+            <span class="input-group-addon">kg</span>
+        </div>
+    </div>
+</div>

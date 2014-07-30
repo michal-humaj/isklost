@@ -1,0 +1,11 @@
+@(item: StoredItem)
+
+<div class="form-group">
+    <label class="col-sm-4 control-label">@item.name</label>
+    <div class="col-sm-4">
+        <div class="input-group">
+            <input name="amount" type="number" min="1" step="1" required class="form-control">
+            <span class="input-group-addon">ks</span>
+        </div>
+    </div>
+</div>

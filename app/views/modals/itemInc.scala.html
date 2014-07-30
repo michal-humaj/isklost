@@ -1,0 +1,8 @@
+@(item: StoredItem)
+
+@import views.html.masters.modal
+@import views.html.forms.itemIncDec
+
+@modal("Príjem na sklad")("Naskladniť")(routes.Store.increase(item.id)){
+    @itemIncDec(item)
+}
