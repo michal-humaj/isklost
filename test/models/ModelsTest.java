@@ -17,10 +17,7 @@ public class ModelsTest extends WithApplication {
 
     @Test
     public void createAndRetrieveUser() {
-        new StoredItem("meno", Category.BALDACHINS, 5, 8).save();
-        StoredItem item = StoredItem.find.where().eq("name", "meno").findUnique();
-        assertNotNull(item);
-        assertEquals(8, item.amount);
+
     }
 }
 

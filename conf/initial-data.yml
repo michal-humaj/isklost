@@ -17,17 +17,17 @@
     name: rebrík malý
     category: TOOLS
     amount: 2
-    weight: 850
+    weight: 8.3
 - !!models.StoredItem
     name: nastrelovačka vzduchová
     category: TOOLS
     amount: 1
-    weight: 420
+    weight: 4.2
 - !!models.StoredItem
     name: Ø120cm s kobercom
     category: TABLES
     amount: 10
-    weight: 355
+    weight: 3.55
 - !!models.StoredItem
     name: 120x80cm bez nôh
     category: TABLES
@@ -51,22 +51,22 @@
 - !!models.StoredItem
     name: kooberec indický
     category: CARPETS
-    amount: 12100
+    amount: 9.48
     weight: 35
 - !!models.StoredItem
     name: koberec modrý
     category: CARPETS
-    amount: 1540
+    amount: 153.48
     weight: 85
 - !!models.StoredItem
     name: žltý chlpatý koberec
     category: CARPETS
-    amount: 3865
+    amount: 9874.54
     weight: 43
 - !!models.StoredItem
     name: tenký ultrasil fialový
     category: CARPETS
-    amount: 24050
+    amount: 14.36
     weight: 84
 - !!models.StoredItem
     name: nafukovací tiger
@@ -151,7 +151,7 @@
 - !!models.StoredItem
     name: krov MO 4x2
     category: CONSTRUCTIONS
-    amount: 12100
+    amount: 12.10
     weight: 35
 - !!models.StoredItem
     name: stan noha dlha
@@ -166,7 +166,7 @@
 - !!models.StoredItem
     name: koberec tmavy obliaty
     category: CARPETS
-    amount: 24050
+    amount: 24
     weight: 84
 - !!models.StoredItem
     name: karbobruska BOSCH

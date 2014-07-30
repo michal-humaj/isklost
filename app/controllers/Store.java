@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Category;
 import models.StoredItem;
 import play.data.DynamicForm;
 import play.data.Form;
@@ -32,7 +33,7 @@ public class Store extends Controller {
     }
 
     public static Result create() {
-        StoredItem item = Form.form(StoredItem.class).bindFromRequest().get();
+        StoredItem item = form(StoredItem.class).bindFromRequest().get();
         item.save();
         return STORE_HOME;
     }
@@ -68,7 +69,7 @@ public class Store extends Controller {
         DynamicForm data = form().bindFromRequest();
         int amount = Integer.parseInt(data.get("amount"));
         StoredItem item = StoredItem.find.ref(id);
-        item.amount = item.amount + amount;
+        //item.amount = item.amount + amount;
         item.update(id);
         return STORE_HOME;
     }
@@ -82,8 +83,29 @@ public class Store extends Controller {
         DynamicForm data = form().bindFromRequest();
         int amount = Integer.parseInt(data.get("amount"));
         StoredItem item = StoredItem.find.ref(id);
-        item.amount = item.amount - amount;
+        //item.amount = item.amount - amount;
         item.update(id);
         return STORE_HOME;
     }
+
+   /* private static StoredItem buildItemFromDynForm(DynamicForm data){
+        String sWeight = data.get("weight");
+        String sAmount = data.get("amount");
+        if (!sWeight.contains(".")){
+            sWeight += "00";
+        }else if ('.' == sWeight.charAt(sWeight.length() - 1)){
+            sWeight += "00";
+        }else if ('.' == sWeight.charAt(sWeight.length() - 2)){
+            sWeight += "0";
+        }
+        sWeight = sWeight.replace(".","");
+        sAmount = sAmount.replace(".","");
+        return new StoredItem();
+        return new StoredItem(
+                data.get("name"),
+                Category.valueOf(data.get("category")),
+                Integer.parseInt(sAmount),
+                Integer.parseInt(sWeight)
+        );
+    }*/
 }

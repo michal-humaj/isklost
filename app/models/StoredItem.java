@@ -4,6 +4,8 @@ import play.data.validation.Constraints.*;
 import play.db.ebean.Model;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
+
 
 /**
  * Created by MiHu on 22.7.2014.
@@ -21,17 +23,28 @@ public class StoredItem extends Model {
     @Required
     public Category category;
 
-    @Min(1)
-    public int amount;
+    @Required
+    @Column(precision = 6, scale = 2)
+    public BigDecimal amount;
 
-    @Min(1)
-    public int weight;
+    @Required
+    @Column(precision = 6, scale = 2)
+    public BigDecimal weight;
 
-    public StoredItem(String name, Category category, int weight, int amount) {
+    public StoredItem(String name, Category category, BigDecimal amount, BigDecimal weight) {
         this.name = name;
         this.category = category;
-        this.weight = weight;
         this.amount = amount;
+        this.weight = weight;
+    }
+
+    public StringBuilder printAmount(){
+        return new StringBuilder(String.valueOf(amount)).append(" ks");
+    }
+
+    public StringBuilder printWeight(){
+        StringBuilder sWeight = new StringBuilder(String.valueOf(weight));
+        return sWeight.insert(sWeight.length() - 3,',').append(" kg");
     }
 
     public static Finder<Long, StoredItem> find = new Finder<>(Long.class, StoredItem.class);

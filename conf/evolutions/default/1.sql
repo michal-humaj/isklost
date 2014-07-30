@@ -7,8 +7,8 @@ create table stored_item (
   id                        bigint not null,
   name                      varchar(255),
   category                  integer,
-  amount                    integer,
-  weight                    integer,
+  amount                    decimal(6,2),
+  weight                    decimal(6,2),
   constraint ck_stored_item_category check (category in (0,1,2,3,4,5,6,7,8,9,10,11,12,13,14)),
   constraint pk_stored_item primary key (id))
 ;
