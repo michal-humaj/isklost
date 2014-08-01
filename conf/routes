@@ -23,6 +23,16 @@ GET         /store/item/:id/inc                   controllers.Store.increaseModa
 POST        /store/item/:id/dec                   controllers.Store.decrease(id:Long)
 GET         /store/item/:id/dec                   controllers.Store.decreaseModal(id:Long)
 
+#Tents
+GET         /tents/new                            controllers.Tents.neu()
+POST        /tents/new                            controllers.Tents.create()
+
+GET         /tents/:id                            controllers.Tents.edit(id:Long)
+POST        /tents/:id                            controllers.Tents.update(id:Long)
+
+GET         /tents/:id/delete                     controllers.Tents.deleteModal(id:Long)
+POST        /tents/:id/delete                     controllers.Tents.delete(id:Long)
+
 # Play-authenticate routes
 GET         /login                                controllers.Application.login()
 GET         /logout                               com.feth.play.module.pa.controllers.Authenticate.logout

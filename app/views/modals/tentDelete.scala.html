@@ -1,0 +1,7 @@
+@(tent: Tent)
+
+@import views.html.masters.modal
+
+@modal("Vymazať stan")("Vymazať")(routes.Tents.delete(tent.id)){
+    <p>Vymazať @tent.name zo skladu?</p>
+}

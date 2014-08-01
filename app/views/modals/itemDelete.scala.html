@@ -2,6 +2,6 @@
 
 @import views.html.masters.modal
 
-@modal("Odstránenie položky")("Vymazať")(routes.Store.delete(item.id)){
-    <p>Chcete natrvalo vymazať @item.name zo skladu?</p>
+@modal("Vymazať položku")("Vymazať")(routes.Store.delete(item.id)){
+    <p>Vymazať @item.name zo skladu?</p>
 }

@@ -3,6 +3,7 @@ package models;
 import play.data.validation.Constraints.Required;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ public class Tent extends Item {
 
     @Required
     @OneToMany(cascade = CascadeType.ALL)
-    public List<Accessory> accessories;
+    public List<Accessory> accessories = new ArrayList<>();
 
     public Tent(List<Accessory> accessories) {
         this.accessories = accessories;

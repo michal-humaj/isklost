@@ -3,7 +3,56 @@
 @masters.tents("IS Klost | Stany"){
 
 }{
+    <div class="row">
+        <div class="col-md-12">
 
+            <div class="box box-primary" style="width:480px;">
+
+                <div class="box-header">
+                    <h3 class="box-title">Typy stanov</h3>
+                    <div class="pull-right box-tools">
+                        <form action='@routes.Tents.neu()' method="GET">
+                            <button type="submit" class="btn btn-primary">
+                                Vytvoriť stan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="box-body no-padding">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <th>Názov</th>
+                                <th>Akcia</th>
+                            </tr>
+                            @for(tent <- tents) {
+                                <tr>
+                                    <td>Stan pagoda</td>
+                                    <td>
+                                        <div class="btn-group btn-group-xs">
+                                            <form action='@routes.Tents.edit(tent.id)' method="GET">
+                                                <button type="submit" class="btn btn-primary">Upraviť</button>
+                                            </form>
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                <span class="caret"></span>
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href='@routes.Tents.deleteModal(tent.id)' >Vymazať</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 }{
 
 }

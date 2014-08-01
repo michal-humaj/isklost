@@ -1,0 +1,46 @@
+@(tentForm: Form[Tent])
+
+@import helper._
+@import views.html.helpers._
+@implicitFieldConstructor = @{ FieldConstructor(bootstrapInput.render) }
+
+@masters.tents("IS Klost | Nový stan"){
+
+}{
+    <div class="row">
+        <div class="col-md-12">
+
+            <form class="form-horizontal" method="POST" action="/fcsf/fdf">
+
+                <div class="box box-solid box-primary" style="width:640px;">
+
+                    <div class="box-header">
+                        <h3 class="box-title">Nový stan</h3>
+                    </div>
+                    <div class="box-body">
+                        @inputText(tentForm("name"), '_label -> "Názov", 'class -> "form-control", 'placeholder -> "Stolička ratan", 'required -> "true")
+                        @select(
+                            tentForm("category"),
+                            options(Category.options),
+                            'id -> "categorySelect", '_label -> "Kategória", 'class -> "form-control", 'required -> "true"
+                        )
+                        @select(
+                            tentForm("category"),
+                            options(Category.options),
+                            'id -> "categorySelect", '_label -> "Kategória", 'class -> "form-control", 'required -> "true"
+                        )
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">Vytvorit</button>
+                        <button type="button" class="btn btn-default">Späť</button>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+}{
+
+}

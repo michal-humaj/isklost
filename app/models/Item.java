@@ -1,5 +1,6 @@
 package models;
 
+import play.data.format.Formats;
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
 
