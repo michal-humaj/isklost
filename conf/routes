@@ -1,13 +1,10 @@
-# Home page
+# Calendar
 GET         /                                     controllers.Calendar.list()
 
-#Store main page
-GET         /store/items                          controllers.Store.list()
-
-#Tents main page
-GET         /tents                                controllers.Tents.list()
-
 # StoredItem
+GET         /store/items                          controllers.Store.list()
+GET         /store/items/:category                controllers.Store.listInCategory(category: String)
+
 POST        /store/item                           controllers.Store.create()
 GET         /store/item                           controllers.Store.newModal()
 
@@ -24,6 +21,8 @@ POST        /store/item/:id/dec                   controllers.Store.decrease(id:
 GET         /store/item/:id/dec                   controllers.Store.decreaseModal(id:Long)
 
 #Tents
+GET         /tents                                controllers.Tents.list()
+
 GET         /tents/new                            controllers.Tents.neu()
 POST        /tents/new                            controllers.Tents.create()
 
@@ -32,6 +31,8 @@ POST        /tents/:id                            controllers.Tents.update(id:Lo
 
 GET         /tents/:id/delete                     controllers.Tents.deleteModal(id:Long)
 POST        /tents/:id/delete                     controllers.Tents.delete(id:Long)
+
+
 
 # Play-authenticate routes
 GET         /login                                controllers.Application.login()

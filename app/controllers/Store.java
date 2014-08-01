@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import static play.data.Form.form;
+import static play.libs.Json.toJson;
 
 /**
  * Created by MiHu on 22.7.2014.
@@ -87,5 +88,11 @@ public class Store extends Controller {
         item.amount = item.amount.subtract(amount);
         item.update(id);
         return STORE_HOME;
+    }
+
+    public static Result listInCategory(String sCat) {
+        Category category = Category.valueOf(sCat);
+        final List<StoredItem> items = StoredItem.find.where().eq("category", category).findList();
+        return ok(toJson(items));
     }
 }

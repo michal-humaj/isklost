@@ -12,23 +12,56 @@
 
             <form class="form-horizontal" method="POST" action="/fcsf/fdf">
 
-                <div class="box box-solid box-primary" style="width:640px;">
+                <div class="box box-solid box-primary" style="width:960px;">
 
                     <div class="box-header">
                         <h3 class="box-title">Nový stan</h3>
                     </div>
                     <div class="box-body">
                         @inputText(tentForm("name"), '_label -> "Názov", 'class -> "form-control", 'placeholder -> "Stolička ratan", 'required -> "true")
-                        @select(
-                            tentForm("category"),
-                            options(Category.options),
-                            'id -> "categorySelect", '_label -> "Kategória", 'class -> "form-control", 'required -> "true"
-                        )
-                        @select(
-                            tentForm("category"),
-                            options(Category.options),
-                            'id -> "categorySelect", '_label -> "Kategória", 'class -> "form-control", 'required -> "true"
-                        )
+                        </div>
+                        <div class="box-body no-padding">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width:405px;">Kategoria</th>
+                                    <th style="width:405px;">Položka</th>
+                                    <th>Počet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <select id="categorySelect" class="form-control">
+                                            <option value="TABLES">Stoly</option>
+                                            <option value="CHAIRS">Stoličky</option>
+                                            <option value="COVERS">Nastieranie</option>
+                                            <option value="TARPS">Plachty na stany</option>
+                                            <option value="HEATING">Kúrenie</option>
+                                            <option value="LIGHTS">Svetlá</option>
+                                            <option value="INFLATABLES">Nafukovadlá</option>
+                                            <option value="FLOORS">Podlahy</option>
+                                            <option value="ACCESSORIES">Doplnky</option>
+                                            <option value="TOOLS">Náradie</option>
+                                            <option value="BALDACHINS">Baldachýny</option>
+                                            <option value="OTHERS">Ostatné</option>
+                                            <option value="CONSTRUCTIONS">Konštrukcie stany</option>
+                                            <option value="CARPETS">Koberce</option>
+                                            <option value="PB">PB</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select id="itemSelect" class="form-control"></select>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input name="amount" type="number" min="1" step="1" max="9999" required class="form-control" placeholder="45">
+                                            <span class="input-group-addon" >ks</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary">Vytvorit</button>
@@ -42,5 +75,5 @@
         </div>
     </div>
 }{
-
+    <script type="text/javascript" src='@routes.Assets.at("js/itemSelect.js")'></script>
 }
