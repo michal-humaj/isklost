@@ -3,6 +3,10 @@
 @masters.tents("IS Klost | Stany"){
 
 }{
+    <!-- MODALS -->
+    <!-- Modal asking to delete Tent -->
+    <div class="modal" id="modal-tent-delete" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"></div>
+
     <div class="row">
         <div class="col-md-12">
 
@@ -39,7 +43,7 @@
                                                 <span class="sr-only">Toggle Dropdown</span>
                                             </button>
                                             <ul class="dropdown-menu" role="menu">
-                                                <li><a href='@routes.Tents.deleteModal(tent.id)' >Vymazať</a></li>
+                                                <li><a href='@routes.Tents.deleteModal(tent.id)' data-toggle="modal" data-target="#modal-tent-delete" >Vymazať</a></li>
                                             </ul>
                                         </div>
                                     </td>

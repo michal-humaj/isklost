@@ -53,6 +53,7 @@ public class Tents extends Controller {
     }
 
     public static Result delete(long id) {
-        return play.mvc.Results.TODO;
+        Tent.find.ref(id).delete();
+        return TENTS_HOME;
     }
 }
