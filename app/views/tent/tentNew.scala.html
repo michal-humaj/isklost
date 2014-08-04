@@ -33,7 +33,11 @@
         )
         </td>
         <td>
-            @inputText(field("amount"), 'class -> "form-control amountInput")
+            @if(style.equals("")) {
+                @inputText(field("amount"), 'class -> "form-control amountInput", 'type -> "number", 'min -> "1", 'required -> "true")
+            }else{
+                @inputText(field("amount"), 'class -> "form-control amountInput")
+            }
         </td>
         <td>
             <button type="button" class="btn btn-danger">X</button>
@@ -95,6 +99,7 @@
     <script type="text/javascript" src='@routes.Assets.at("js/itemSelect.js")'></script>
     <script type="text/javascript">
         function loadItems(e) {
+            console.log('dae');
             var cat = e.options[e.selectedIndex].value;
             var selIndex = e.id.substr(14);
             return $.get("/store/items/" + cat, function(items) {
