@@ -28,7 +28,7 @@
                             </tr>
                             @for(tent <- tents) {
                                 <tr>
-                                    <td>Stan pagoda</td>
+                                    <td>@tent.name</td>
                                     <td>
                                         <div class="btn-group btn-group-xs">
                                             <form action='@routes.Tents.edit(tent.id)' method="GET">

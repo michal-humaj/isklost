@@ -1,15 +1,17 @@
-$ ->
-  $.get "/store/items/TABLES", (items) ->
-    $.each items, (index, item) ->
-      opt = $("<option>").text item.name
-      opt.prop 'value', item.id
-      $('#itemSelect').append opt
+$("#addAccessory").click (e) ->
+  template = $(".accessoryGroupTemplate")
+  template.before '<tr class="accessoryGroup">' + template.html() + "</tr>"
+  renumber()
 
-$("#categorySelect").change ->
-  cat = this.options[this.selectedIndex].value
-  $.get "/store/items/#{cat}", (items) ->
-    $('#itemSelect').html ""
-    $.each items, (index, item) ->
-      opt = $("<option>").text item.name
-      opt.prop 'value', item.id
-      $('#itemSelect').append opt
+renumber = () ->
+  $(".accessoryGroup").each (i) ->
+    $(".categorySelect", this).each ->
+      $(this).attr "id", "categorySelect" + i
+    $(".itemSelect", this).each ->
+      $(this).attr "name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]")
+      $(this).attr "id", "itemSelect" + i
+    $(".amountInput", this).each ->
+      $(this).attr "name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]")
+
+$("#form").submit ->
+  $(".accessoryGroupTemplate").remove()

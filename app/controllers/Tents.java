@@ -4,11 +4,10 @@ import models.Tent;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.tents;
-import views.html.tent.*;
 import views.html.modals.tentDelete;
+import views.html.tent.tentNew;
+import views.html.tents;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static play.data.Form.form;
@@ -32,7 +31,12 @@ public class Tents extends Controller {
     }
 
     public static Result create() {
-        return play.mvc.Results.TODO;
+        Form<Tent> tentForm = form(Tent.class).bindFromRequest();
+        System.out.println("------------- " + tentForm);
+
+        final Tent tent = tentForm.get();
+        tent.save();
+        return TENTS_HOME;
     }
 
     public static Result edit(long id) {

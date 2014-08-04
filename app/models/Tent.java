@@ -1,8 +1,10 @@
 package models;
 
 import play.data.validation.Constraints.Required;
+import play.db.ebean.Model;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,13 +14,8 @@ import java.util.List;
 @Entity
 public class Tent extends Item {
 
-    @Required
     @OneToMany(cascade = CascadeType.ALL)
     public List<Accessory> accessories = new ArrayList<>();
-
-    public Tent(List<Accessory> accessories) {
-        this.accessories = accessories;
-    }
 
     public static Finder<Long, Tent> find = new Finder<>(Long.class, Tent.class);
 }
