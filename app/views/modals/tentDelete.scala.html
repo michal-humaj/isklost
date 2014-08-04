@@ -3,5 +3,6 @@
 @import views.html.masters.modal
 
 @modal("Vymazať stan")("Vymazať")(routes.Tents.delete(tent.id)){
-    <p>Vymazať @tent.name zo skladu?</p>
+    <p>Vymazať @tent.name?</p>
+    <p>Zo skladu nebudu vymazané žiadne položky</p>
 }

@@ -26,21 +26,25 @@
             </select>
         </td>
         <td>
-        @select(
-            field("item.id"),
-            options(Category.options),
-            'id -> "itemSelect0", 'class -> "form-control itemSelect", 'required -> "true"
-        )
-        </td>
-        <td>
             @if(style.equals("")) {
-                @inputText(field("amount"), 'class -> "form-control amountInput", 'type -> "number", 'min -> "1", 'required -> "true")
+                <select id="itemSelect0" class="form-control itemSelect" name='@field("item.id").name' required="true">
+                </select>
             }else{
-                @inputText(field("amount"), 'class -> "form-control amountInput")
+                <select id="itemSelect0" class="form-control itemSelect" name='@field("item.id").name'>
+                </select>
             }
         </td>
         <td>
-            <button type="button" class="btn btn-danger removeAccessory" onclick="removeAccessory(this);">X</button>
+            @if(style.equals("")) {
+                <input type="number" class="form-control amountInput" name='@field("amount").name' min="1" required="true">
+            }else{
+                <input type="text" class="form-control amountInput" name='@field("amount").name'>
+            }
+        </td>
+        <td>
+            <button class="btn btn-danger btn-sm" onclick="removeAccessory(this);" data-widget="remove">
+                <i class="fa fa-times"></i>
+            </button>
         </td>
 
     </tr>
@@ -61,14 +65,20 @@
                     </div>
                     <div class="box-body">
                         @inputText(tentForm("name"), '_label -> "Názov", 'class -> "form-control", 'placeholder -> "Stan pagoda", 'required -> "true")
-                        </div>
-                        <div class="box-body no-padding">
+                        <hr>
+                        <h4>Položky stanu</h4>
+
+
+
+                    </div>
+                    <div class="box-body no-padding">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Kategoria</th>
-                                    <th>Položka</th>
+                                    <th style="width:240px;">Kategoria</th>
+                                    <th style="width:580px;">Položka</th>
                                     <th>Počet</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,11 +92,13 @@
                                 )
                             </tbody>
                         </table>
-                        <button type="button" id="addAccessory" class="btn btn-success">Pridat polozku</button>
                     </div>
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary">Vytvorit</button>
-                        <button type="button" class="btn btn-default">Späť</button>
+                        <a type="button" class="btn btn-default" href="@routes.Tents.list()" >Späť</a>
+                        <button type="button" style="margin-right: -2px;" class="pull-right btn btn-info btn-sm" id="addAccessory">
+                            <i class="fa fa-plus"></i>
+                        </button>
                     </div>
 
                 </div>
