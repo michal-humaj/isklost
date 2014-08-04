@@ -1,7 +1,14 @@
+$ ->
+  loadItems document.getElementById("categorySelect0")
+
+
 $("#addAccessory").click (e) ->
   template = $(".accessoryGroupTemplate")
   template.before '<tr class="accessoryGroup">' + template.html() + "</tr>"
   renumber()
+  $(".accessoryGroup").each (i) ->
+    $(".categorySelect", this).each ->
+      loadItems this
 
 renumber = () ->
   $(".accessoryGroup").each (i) ->

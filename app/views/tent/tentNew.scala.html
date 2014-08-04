@@ -94,20 +94,17 @@
 }{
     <script type="text/javascript" src='@routes.Assets.at("js/itemSelect.js")'></script>
     <script type="text/javascript">
-
-    function loadItems(e) {
-        var cat, selIndex;
-        cat = e.options[e.selectedIndex].value;
-        selIndex = e.id.substr(14);
-        return $.get("/store/items/" + cat, function(items) {
-        $('#itemSelect' + selIndex).html("");
-        return $.each(items, function(index, item) {
-        var opt;
-        opt = $("<option>").text(item.name);
-        opt.prop('value', item.id);
-        return $('#itemSelect' + selIndex).append(opt);
-        });
-        });
-    };
+        function loadItems(e) {
+            var cat = e.options[e.selectedIndex].value;
+            var selIndex = e.id.substr(14);
+            return $.get("/store/items/" + cat, function(items) {
+                $('#itemSelect' + selIndex).html("");
+                return $.each(items, function(index, item) {
+                    var opt = $("<option>").text(item.name);
+                    opt.prop('value', item.id);
+                    return $('#itemSelect' + selIndex).append(opt);
+                });
+            });
+        };
     </script>
 }
