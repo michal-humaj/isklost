@@ -1,10 +1,13 @@
 package models;
 
 import play.data.validation.Constraints.*;
-import play.db.ebean.Model;
+import scala.reflect.internal.transform.Erasure;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -32,4 +35,20 @@ public class StoredItem extends Item {
     }
 
     public static Finder<Long, StoredItem> find = new Finder<>(Long.class, StoredItem.class);
+
+    public static Map<String,String> options(String sCat) {
+        System.out.println("------------------------------------------ " + sCat);
+        LinkedHashMap<String, String> options = new LinkedHashMap<>();
+        Category category;
+        try {
+            category = Category.valueOf(sCat.substring(5, sCat.length() - 1));
+        }catch (StringIndexOutOfBoundsException | IllegalArgumentException e){
+            return options;
+        }
+        final List<StoredItem> items = StoredItem.find.where().eq("category", category).findList();
+        for(StoredItem item : items){
+            options.put(item.id.toString(), item.name);
+        }
+        return options;
+    }
 }

@@ -2,40 +2,43 @@
 
 @import helper._
 @import views.html.helpers._
-@implicitFieldConstructor = @{ FieldConstructor(bootstrapInput.render) }
+@implicitField = @{ FieldConstructor(tableInput.f) }
 
 @accessoryGroup(field: Field, className: String = "accessoryGroup", style: String = "") = {
     <tr class="@className" style="@style">
         <td>
-            <select id="categorySelect0" class="form-control categorySelect" onchange="loadItems(this);">
-                <option value="TABLES">Stoly</option>
-                <option value="CHAIRS">Stoličky</option>
-                <option value="COVERS">Nastieranie</option>
-                <option value="TARPS">Plachty na stany</option>
-                <option value="LIGHTS">Svetlá</option>
-                <option value="INFLATABLES">Nafukovadlá</option>
-                <option value="FLOORS">Podlahy</option>
-                <option value="ACCESSORIES">Doplnky</option>
-                <option value="TOOLS">Náradie</option>
-                <option value="BALDACHINS">Baldachýny</option>
-                <option value="OTHERS">Ostatné</option>
-                <option value="CONSTRUCTIONS">Konštrukcie stany</option>
-            </select>
+            @select(
+                field("item.category"),
+                options(Category.options),
+                'id -> "categorySelect0", 'class -> "form-control categorySelect", 'onchange -> "loadItems(this);"
+            )(implicitField, null)
         </td>
         <td>
             @if(style.equals("")) {
-                <select id="itemSelect0" class="form-control itemSelect" name='@field("item.id").name' required="true">
-                </select>
+                @select(
+                    field("item.id"),
+                    options(Category.options),
+                    'id -> "itemSelect0", 'class -> "form-control itemSelect", 'required -> "true"
+                )(implicitField, null)
             }else{
-                <select id="itemSelect0" class="form-control itemSelect" name='@field("item.id").name'>
-                </select>
+                @select(
+                    field("item.id"),
+                    options(Category.options),
+                    'id -> "itemSelect0", 'class -> "form-control itemSelect"
+                )(implicitField, null)
             }
         </td>
         <td>
             @if(style.equals("")) {
-                <input type="number" class="form-control amountInput" name='@field("amount").name' min="1" required="true">
+                @inputText(
+                    field("amount"),
+                    'type -> "number", 'class -> "form-control amountInput", 'min -> "1", 'required -> "true"
+                )
             }else{
-                <input type="text" class="form-control amountInput" name='@field("amount").name'>
+                @inputText(
+                    field("amount"),
+                    'class -> "form-control amountInput"
+                )
             }
         </td>
         <td>
@@ -61,11 +64,10 @@
                         <h3 class="box-title">Nový stan</h3>
                     </div>
                     <div class="box-body">
-                        @inputText(tentForm("name"), '_label -> "Názov", 'class -> "form-control", 'placeholder -> "Stan pagoda", 'required -> "true")
+
+                        @inputText(tentForm("name"), '_label -> "Názov", 'class -> "form-control", 'placeholder -> "Názov stanu", 'required -> "true")
                         <hr>
                         <h4>Položky stanu</h4>
-
-
 
                     </div>
                     <div class="box-body no-padding">
@@ -127,6 +129,7 @@
             $(".accessoryGroup").each(function(i) {
                 $(".categorySelect", this).each(function() {
                     $(this).attr("id", "categorySelect" + i);
+                    $(this).attr("name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]"));
                 });
                 $(".itemSelect", this).each(function() {
                     $(this).attr("name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]"));

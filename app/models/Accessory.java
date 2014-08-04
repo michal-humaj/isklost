@@ -13,7 +13,6 @@ import javax.validation.Valid;
 public class Accessory extends Model {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
     @ManyToOne

@@ -1,11 +1,13 @@
 package controllers;
 
+import com.avaje.ebean.Ebean;
+import models.Accessory;
 import models.Tent;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.modals.tentDelete;
-import views.html.tent.tentNew;
+import views.html.tent.*;
 import views.html.tents;
 
 import java.util.List;
@@ -32,19 +34,27 @@ public class Tents extends Controller {
 
     public static Result create() {
         Form<Tent> tentForm = form(Tent.class).bindFromRequest();
-        System.out.println("------------- " + tentForm);
-
         final Tent tent = tentForm.get();
         tent.save();
         return TENTS_HOME;
     }
 
     public static Result edit(long id) {
-        return play.mvc.Results.TODO;
+        Tent tent = Tent.find.ref(id);
+        Form<Tent> tentForm = form(Tent.class).fill(tent);
+        return ok(tentEdit.render(id, tentForm));
     }
 
+
     public static Result update(long id) {
-        return play.mvc.Results.TODO;
+
+
+        Form<Tent> tentForm = form(Tent.class).bindFromRequest();
+        System.out.println("------------------------------------ " + tentForm);
+        final Tent tent = tentForm.get();
+        tent.save();
+        Tent.find.ref(id).delete();
+        return TENTS_HOME;
     }
 
     public static Result deleteModal(long id) {

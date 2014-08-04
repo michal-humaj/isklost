@@ -13,7 +13,7 @@ public enum Category {
     CONSTRUCTIONS, CARPETS, PB;
 
     public static Map<String,String> options() {
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
+        LinkedHashMap<String,String> options = new LinkedHashMap<>();
         for(Category c : Category.values()) {
             options.put(c.toString(), Messages.get(c.toString()) );
         }
