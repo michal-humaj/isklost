@@ -13,6 +13,10 @@ $("#addAccessory").click (e) ->
     $(".categorySelect", this).each ->
       loadItems this
 
+$(".removeAccessory").click (e) ->
+  $(this).parents(".accessoryGroup").remove()
+  renumber()
+
 renumber = () ->
   $(".accessoryGroup").each (i) ->
     $(".categorySelect", this).each ->
