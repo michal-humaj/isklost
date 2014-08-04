@@ -13,19 +13,5 @@ $("#addAccessory").click (e) ->
     $(".categorySelect", this).each ->
       loadItems this
 
-$(".removeAccessory").click (e) ->
-  $(this).parents(".accessoryGroup").remove()
-  renumber()
-
-renumber = () ->
-  $(".accessoryGroup").each (i) ->
-    $(".categorySelect", this).each ->
-      $(this).attr "id", "categorySelect" + i
-    $(".itemSelect", this).each ->
-      $(this).attr "name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]")
-      $(this).attr "id", "itemSelect" + i
-    $(".amountInput", this).each ->
-      $(this).attr "name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]")
-
 $("#form").submit ->
   $(".accessoryGroupTemplate").remove()

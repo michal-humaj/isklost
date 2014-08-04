@@ -40,7 +40,7 @@
             }
         </td>
         <td>
-            <button type="button" class="btn btn-danger removeAccessory">X</button>
+            <button type="button" class="btn btn-danger removeAccessory" onclick="removeAccessory(this);">X</button>
         </td>
 
     </tr>
@@ -112,6 +112,26 @@
                 });
                 itemSelect.selectedIndex = selectedIndex;
             });
+        };
+
+        function renumber() {
+            $(".accessoryGroup").each(function(i) {
+                $(".categorySelect", this).each(function() {
+                    $(this).attr("id", "categorySelect" + i);
+                });
+                $(".itemSelect", this).each(function() {
+                    $(this).attr("name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]"));
+                    $(this).attr("id", "itemSelect" + i);
+                });
+                $(".amountInput", this).each(function() {
+                    $(this).attr("name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]"));
+                });
+            });
+        };
+
+        function removeAccessory(e){
+            e.parentNode.parentNode.remove();
+            renumber();
         };
     </script>
 }
