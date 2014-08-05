@@ -19,4 +19,17 @@ public enum Category {
         }
         return options;
     }
+
+    public static Map<String,String> tentOptions() {
+        LinkedHashMap<String,String> options = new LinkedHashMap<>();
+        for(Category c : Category.values()) {
+            switch (c){
+                case PB: continue;
+                case CARPETS: continue;
+                case HEATING: continue;
+            }
+            options.put(c.toString(), Messages.get(c.toString()) );
+        }
+        return options;
+    }
 }

@@ -9,7 +9,7 @@
             <td>
             @select(
                 field("item.category"),
-                options(Category.options),
+                options(Category.tentOptions),
                 'id -> "categorySelect0", 'class -> "form-control categorySelect", 'onchange -> "loadItems(this);"
             )(implicitField, null)
             </td>
@@ -42,7 +42,7 @@
             }
             </td>
             <td>
-                <button class="btn btn-danger btn-sm" onclick="removeAccessory(this);" data-widget="remove">
+                <button class="btn btn-danger" onclick="removeAccessory(this);" data-widget="remove">
                     <i class="fa fa-times"></i>
                 </button>
             </td>
@@ -95,7 +95,7 @@
                 <div class="box-footer">
                     <button type="submit" class="btn btn-primary">Vytvorit</button>
                     <a type="button" class="btn btn-default" href="@routes.Tents.list()" >Späť</a>
-                    <button type="button" style="margin-right: -2px;" class="pull-right btn btn-info btn-sm" id="addAccessory">
+                    <button type="button" style="margin-right: -2px;" class="pull-right btn btn-info" id="addAccessory">
                         <i class="fa fa-plus"></i>
                     </button>
                 </div>

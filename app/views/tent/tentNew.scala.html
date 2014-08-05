@@ -9,7 +9,7 @@
         <td>
             @select(
                 field("item.category"),
-                options(Category.options),
+                options(Category.tentOptions),
                 'id -> "categorySelect0", 'class -> "form-control categorySelect", 'onchange -> "loadItems(this);"
             )(implicitField, null)
         </td>
