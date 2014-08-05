@@ -47,10 +47,7 @@ public class Tents extends Controller {
 
 
     public static Result update(long id) {
-
-
         Form<Tent> tentForm = form(Tent.class).bindFromRequest();
-        System.out.println("------------------------------------ " + tentForm);
         final Tent tent = tentForm.get();
         tent.save();
         Tent.find.ref(id).delete();

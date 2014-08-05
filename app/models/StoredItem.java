@@ -37,7 +37,6 @@ public class StoredItem extends Item {
     public static Finder<Long, StoredItem> find = new Finder<>(Long.class, StoredItem.class);
 
     public static Map<String,String> options(String sCat) {
-        System.out.println("------------------------------------------ " + sCat);
         LinkedHashMap<String, String> options = new LinkedHashMap<>();
         Category category;
         try {
