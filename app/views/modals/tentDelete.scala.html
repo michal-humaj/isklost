@@ -2,7 +2,7 @@
 
 @import views.html.masters.modal
 
-@modal("Vymazať stan")("Vymazať")(routes.Tents.delete(tent.id)){
+@modal("Vymazať stan")("Vymazať")(routes.Tents.delete(tent.id))("btn-danger"){
     <p>Vymazať @tent.name?</p>
     <p>Zo skladu nebudu vymazané žiadne položky</p>
 }

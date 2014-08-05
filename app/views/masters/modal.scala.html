@@ -1,4 +1,4 @@
-@(title: String)(submitLabel: String)(call: play.api.mvc.Call)(content: Html)
+@(title: String)(submitLabel: String)(call: play.api.mvc.Call)(btnClass: String)(content: Html)
 
 @import helper._
 
@@ -16,7 +16,7 @@
             @content
         </div>
         <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">@submitLabel</button>
+            <button type="submit" class="btn @btnClass">@submitLabel</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Späť</button>
         </div>
     }

@@ -3,6 +3,6 @@
 @import views.html.masters.modal
 @import views.html.forms.item
 
-@modal("Nová položka")("Vytvoriť")(routes.Store.create()){
+@modal("Nová položka")("Vytvoriť")(routes.Store.create())("btn-primary"){
     @item(itemForm)
 }

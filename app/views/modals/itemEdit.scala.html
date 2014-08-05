@@ -3,6 +3,6 @@
 @import views.html.masters.modal
 @import views.html.forms.item
 
-@modal("Úprava položky")("Uložiť")(routes.Store.update(id)){
+@modal("Úprava položky")("Uložiť")(routes.Store.update(id))("btn-primary"){
     @item(itemForm)
 }

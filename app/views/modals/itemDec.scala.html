@@ -3,6 +3,6 @@
 @import views.html.masters.modal
 @import views.html.forms.itemIncDec
 
-@modal("Odber zo skladu")("Vyskladniť")(routes.Store.decrease(item.id)){
+@modal("Odber zo skladu")("Vyskladniť")(routes.Store.decrease(item.id))("btn-primary"){
     @itemIncDec(item)
 }
