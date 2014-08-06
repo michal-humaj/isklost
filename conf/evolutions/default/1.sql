@@ -4,7 +4,7 @@
 # --- !Ups
 
 create table accessory (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   tent_id                   bigint not null,
   item_id                   bigint,
   amount                    integer,
@@ -12,7 +12,7 @@ create table accessory (
 ;
 
 create table stored_item (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   name                      varchar(255),
   category                  integer,
   amount                    decimal(6,2),
@@ -22,16 +22,10 @@ create table stored_item (
 ;
 
 create table tent (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   name                      varchar(255),
   constraint pk_tent primary key (id))
 ;
-
-create sequence accessory_seq;
-
-create sequence stored_item_seq;
-
-create sequence tent_seq;
 
 alter table accessory add constraint fk_accessory_tent_1 foreign key (tent_id) references tent (id) on delete restrict on update restrict;
 create index ix_accessory_tent_1 on accessory (tent_id);
@@ -42,19 +36,13 @@ create index ix_accessory_item_2 on accessory (item_id);
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+SET FOREIGN_KEY_CHECKS=0;
 
-drop table if exists accessory;
+drop table accessory;
 
-drop table if exists stored_item;
+drop table stored_item;
 
-drop table if exists tent;
+drop table tent;
 
-SET REFERENTIAL_INTEGRITY TRUE;
-
-drop sequence if exists accessory_seq;
-
-drop sequence if exists stored_item_seq;
-
-drop sequence if exists tent_seq;
+SET FOREIGN_KEY_CHECKS=1;
 
