@@ -19,6 +19,7 @@
     </div>
 }{
     <!---------------------JAVASCRIPTS-------------------------------------------------------------->
+    <script src='@routes.Assets.at("js/jquery-ui-1.10.3.min.js")' type="text/javascript"></script>
     <!-- fullCalendar -->
     <script src='@routes.Assets.at("js/plugins/fullcalendar/fullcalendar.min.js")' type="text/javascript"></script>
     <script src='@routes.Assets.at("js/plugins/fullcalendar/gcal.js")' type='text/javascript'></script>
@@ -26,6 +27,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#calendar').fullCalendar({
+                editable: true,
                 header: {
                     left: 'prev,next today',
                     center: 'title',
@@ -46,18 +48,22 @@
                 eventSources: [
                     {
                         url: "https://www.google.com/calendar/feeds/o776rmha219v92fvejs0hahsso%40group.calendar.google.com/private-6968d2f0aa2dee4823410b8e47fa040c/basic",
+                        editable:true,
                         color: '#92E1C0'
                     },
                     {
                         url: "https://www.google.com/calendar/feeds/gehqh0ptgh0i2hkh3f1l4tlerg%40group.calendar.google.com/private-65a3820d5b7a4aa1ac390d21d85d93fc/basic",
+                        editable:true,
                         color: '#9FC6E7'
                     },
                     {
                         url: "https://www.google.com/calendar/feeds/3jg1lna270kjsjb0jjrhhqo5m8%40group.calendar.google.com/private-57e4356bbde4ecb5ba981a2eedb4dd91/basic",
+                        editable:true,
                         color: '#FAD165'
                     },
                     {
                         url: "https://www.google.com/calendar/feeds/hq8a7ru1eh0qoj7bpn05amtsg8%40group.calendar.google.com/private-14076798185cd1615e25439fbd969ae8/basic",
+                        editable:true,
                         color: '#CABDBF'
                     }
                 ],
@@ -67,6 +73,7 @@
                 selectHelper: true,
                 unselectCancel: ".form-horizontal",
                 select: function(startDate, endDate, allDay, jsEvent, view) {
+                    $(".popover").remove();
 
                     $("#startDate").attr("value", startDate.getTime());
                     $("#endDate").attr("value", endDate.getTime());
@@ -84,7 +91,27 @@
                     $(jsEvent.target).popover('show');
                 },
                 unselect: function( view, jsEvent ){
-                    $ (".popover").remove();
+                    $(".popover").remove();
+                },
+                eventClick: function( event, jsEvent, view ) {
+                    $(".popover").remove();
+
+                    var pos = event.allDay ? "bottom" : "top";
+                    $(jsEvent.target).popover({
+                        trigger: 'manual',
+                        placement: pos,
+                        container: 'body',
+                        html: true,
+                        content: function() {
+                            return $("#popoverContent").html();
+                        }
+                    });
+                    $(jsEvent.target).popover('show');
+                    return false;
+                },
+                eventResize: function( event, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view ) {
+                },
+                eventDrop: function( event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view ) {
                 }
             });
         });
