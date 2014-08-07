@@ -7,11 +7,12 @@
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-body no-padding">
-                        <!-- FULL CALENDAR -->
+                    <!-- FULL CALENDAR -->
                     <div id="calendar"></div>
                 </div>
             </div>
         </div>
+
     </div>
 }{
     <!-- fullCalendar -->
@@ -34,8 +35,10 @@
                     week: 'week',
                     day: 'day'
                 },
-                defaultView: 'agendaWeek',
-                firstDay: 1,
+                height: $(window).height() - 120,
+                windowResize: function(view) {
+                    $('#calendar').fullCalendar('option', 'height', $(window).height() - 120);
+                },
                 eventSources: [
                     {
                         url: "https://www.google.com/calendar/feeds/o776rmha219v92fvejs0hahsso%40group.calendar.google.com/private-6968d2f0aa2dee4823410b8e47fa040c/basic",
@@ -53,9 +56,29 @@
                         url: "https://www.google.com/calendar/feeds/hq8a7ru1eh0qoj7bpn05amtsg8%40group.calendar.google.com/private-14076798185cd1615e25439fbd969ae8/basic",
                         color: '#CABDBF'
                     }
-                ]
-            })
+                ],
+                defaultView: 'agendaWeek',
+                firstDay: 1,
+                selectable: true,
+                selectHelper: true,
+                select: function(startDate, endDate, allDay, jsEvent, view) {
+                    var pos = allDay ? "bottom" : "top";
+                    $(jsEvent.target).popover({
+                        trigger: 'manual',
+                        placement: pos,
+                        container: 'body',
+                        content: "Start " + startDate + " end " + endDate + " allday " + allDay,
+                        title: "Dismissible popover"
+                    });
+                    $(jsEvent.target).popover('show');
+                },
+                unselect: function( view, jsEvent ){
+                    $ (".popover").remove();
+                }
+            });
         });
+
+
     </script>
 
 }
