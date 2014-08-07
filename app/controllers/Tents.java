@@ -6,6 +6,7 @@ import models.Tent;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import play.mvc.Security;
 import views.html.modals.tentDelete;
 import views.html.tent.*;
 import views.html.tents;
@@ -18,6 +19,7 @@ import static play.data.Form.form;
 /**
  * Created by MiHu on 30.7.2014.
  */
+@Security.Authenticated(SecuredAdmin.class)
 public class Tents extends Controller {
 
     public static Result TENTS_HOME = redirect(routes.Tents.list());

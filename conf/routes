@@ -1,5 +1,6 @@
 # Calendar
 GET         /                                     controllers.Calendar.list()
+POST        /event/new                            controllers.Calendar.create()
 
 # StoredItem
 GET         /store/items                          controllers.Store.list()

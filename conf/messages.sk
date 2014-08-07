@@ -13,3 +13,7 @@ OTHERS=Ostatné
 CONSTRUCTIONS=Konštrukcie stany
 CARPETS=Koberce
 PB=PB
+ACTION=Akcia
+RESERVATION=Rezervácia
+SELFTRANSPORT=Vlastná doprava
+INSTALLATION=Montáž

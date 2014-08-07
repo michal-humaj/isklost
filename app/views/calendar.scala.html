@@ -12,9 +12,13 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <div id="popoverContent" class="hide">
+        @forms.eventPopover()
     </div>
 }{
+    <!---------------------JAVASCRIPTS-------------------------------------------------------------->
     <!-- fullCalendar -->
     <script src='@routes.Assets.at("js/plugins/fullcalendar/fullcalendar.min.js")' type="text/javascript"></script>
     <script src='@routes.Assets.at("js/plugins/fullcalendar/gcal.js")' type='text/javascript'></script>
@@ -61,14 +65,21 @@
                 firstDay: 1,
                 selectable: true,
                 selectHelper: true,
+                unselectCancel: ".form-horizontal",
                 select: function(startDate, endDate, allDay, jsEvent, view) {
+                    console.log(startDate.getDate());
+                    $("#startDate" ).attr("value", startDate);
+                    $("#endDate" ).attr("value", endDate);
+                    $("#allDay" ).attr("value", allDay);
                     var pos = allDay ? "bottom" : "top";
                     $(jsEvent.target).popover({
                         trigger: 'manual',
                         placement: pos,
                         container: 'body',
-                        content: "Start " + startDate + " end " + endDate + " allday " + allDay,
-                        title: "Dismissible popover"
+                        html: true,
+                        content: function() {
+                            return $("#popoverContent").html();
+                        }
                     });
                     $(jsEvent.target).popover('show');
                 },
@@ -77,8 +88,5 @@
                 }
             });
         });
-
-
     </script>
-
 }
