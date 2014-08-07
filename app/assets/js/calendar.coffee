@@ -1,3 +1,12 @@
+calUrlToEventType = (url) ->
+  if url is "https://www.google.com/calendar/feeds/o776rmha219v92fvejs0hahsso%40group.calendar.google.com/private-6968d2f0aa2dee4823410b8e47fa040c/basic"
+    "ACTION"
+  else if url is "https://www.google.com/calendar/feeds/gehqh0ptgh0i2hkh3f1l4tlerg%40group.calendar.google.com/private-65a3820d5b7a4aa1ac390d21d85d93fc/basic"
+    "INSTALLATION"
+  else if url is "https://www.google.com/calendar/feeds/3jg1lna270kjsjb0jjrhhqo5m8%40group.calendar.google.com/private-57e4356bbde4ecb5ba981a2eedb4dd91/basic"
+    "RESERVATION"
+  else "SELFTRANSPORT"  if url is "https://www.google.com/calendar/feeds/hq8a7ru1eh0qoj7bpn05amtsg8%40group.calendar.google.com/private-14076798185cd1615e25439fbd969ae8/basic"
+
 $(document).ready ->
   $("#calendar").fullCalendar
     editable: true
@@ -84,6 +93,7 @@ $(document).ready ->
     eventResize: (event, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view) ->
       $.post("/event/drag",
         id: event.id
+        eventType: calUrlToEventType event.source.url
         allDay: event.allDay
         startDate: event.start.getTime()
         endDate: event.end.getTime()
@@ -93,6 +103,7 @@ $(document).ready ->
     eventDrop: (event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view) ->
       $.post("/event/drag",
         id: event.id
+        eventType: calUrlToEventType event.source.url
         allDay: event.allDay
         startDate: event.start.getTime()
         endDate: event.end.getTime()

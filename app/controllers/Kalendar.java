@@ -64,30 +64,18 @@ public class Kalendar extends Controller {
     }
 
     public static Result drag() {
-        DynamicForm eventForm = form().bindFromRequest();
-        String id = eventForm.get("id").split("@")[0];
-        int i = 0;
-        Event event = null;
-        EventType eventType = null;
-        for (EventType type : EventType.values()){
-            try {
-               event = findEvent(id, type);
-               eventType = type;
-               break;
-            } catch (IOException e) {
-                i++;
-                if(i > 3){
-                    return notFound(e.getMessage() + " " + e );
-                }
-            }
-        }
-        event = setStartEndFromRequest(event, eventForm);
         try {
-            updateEvent(event, eventType);
-        } catch (IOException e) {
-            return unauthorized(e.getMessage() + " " + e);
+            DynamicForm eventForm = form().bindFromRequest();
+            String id = eventForm.get("id").split("@")[0];
+            EventType type = EventType.valueOf(eventForm.get("eventType"));
+            Event event = findEvent(id, type);
+            event = setStartEndFromRequest(event, eventForm);
+            updateEvent(event, type);
+        }catch (IOException e){
+            e.printStackTrace();
+            return badRequest("NO");
         }
-        return ok(id);
+        return ok("OK");
     }
 
     private static Calendar calendar() {
