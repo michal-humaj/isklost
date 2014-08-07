@@ -1,4 +1,5 @@
 import com.avaje.ebean.Ebean;
+import controllers.Kalendar;
 import models.StoredItem;
 import play.Application;
 import play.GlobalSettings;
@@ -14,8 +15,6 @@ import controllers.routes;
 import play.mvc.Http;
 
 import java.util.List;
-
-import static play.mvc.Http.Context.Implicit.flash;
 
 public class Global extends GlobalSettings {
 
@@ -37,7 +36,7 @@ public class Global extends GlobalSettings {
             public Call afterAuth() {
                 // The user will be redirected to this page after authentication
                 // if no original URL was saved
-                return routes.Calendar.list();
+                return routes.Kalendar.list();
             }
 
             @Override

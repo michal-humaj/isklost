@@ -67,10 +67,10 @@
                 selectHelper: true,
                 unselectCancel: ".form-horizontal",
                 select: function(startDate, endDate, allDay, jsEvent, view) {
-                    console.log(startDate.getDate());
-                    $("#startDate" ).attr("value", startDate);
-                    $("#endDate" ).attr("value", endDate);
-                    $("#allDay" ).attr("value", allDay);
+
+                    $("#startDate").attr("value", startDate.getTime());
+                    $("#endDate").attr("value", endDate.getTime());
+                    $("#allDay").attr("value", allDay);
                     var pos = allDay ? "bottom" : "top";
                     $(jsEvent.target).popover({
                         trigger: 'manual',
