@@ -1,7 +1,7 @@
 # Calendar
 GET         /                                     controllers.Kalendar.list()
 POST        /event/new                            controllers.Kalendar.create()
-
+POST        /event/drag                           controllers.Kalendar.drag()
 # StoredItem
 GET         /store/items                          controllers.Store.list()
 GET         /store/items/:category                controllers.Store.listInCategory(category: String)

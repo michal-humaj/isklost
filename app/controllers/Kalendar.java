@@ -50,8 +50,84 @@ public class Kalendar extends Controller {
 
         EventType type = EventType.valueOf(eventForm.get("eventType"));
         String name = eventForm.get("name");
-        boolean allDay = Boolean.parseBoolean(eventForm.get("allDay"));
 
+        Event event = new Event().setSummary(name);
+        event = setStartEndFromRequest(event, eventForm);
+
+        try {
+            insertEvent(event, type);
+        } catch (IOException e) {
+            return unauthorized(e.getMessage() + " " + e);
+        }
+
+        return HOME;
+    }
+
+    public static Result drag() {
+        DynamicForm eventForm = form().bindFromRequest();
+        String id = eventForm.get("id").split("@")[0];
+        int i = 0;
+        Event event = null;
+        EventType eventType = null;
+        for (EventType type : EventType.values()){
+            try {
+               event = findEvent(id, type);
+               eventType = type;
+               break;
+            } catch (IOException e) {
+                i++;
+                if(i > 3){
+                    return notFound(e.getMessage() + " " + e );
+                }
+            }
+        }
+        event = setStartEndFromRequest(event, eventForm);
+        try {
+            updateEvent(event, eventType);
+        } catch (IOException e) {
+            return unauthorized(e.getMessage() + " " + e);
+        }
+        return ok(id);
+    }
+
+    private static Calendar calendar() {
+        Calendar.Builder builder = new Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, null);
+        return builder.build();
+    }
+
+    private static Event insertEvent(Event event, EventType eventType) throws IOException {
+        return calendar()
+                .events()
+                .insert(calIds.get(eventType), event)
+                .setOauthToken(session("accessToken"))
+                .execute();
+    }
+
+    private static Event findEvent(String id, EventType eventType) throws IOException {
+        return calendar()
+                .events()
+                .get(calIds.get(eventType), id)
+                .setOauthToken(session("accessToken"))
+                .execute();
+    }
+
+    private static void updateEvent(Event event, EventType eventType) throws IOException {
+        event
+            .setSequence(calendar()
+                    .events()
+                    .get(calIds.get(eventType), event.getId())
+                    .setOauthToken(session("accessToken"))
+                    .execute()
+                    .getSequence());
+        calendar()
+            .events()
+            .update(calIds.get(eventType), event.getId(), event)
+            .setOauthToken(session("accessToken"))
+            .execute();
+    }
+
+    private static Event setStartEndFromRequest(Event e, DynamicForm eventForm){
+        boolean allDay = Boolean.parseBoolean(eventForm.get("allDay"));
         Long startMillis = Long.parseLong(eventForm.get("startDate"));
         Long endMillis = Long.parseLong(eventForm.get("endDate"));
 
@@ -71,26 +147,6 @@ public class Kalendar extends Controller {
             eventStart = new EventDateTime().setDateTime(start);
             eventEnd = new EventDateTime().setDateTime(end);
         }
-        Event event = new Event().setSummary(name).setStart(eventStart).setEnd(eventEnd);
-        try {
-            insertEvent(event, type);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return HOME;
-    }
-
-    private static Calendar calendar() {
-        Calendar.Builder builder = new Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, null);
-        return builder.build();
-    }
-
-    private static Event insertEvent(Event event, EventType eventType) throws IOException {
-        return calendar()
-                .events()
-                .insert(calIds.get(eventType), event)
-                .setOauthToken(session("accessToken"))
-                .execute();
+        return e.setStart(eventStart).setEnd(eventEnd);
     }
 }
