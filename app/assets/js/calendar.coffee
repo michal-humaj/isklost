@@ -67,7 +67,7 @@ $(document).ready ->
         container: "body"
         html: true
         content: ->
-          $("#popoverContent").html()
+          $("#newEventPopover").html()
 
       $(jsEvent.target).popover "show"
 
@@ -85,8 +85,9 @@ $(document).ready ->
         container: "body"
         html: true
         content: ->
-          $("#popoverContent").html()
+          $("#eventClickPopover").html()
 
+      $("h4").html event.title
       $(jsEvent.target).popover "show"
       false
 

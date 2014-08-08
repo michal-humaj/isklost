@@ -14,9 +14,13 @@
         </div>
     </div>
 
-    <div id="popoverContent" class="hide">
+    <div id="newEventPopover" class="hide">
         @forms.eventPopover()
     </div>
+    <div id="eventClickPopover" class="hide">
+        @forms.eventClickPopover()
+    </div>
+
 }{
     <!---------------------JAVASCRIPTS-------------------------------------------------------------->
     <script src='@routes.Assets.at("js/jquery-ui-1.10.3.min.js")' type="text/javascript"></script>

@@ -57,7 +57,8 @@ public class Kalendar extends Controller {
         try {
             insertEvent(event, type);
         } catch (IOException e) {
-            return unauthorized(e.getMessage() + " " + e);
+            e.printStackTrace();
+            return badRequest("NO");
         }
 
         return HOME;
@@ -77,6 +78,8 @@ public class Kalendar extends Controller {
         }
         return ok("OK");
     }
+
+    //---------------------------HELPER METHODS---------------------------------------------
 
     private static Calendar calendar() {
         Calendar.Builder builder = new Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, null);
