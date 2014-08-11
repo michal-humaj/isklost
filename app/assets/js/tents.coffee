@@ -17,6 +17,9 @@ $ ->
         loadItems this
     $(".categorySelect").change (a) ->
       loadItems a.currentTarget
+    $(".removeAccessory").click (a) ->
+      a.currentTarget.parentNode.parentNode.remove()
+      renumber();
 
   $("#form").submit ->
     $(".accessoryGroupTemplate").remove()

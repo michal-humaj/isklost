@@ -13,6 +13,7 @@ import javax.persistence.*;
 public abstract class Item extends Model {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
     @Required

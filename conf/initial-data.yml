@@ -1,245 +1,204 @@
 - !!models.StoredItem
-    id: 1
     name: stolička ratan
     category: CHAIRS
     amount: 35
     weight: 95
 - !!models.StoredItem
-    id: 2
     name: stol velky
     category: TABLES
     amount: 48
     weight: 580
 - !!models.StoredItem
-    id: 3
     name: lano červené
     category: ACCESSORIES
     amount: 12
     weight: 8
 - !!models.StoredItem
-    id: 4
     name: rebrík malý
     category: TOOLS
     amount: 2
     weight: 8.3
 - !!models.StoredItem
-    id: 5
     name: nastrelovačka vzduchová
     category: TOOLS
     amount: 1
     weight: 4.2
 - !!models.StoredItem
-    id: 6
     name: Ø120cm s kobercom
     category: TABLES
     amount: 10
     weight: 3.55
 - !!models.StoredItem
-    id: 7
     name: 120x80cm bez nôh
     category: TABLES
     amount: 800
     weight: 350
 - !!models.StoredItem
-    id: 8
     name: stolička čalúnená C
     category: CHAIRS
     amount: 232
     weight: 130
 - !!models.StoredItem
-    id: 9
     name: stolička čalúnená N
     category: CHAIRS
     amount: 50
     weight: 230
 - !!models.StoredItem
-    id: 10
     name: klimatizácia
     category: HEATING
     amount: 1
     weight: 1150
 - !!models.StoredItem
-    id: 11
     name: kooberec indický
     category: CARPETS
     amount: 9.48
     weight: 35
 - !!models.StoredItem
-    id: 12
     name: koberec modrý
     category: CARPETS
     amount: 153.48
     weight: 85
 - !!models.StoredItem
-    id: 13
     name: žltý chlpatý koberec
     category: CARPETS
     amount: 9874.54
     weight: 43
 - !!models.StoredItem
-    id: 14
     name: tenký ultrasil fialový
     category: CARPETS
     amount: 14.36
     weight: 84
 - !!models.StoredItem
-    id: 15
     name: nafukovací tiger
     category: INFLATABLES
     amount: 2
     weight: 3500
 - !!models.StoredItem
-    id: 16
     name: trampolína velka
     category: INFLATABLES
     amount: 1
     weight: 4850
 - !!models.StoredItem
-    id: 17
     name: krov RO 10m
     category: CONSTRUCTIONS
     amount: 28
     weight: 2350
 - !!models.StoredItem
-    id: 18
     name: noha dlhá HTS
     category: CONSTRUCTIONS
     amount: 45
     weight: 130
 - !!models.StoredItem
-    id: 19
     name: predna stena FBS 5m
     category: TARPS
     amount: 50
     weight: 230
 - !!models.StoredItem
-    id: 20
     name: tyč zadná RO /50m/
     category: CONSTRUCTIONS
     amount: 85
     weight: 110
 - !!models.StoredItem
-    id: 21
     name: stolička hliníková
     category: CHAIRS
     amount: 35
     weight: 95
 - !!models.StoredItem
-    id: 22
     name: stôl s jednou nohou
     category: TABLES
     amount: 48
     weight: 580
 - !!models.StoredItem
-    id: 23
     name: stlpik holluwood
     category: ACCESSORIES
     amount: 12
     weight: 8
 - !!models.StoredItem
-    id: 24
     name: rebrík hliníkový
     category: TOOLS
     amount: 2
     weight: 850
 - !!models.StoredItem
-    id: 25
     name: teplovzdušná pištoľ
     category: TOOLS
     amount: 1
     weight: 420
 - !!models.StoredItem
-    id: 26
     name: stol dubový
     category: TABLES
     amount: 10
     weight: 355
 - !!models.StoredItem
-    id: 27
     name: stol detsky plastovy
     category: TABLES
     amount: 800
     weight: 350
 - !!models.StoredItem
-    id: 28
     name: stolička záhradná
     category: CHAIRS
     amount: 232
     weight: 130
 - !!models.StoredItem
-    id: 29
     name: stolička plastova
     category: CHAIRS
     amount: 50
     weight: 230
 - !!models.StoredItem
-    id: 30
     name: vykurovaci agregat velký
     category: HEATING
     amount: 1
     weight: 1150
 - !!models.StoredItem
-    id: 31
     name: krov MO 4x2
     category: CONSTRUCTIONS
     amount: 12.10
     weight: 35
 - !!models.StoredItem
-    id: 32
     name: stan noha dlha
     category: CONSTRUCTIONS
     amount: 1540
     weight: 85
 - !!models.StoredItem
-    id: 33
     name: Okruhly stôl 180
     category: TABLES
     amount: 3865
     weight: 43
 - !!models.StoredItem
-    id: 34
     name: koberec tmavy obliaty
     category: CARPETS
     amount: 24
     weight: 84
 - !!models.StoredItem
-    id: 35
     name: karbobruska BOSCH
     category: TOOLS
     amount: 2
     weight: 3500
 - !!models.StoredItem
-    id: 36
     name: plavajuca podlaha
     category: FLOORS
     amount: 1
     weight: 4850
 - !!models.StoredItem
-    id: 37
     name: podlaha parkety tisic
     category: FLOORS
     amount: 28
     weight: 2350
 - !!models.StoredItem
-    id: 38
     name: obrus zamatovy 50
     category: COVERS
     amount: 35
     weight: 130
 - !!models.StoredItem
-    id: 39
     name: Obliaty obrus biely
     category: COVERS
     amount: 15
     weight: 0.45
 - !!models.StoredItem
-    id: 40
     name: plachta stan 8x4m
     category: TARPS
     amount: 5
     weight: 8.3
 - !!models.StoredItem
-    id: 41
     name: plachta derava velka
     category: TARPS
     amount: 2
