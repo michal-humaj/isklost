@@ -93,6 +93,8 @@ $ ->
         $.post("/event/move/#{type}/#{event.id}").done (data) ->
           $(".popover").remove()
           $("#calendar").fullCalendar "refetchEvents"
+
+      $(".btnEdit").attr "href", "/event/#{type}/#{event.id}"
       false
 
     eventResize: (event, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view) ->

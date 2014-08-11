@@ -5,6 +5,9 @@ POST        /event/drag                           controllers.Kalendar.drag()
 
 POST        /event/move/:eventType/:id            controllers.Kalendar.move(eventType: String, id: String)
 
+GET         /event/:eventType/:id                 controllers.Kalendar.edit(eventType: String, id: String)
+POST        /event/:eventType/:id                 controllers.Kalendar.update(eventType: String, id: String)
+
 GET         /event/delete/:eventType/:id          controllers.Kalendar.deleteModal(eventType: String, id: String)
 POST        /event/delete/:eventType/:id          controllers.Kalendar.delete(eventType: String, id: String)
 # StoredItem

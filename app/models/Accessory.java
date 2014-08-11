@@ -5,6 +5,7 @@ import play.db.ebean.Model;
 
 import javax.persistence.*;
 import javax.validation.Valid;
+import java.math.BigDecimal;
 
 /**
  * Created by MiHu on 30.7.2014.
@@ -19,5 +20,7 @@ public class Accessory extends Model {
     @ManyToOne
     public StoredItem item;
 
-    public int amount;
+    @Required
+    @Column(precision = 6, scale = 2)
+    public BigDecimal amount;
 }

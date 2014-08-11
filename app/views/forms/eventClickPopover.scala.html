@@ -1,6 +1,5 @@
 @import helper._
 
-
 @form(routes.Kalendar.create(), 'class -> "form-horizontal", 'style -> "width:240px;"){
     <div class="form-group">
         <div class="col-sm-12">
@@ -13,7 +12,7 @@
     <input type="hidden" id="allDay" name="allDay">
 
     <div class="btn-group">
-        <button type="button" class="btn btn-info">Upravit</button>
+        <a type="button" class="btn btn-info btnEdit">Upravit</a>
         <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
             <span class="caret"></span>
             <span class="sr-only">Toggle Dropdown</span>

@@ -14,6 +14,7 @@ import java.util.Map;
  * Created by MiHu on 22.7.2014.
  */
 @Entity
+@DiscriminatorValue("STORED_ITEM")
 public class StoredItem extends Item {
 
     @Required

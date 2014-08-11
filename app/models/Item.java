@@ -9,7 +9,9 @@ import javax.persistence.*;
 /**
  * Created by MiHu on 30.7.2014.
  */
-@MappedSuperclass
+@Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="ITEM_TYPE", discriminatorType=DiscriminatorType.STRING)
 public abstract class Item extends Model {
 
     @Id

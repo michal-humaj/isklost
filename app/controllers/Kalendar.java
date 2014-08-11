@@ -80,6 +80,14 @@ public class Kalendar extends Controller {
         return ok("OK");
     }
 
+    public static Result edit(String eventType, String id) {
+        return TODO;
+    }
+
+    public static Result update(String eventType, String id) {
+        return TODO;
+    }
+
     public static Result deleteModal(String eventType, String id) {
         String parseId = id.split("@")[0];
         Event event = null;
