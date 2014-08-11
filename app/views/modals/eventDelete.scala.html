@@ -1,0 +1,7 @@
+@(name: String)(eventType: String)(id: String)
+
+@import views.html.masters.modal
+
+@modal("Vymazať udalost")("Vymazať")(routes.Kalendar.delete(eventType, id))("btn-danger"){
+    <p>Vymazať @name?</p>
+}

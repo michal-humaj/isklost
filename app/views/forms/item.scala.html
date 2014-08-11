@@ -7,7 +7,7 @@
 @select(
     itemForm("category"),
     options(Category.options),
-    'id -> "categorySelect", '_label -> "Kategória", 'class -> "form-control", 'required -> "true"
+    'id -> "categorySelect", '_label -> "Kategória", 'class -> "form-control categorySelect", 'required -> "true"
 )
 @inputText(itemForm("name"), '_label -> "Názov", 'class -> "form-control", 'placeholder -> "Stolička ratan", 'required -> "true")
 <div class="form-group">
@@ -32,26 +32,21 @@
 <script type="text/javascript">
     function changeForm() {
         var e = document.getElementById("categorySelect");
-        //category changed to carpets
         if (e.options[e.selectedIndex].value == 'CARPETS'){
-            document.getElementById("amountUnits").innerHTML = 'm';
-            document.getElementById("weightUnits").innerHTML = 'kg/m';
-            document.getElementById("amountLabel").innerHTML = 'Dĺžka';
-            var amountInput = document.getElementById("amountInput");
-            amountInput.min = 0.01;
-            amountInput.step = 0.01;
-            amountInput.placeholder = '24,55';
-        //category changed to not carpet
+            $("#amountUnits" ).html("m");
+            $("#weightUnits").html('kg/m');
+            $("#amountLabel" ).html('Dĺžka');
+            $("#amountInput").attr("min",0.01);
+            $("#amountInput").attr("step",0.01);
+            $("#amountInput").attr("placeholder",'24,55');
         }else{
-            document.getElementById("amountUnits").innerHTML = 'ks';
-            document.getElementById("weightUnits").innerHTML = 'kg';
-            document.getElementById("amountLabel").innerHTML = 'Počet';
-            var amountInput = document.getElementById("amountInput");
-            amountInput.min = 1;
-            amountInput.step = 1;
-            amountInput.placeholder = '45';
+            $("#amountUnits" ).html("ks");
+            $("#weightUnits").html('kg');
+            $("#amountLabel" ).html('Počet');
+            $("#amountInput").attr("min",1);
+            $("#amountInput").attr("step",1);
+            $("#amountInput").attr("placeholder",'45');
         }
-        return;
     }
 
     $(document).ready(function() {

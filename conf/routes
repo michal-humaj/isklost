@@ -2,6 +2,11 @@
 GET         /                                     controllers.Kalendar.list()
 POST        /event/new                            controllers.Kalendar.create()
 POST        /event/drag                           controllers.Kalendar.drag()
+
+POST        /event/move/:eventType/:id            controllers.Kalendar.move(eventType: String, id: String)
+
+GET         /event/delete/:eventType/:id          controllers.Kalendar.deleteModal(eventType: String, id: String)
+POST        /event/delete/:eventType/:id          controllers.Kalendar.delete(eventType: String, id: String)
 # StoredItem
 GET         /store/items                          controllers.Store.list()
 GET         /store/items/:category                controllers.Store.listInCategory(category: String)
@@ -32,8 +37,6 @@ POST        /tents/:id                            controllers.Tents.update(id:Lo
 
 GET         /tents/:id/delete                     controllers.Tents.deleteModal(id:Long)
 POST        /tents/:id/delete                     controllers.Tents.delete(id:Long)
-
-
 
 # Play-authenticate routes
 GET         /login                                controllers.Application.login()

@@ -2,7 +2,7 @@
 
 @import helper._
 @import views.html.helpers._
-@implicitField = @{ FieldConstructor(tableInput.f) }
+@implicitField = @{ FieldConstructor(plainElement.f) }
 
 @accessoryGroup(field: Field, className: String = "accessoryGroup", style: String = "") = {
     <tr class="@className" style="@style">
@@ -10,7 +10,7 @@
             @select(
                 field("item.category"),
                 options(Category.tentOptions),
-                'id -> "categorySelect0", 'class -> "form-control categorySelect", 'onchange -> "loadItems(this);"
+                'id -> "categorySelect0", 'class -> "form-control categorySelect"
             )(implicitField, null)
         </td>
         <td>
@@ -42,7 +42,7 @@
             }
         </td>
         <td>
-            <button class="btn btn-danger" onclick="removeAccessory(this);" data-widget="remove">
+            <button type="button" class="btn btn-danger removeAccessory">
                 <i class="fa fa-times"></i>
             </button>
         </td>
@@ -103,46 +103,5 @@
         </div>
     </div>
 }{
-    <script type="text/javascript" src='@routes.Assets.at("js/itemSelect.js")'></script>
-    <script type="text/javascript">
-        function loadItems(e) {
-            var cat = e.options[e.selectedIndex].value;
-            var itemSelect = document.getElementById('itemSelect' + e.id.substr(14));
-            var selectedIndex = itemSelect.selectedIndex;
-            $.get("/store/items/" + cat, function(items) {
-                $('#itemSelect' + e.id.substr(14)).html("");
-                $.each(items, function(index, item) {
-                    var opt = $("<option>").text(item.name);
-                    opt.prop('value', item.id);
-                    $('#itemSelect' + e.id.substr(14)).append(opt);
-                });
-                itemSelect.selectedIndex = selectedIndex;
-            });
-        };
-
-        $(document ).ready(function(){
-            renumber();
-        });
-
-        function renumber() {
-            $(".accessoryGroup").each(function(i) {
-                $(".categorySelect", this).each(function() {
-                    $(this).attr("id", "categorySelect" + i);
-                    $(this).attr("name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]"));
-                });
-                $(".itemSelect", this).each(function() {
-                    $(this).attr("name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]"));
-                    $(this).attr("id", "itemSelect" + i);
-                });
-                $(".amountInput", this).each(function() {
-                    $(this).attr("name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]"));
-                });
-            });
-        };
-
-        function removeAccessory(e){
-            e.parentNode.parentNode.remove();
-            renumber();
-        };
-    </script>
+    <script type="text/javascript" src='@routes.Assets.at("js/tents.js")'></script>
 }

@@ -3,6 +3,8 @@
     <link href='@routes.Assets.at("css/fullcalendar/fullcalendar.css")' rel="stylesheet" type="text/css" />
     <link href='@routes.Assets.at("css/fullcalendar/fullcalendar.print.css")' rel="stylesheet" type="text/css" media='print' />
 }{
+    <div class="modal" id="modal-event-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
@@ -15,7 +17,7 @@
     </div>
 
     <div id="newEventPopover" class="hide">
-        @forms.eventPopover()
+        @forms.newEventPopover()
     </div>
     <div id="eventClickPopover" class="hide">
         @forms.eventClickPopover()

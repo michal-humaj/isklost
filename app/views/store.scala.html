@@ -75,22 +75,6 @@
         </div><!-- /.col -->
     </div><!-- /.row -->
 } {
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#scroll-table').height($(window).height() - 196);
-            $("body").toggleClass("fixed");
-            fix_sidebar();
-        });
-
-        $(window).resize(function() {
-            $('#scroll-table').height($(window).height() -196);
-        });
-
-        $('#scroll-table').scrollspy({ target: '#scroll-target' });
-
-        $('body').on('hidden.bs.modal', '.modal', function () {
-            $(this).removeData('bs.modal');
-        });
-    </script>
+    <script type="text/javascript" src='@routes.Assets.at("js/store.js")'></script>
 }
 

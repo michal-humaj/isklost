@@ -16,6 +16,7 @@ import play.mvc.Result;
 import play.mvc.Results;
 import play.mvc.Security;
 import views.html.calendar;
+import views.html.modals.eventDelete;
 
 import java.io.IOException;
 import java.util.Date;
@@ -77,6 +78,41 @@ public class Kalendar extends Controller {
             return badRequest("NO");
         }
         return ok("OK");
+    }
+
+    public static Result deleteModal(String eventType, String id) {
+        System.out.println("-----------------------------deleteMOdal");
+        String parseId = id.split("@")[0];
+        Event event = null;
+        try {
+            event = findEvent(parseId, EventType.valueOf(eventType));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return badRequest("NO");
+        }
+        return ok(eventDelete.render(event.getSummary(), eventType, id));
+    }
+
+    public static Result move(String eventType, String id) {
+        try {
+            String parseId = id.split("@")[0];
+            EventType type = EventType.valueOf(eventType);
+            EventType to = type.equals(EventType.ACTION) ? EventType.RESERVATION : EventType.ACTION;
+            Event event = findEvent(parseId, type);
+            calendar()
+                .events()
+                .move(calIds.get(type), event.getId(), calIds.get(to))
+                .setOauthToken(session("accessToken"))
+                .execute();
+        }catch(IOException e){
+            e.printStackTrace();
+            return badRequest("NO");
+        }
+        return ok("OK");
+    }
+
+    public static Result delete(String eventType, String id) {
+        return TODO;
     }
 
     //---------------------------HELPER METHODS---------------------------------------------
