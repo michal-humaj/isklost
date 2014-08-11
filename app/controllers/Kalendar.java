@@ -81,7 +81,6 @@ public class Kalendar extends Controller {
     }
 
     public static Result deleteModal(String eventType, String id) {
-        System.out.println("-----------------------------deleteMOdal");
         String parseId = id.split("@")[0];
         Event event = null;
         try {
@@ -111,8 +110,21 @@ public class Kalendar extends Controller {
         return ok("OK");
     }
 
-    public static Result delete(String eventType, String id) {
-        return TODO;
+    public static Result delete(String eventType, String id){
+        try {
+            String parseId = id.split("@")[0];
+            EventType type = EventType.valueOf(eventType);
+            Event event = findEvent(parseId, type);
+            calendar()
+                    .events()
+                    .delete(calIds.get(type), parseId)
+                    .setOauthToken(session("accessToken"))
+                    .execute();
+        }catch(IOException e){
+            e.printStackTrace();
+            return badRequest("NO");
+        }
+        return HOME;
     }
 
     //---------------------------HELPER METHODS---------------------------------------------
