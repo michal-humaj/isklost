@@ -1,10 +1,10 @@
 $(document).ready ->
-  allDayChange()
-  $("#jozo").click ->
-    allDayChange()
-  $(".iCheck-helper").click ->
+
+  $("#checkboxAllDay").click ->
     allDayChange()
 
+  $(".iCheck-helper").click ->
+    allDayChange()
 
 allDayChange = ->
   checked = $(".icheckbox_minimal").attr 'aria-checked'

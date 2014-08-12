@@ -24,6 +24,9 @@ import views.html.modals.eventDelete;
 import views.html.modals.itemEdit;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 import java.util.TimeZone;
@@ -91,15 +94,27 @@ public class Kalendar extends Controller {
             String parseId = id.split("@")[0];
             EventType type = EventType.valueOf(eventType);
             Event event = findEvent(parseId, type);
-            eventForm = form(EventTO.class);
+            eventForm = form(EventTO.class).fill(convert(event));
         }catch(IOException e){
-             e.printStackTrace();
+            e.printStackTrace();
         }
-        return ok(eventEdit.render(eventForm));
+        return ok(eventEdit.render(eventType, id, eventForm));
     }
 
     public static Result update(String eventType, String id) {
-        return TODO;
+        try {
+            Form<EventTO> eventForm = form(EventTO.class).bindFromRequest();
+            EventTO eventTO = eventForm.get();
+
+            String parseId = id.split("@")[0];
+            EventType type = EventType.valueOf(eventType);
+            Event event = findEvent(parseId, type);
+            updateEvent(setEventFromTO(event, eventTO), type);
+        }catch(IOException e){
+            e.printStackTrace();
+            return badRequest("NO");
+        }
+        return HOME;
     }
 
     public static Result deleteModal(String eventType, String id) {
@@ -209,5 +224,63 @@ public class Kalendar extends Controller {
             eventEnd = new EventDateTime().setDateTime(end);
         }
         return e.setStart(eventStart).setEnd(eventEnd);
+    }
+
+    private static EventTO convert(Event event){
+        EventTO eventTO = new EventTO();
+        eventTO.name = event.getSummary();
+
+        DateTime start;
+        DateTime end;
+
+        eventTO.allDay = null == event.getStart().getDateTime() ? true : false;
+
+        if (eventTO.allDay){
+            start = event.getStart().getDate();
+            end = event.getEnd().getDate();
+
+            eventTO.startDate = new Date(start.getValue());
+            eventTO.endDate = new Date(end.getValue() - 86_400_000);
+        }else{
+            start = event.getStart().getDateTime();
+            end = event.getEnd().getDateTime();
+
+            eventTO.startDate = new Date(start.getValue());
+            eventTO.endDate = new Date(end.getValue());
+        }
+        DateFormat df = new SimpleDateFormat("HH:mm");
+        eventTO.startTime = df.format(eventTO.startDate);
+        eventTO.endTime = df.format(eventTO.endDate);
+
+        return eventTO;
+    }
+
+    private static Event setEventFromTO(Event e, EventTO eventTO){
+        try {
+            e.setSummary(eventTO.name);
+            EventDateTime eventStart;
+            EventDateTime eventEnd;
+
+            //allday event
+            if (eventTO.allDay != null) {
+                DateTime start = new DateTime(true, eventTO.startDate.getTime() + 86_400_000, 0);
+                DateTime end = new DateTime(true, eventTO.endDate.getTime() + 2 * 86_400_000, 0);
+
+                eventStart = new EventDateTime().setDate(start);
+                eventEnd = new EventDateTime().setDate(end);
+            } else {//day scheduled event
+                DateFormat df = new SimpleDateFormat("HH:mm");
+                DateTime start = new DateTime(eventTO.startDate.getTime() + df.parse(eventTO.startTime).getTime() + 3_600_000);
+                DateTime end = new DateTime(eventTO.endDate.getTime() + df.parse(eventTO.endTime).getTime() + 3_600_000);
+
+                eventStart = new EventDateTime().setDateTime(start);
+                eventEnd = new EventDateTime().setDateTime(end);
+            }
+            return e.setStart(eventStart).setEnd(eventEnd);
+        }catch(ParseException ex){
+            ex.printStackTrace();
+            return null;
+        }
+
     }
 }

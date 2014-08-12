@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -8,9 +9,36 @@ import java.util.List;
  */
 public class EventTO {
 
-    public Long startDate;
-    public Long endDate;
-    public boolean allDay;
+    public Date startDate;
+    public Date endDate;
+    public String startTime;
+    public String endTime;
+    public Boolean allDay;
     public String name;
-    public List<EventEntry> entries = new ArrayList<>();
+    //public List<EventEntry> entries = new ArrayList<>();
+
+
+    public EventTO() {
+    }
+
+    public EventTO(Date startDate, Date endDate, String startTime, String endTime, Boolean allDay, String name) {
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.allDay = allDay;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "EventTO{" +
+                "startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", startTime='" + startTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", allDay=" + allDay +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

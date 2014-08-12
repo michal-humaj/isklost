@@ -1,4 +1,4 @@
-@(eventForm: Form[EventTO])
+@(eventType: String)(id: String)(eventForm: Form[EventTO])
 
 @import helper._
 @import views.html.helpers._
@@ -16,7 +16,7 @@
                     <h3 class="box-title">Uprava akcie</h3>
                 </div>
 
-                @form(routes.Kalendar.update("dawed","fesfs"), 'id -> "form", 'class -> "form-horizontal"){
+                @form(routes.Kalendar.update(eventType, id), 'id -> "form", 'class -> "form-horizontal"){
                     <div class="box-body">
 
                         <div class="form-group">
@@ -29,8 +29,12 @@
                             <label class="col-sm-1 control-label"></label>
                             <div class="col-sm-11">
                                 <div class="checkbox">
-                                    <label id="jozo">
-                                        @inputText(eventForm("name"), 'id -> "checkbox", 'type -> "checkbox")
+                                    <label id="checkboxAllDay">
+                                        @if(eventForm.apply("allDay").value.equals("true")){
+                                            @inputText(eventForm("allDay"), 'type -> "checkbox", 'checked -> "jozo")
+                                        }else {
+                                            @inputText(eventForm("allDay"), 'type -> "checkbox")
+                                        }
                                         Celý deň
                                     </label>
                                 </div>
@@ -39,19 +43,19 @@
                         <div class="form-group">
                             <label class="col-sm-1 control-label">Začiatok</label>
                             <div class="col-sm-3">
-                                @inputText(eventForm("name"), 'type -> "date", 'class -> "form-control", 'required -> "true", 'value -> "12011584")
+                                @inputText(eventForm("startDate"), 'id -> "startDate", 'type -> "date", 'class -> "form-control", 'required -> "true", 'value -> "12011584")
                             </div>
                             <div class="col-sm-2">
-                                @inputText(eventForm("name"), 'id -> "timeInputStart", 'type -> "time", 'class -> "form-control", 'required -> "true", 'value -> "12:35")
+                                @inputText(eventForm("startTime"), 'id -> "timeInputStart", 'type -> "time", 'class -> "form-control", 'required -> "true")
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-1 control-label">Koniec</label>
                             <div class="col-sm-3">
-                                @inputText(eventForm("name"), 'type -> "date", 'class -> "form-control", 'required -> "true")
+                                @inputText(eventForm("endDate"), 'id -> "endDate",  'type -> "date", 'class -> "form-control", 'required -> "true")
                             </div>
                             <div class="col-sm-2">
-                                @inputText(eventForm("name"), 'id -> "timeInputEnd", 'type -> "time", 'class -> "form-control", 'required -> "true")
+                                @inputText(eventForm("endTime"), 'id -> "timeInputEnd", 'type -> "time", 'class -> "form-control", 'required -> "true")
                             </div>
                         </div>
                         <hr>
@@ -92,5 +96,6 @@
         </div>
     </div>
 }{
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js"></script>
     <script type="text/javascript" src='@routes.Assets.at("js/event.js")'></script>
 }
