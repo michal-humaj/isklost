@@ -1,4 +1,7 @@
 $(document).ready ->
+  if $(".checked").length is 1
+    $("#timeInputStart").hide()
+    $("#timeInputEnd").hide()
 
   $("#checkboxAllDay").click ->
     allDayChange()

@@ -31,7 +31,7 @@
                                 <div class="checkbox">
                                     <label id="checkboxAllDay">
                                         @if(eventForm.apply("allDay").value.equals("true")){
-                                            @inputText(eventForm("allDay"), 'type -> "checkbox", 'checked -> "jozo")
+                                            @inputText(eventForm("allDay"), 'type -> "checkbox", 'checked -> "true")
                                         }else {
                                             @inputText(eventForm("allDay"), 'type -> "checkbox")
                                         }
@@ -96,6 +96,5 @@
         </div>
     </div>
 }{
-    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js"></script>
     <script type="text/javascript" src='@routes.Assets.at("js/event.js")'></script>
 }
