@@ -1,4 +1,4 @@
-$ ->
+$(document).ready ->
   $("#scroll-table").height $(window).height() - 196
   $("body").toggleClass "fixed"
   fix_sidebar()

@@ -9,14 +9,19 @@ import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventDateTime;
 import com.google.common.collect.ImmutableMap;
+import models.EventTO;
 import models.EventType;
+import models.StoredItem;
 import play.data.DynamicForm;
+import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Results;
 import play.mvc.Security;
 import views.html.calendar;
+import views.html.events.eventEdit;
 import views.html.modals.eventDelete;
+import views.html.modals.itemEdit;
 
 import java.io.IOException;
 import java.util.Date;
@@ -81,7 +86,16 @@ public class Kalendar extends Controller {
     }
 
     public static Result edit(String eventType, String id) {
-        return TODO;
+        Form<EventTO> eventForm = null;
+        try {
+            String parseId = id.split("@")[0];
+            EventType type = EventType.valueOf(eventType);
+            Event event = findEvent(parseId, type);
+            eventForm = form(EventTO.class);
+        }catch(IOException e){
+             e.printStackTrace();
+        }
+        return ok(eventEdit.render(eventForm));
     }
 
     public static Result update(String eventType, String id) {

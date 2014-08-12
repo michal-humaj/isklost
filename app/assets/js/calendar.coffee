@@ -1,4 +1,4 @@
-$ ->
+$(document).ready ->
   $("body").on "hidden.bs.modal", ".modal", ->
     $(this).removeData "bs.modal"
 

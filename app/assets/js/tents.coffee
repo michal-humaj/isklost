@@ -1,4 +1,4 @@
-$ ->
+$(document).ready ->
   loadItems document.getElementById("categorySelect0")
   renumber();
 
