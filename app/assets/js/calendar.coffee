@@ -117,6 +117,16 @@ $(document).ready ->
       ).done (data) ->
         console.log data
 
+  $("#datepicker").datepicker(
+    format: "mm.dd. yyyy"
+    weekStart: 1
+    todayBtn: true
+    language: "sk"
+    todayHighlight: true
+  ).on "changeDate", (ev) ->
+    date = ev.date
+    $("#calendar").fullCalendar "gotoDate", date.getFullYear(), date.getMonth(), date.getDate()
+
 calUrlToEventType = (url) ->
   if url is "https://www.google.com/calendar/feeds/o776rmha219v92fvejs0hahsso%40group.calendar.google.com/private-6968d2f0aa2dee4823410b8e47fa040c/basic"
     "ACTION"
