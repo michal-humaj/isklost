@@ -1,5 +1,6 @@
 package controllers;
 
+import com.avaje.ebean.ExpressionList;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
@@ -29,6 +30,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
 
@@ -95,7 +97,10 @@ public class Kalendar extends Controller {
             String parseId = id.split("@")[0];
             EventType type = EventType.valueOf(eventType);
             Event event = findEvent(parseId, type);
-            eventForm = form(EventTO.class).fill(convert(event));
+            EventTO eventTO = convert(event);
+            final List<EventEntry> entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
+            eventTO.entries = entries;
+            eventForm = form(EventTO.class).fill(eventTO);
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -111,6 +116,10 @@ public class Kalendar extends Controller {
             EventType type = EventType.valueOf(eventType);
             Event event = findEvent(parseId, type);
             updateEvent(setEventFromTO(event, eventTO), type);
+            final List<EventEntry> entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
+            for(EventEntry e : entries){
+                e.delete();
+            }
 
             for(EventEntry e : eventTO.entries){
                 e.eventId = parseId;
@@ -165,6 +174,10 @@ public class Kalendar extends Controller {
                     .delete(calIds.get(type), parseId)
                     .setOauthToken(session("accessToken"))
                     .execute();
+            final List<EventEntry> entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
+            for(EventEntry e : entries){
+                e.delete();
+            }
         }catch(IOException e){
             e.printStackTrace();
             return badRequest("NO");
