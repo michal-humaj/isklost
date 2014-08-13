@@ -17,7 +17,6 @@ public class EventTO {
     public String name;
     public List<EventEntry> entries = new ArrayList<>();
 
-
     public EventTO() {
     }
 
@@ -28,18 +27,5 @@ public class EventTO {
         this.endTime = endTime;
         this.allDay = allDay;
         this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "EventTO{" +
-                "startDate=" + startDate +
-                ", endDate=" + endDate +
-                ", startTime='" + startTime + '\'' +
-                ", endTime='" + endTime + '\'' +
-                ", allDay=" + allDay +
-                ", name='" + name + '\'' +
-                ", entries=" + entries +
-                '}';
     }
 }

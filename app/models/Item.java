@@ -6,6 +6,9 @@ import play.db.ebean.Model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by MiHu on 30.7.2014.
@@ -27,15 +30,30 @@ public class Item extends Model {
 
     public static Finder<Long, Item> find = new Finder<>(Long.class, Item.class);
 
-    public BigDecimal getWeight(){
-        return null;
+    public static Map<String,String> options(String sCat) {
+        LinkedHashMap<String, String> options = new LinkedHashMap<>();
+        if ("Some(TENTS)".equals(sCat)){
+            final List<Tent> items = Tent.find.all();
+            for (Tent item : items) {
+                options.put(item.id.toString(), item.name);
+            }
+            return options;
+        }else {
+            Category category;
+            try {
+                category = Category.valueOf(sCat.substring(5, sCat.length() - 1));
+            } catch (StringIndexOutOfBoundsException | IllegalArgumentException e) {
+                return options;
+            }
+            final List<StoredItem> items = StoredItem.find.where().eq("category", category).findList();
+            for (StoredItem item : items) {
+                options.put(item.id.toString(), item.name);
+            }
+            return options;
+        }
     }
 
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+    public BigDecimal getWeight(){
+        return null;
     }
 }

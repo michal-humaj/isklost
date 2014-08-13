@@ -43,16 +43,6 @@ public class EventEntry extends Model {
 
     public static Finder<Long, EventEntry> find = new Finder<>(Long.class, EventEntry.class);
 
-    public EventEntry() {
-    }
-
-    public EventEntry(String eventId, EventType eventType, Item item, BigDecimal amount) {
-        this.eventId = eventId;
-        this.eventType = eventType;
-        this.item = item;
-        this.amount = amount;
-    }
-
     public StringBuilder getInfo() {
         StringBuilder s = new StringBuilder(", ").append(df.format(amount));
         if (item instanceof StoredItem && ((StoredItem) item).category.equals(Category.CARPETS)){

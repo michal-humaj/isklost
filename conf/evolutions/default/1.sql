@@ -21,6 +21,12 @@ create table event_entry (
   constraint pk_event_entry primary key (id))
 ;
 
+create table installation (
+  installation_id           varchar(255) not null,
+  action_id                 varchar(255),
+  constraint pk_installation primary key (installation_id))
+;
+
 create table item (
   ITEM_TYPE                 varchar(31) not null,
   id                        bigint not null,
@@ -35,6 +41,8 @@ create table item (
 create sequence accessory_seq;
 
 create sequence event_entry_seq;
+
+create sequence installation_seq;
 
 create sequence item_seq;
 
@@ -55,6 +63,8 @@ drop table if exists accessory;
 
 drop table if exists event_entry;
 
+drop table if exists installation;
+
 drop table if exists item;
 
 SET REFERENTIAL_INTEGRITY TRUE;
@@ -62,6 +72,8 @@ SET REFERENTIAL_INTEGRITY TRUE;
 drop sequence if exists accessory_seq;
 
 drop sequence if exists event_entry_seq;
+
+drop sequence if exists installation_seq;
 
 drop sequence if exists item_seq;
 
