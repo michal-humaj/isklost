@@ -10,10 +10,7 @@ import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventDateTime;
 import com.google.common.collect.ImmutableMap;
-import models.EventEntry;
-import models.EventTO;
-import models.EventType;
-import models.StoredItem;
+import models.*;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Controller;
@@ -26,6 +23,7 @@ import views.html.modals.eventDelete;
 import views.html.modals.itemEdit;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -98,8 +96,7 @@ public class Kalendar extends Controller {
             EventType type = EventType.valueOf(eventType);
             Event event = findEvent(parseId, type);
             EventTO eventTO = convert(event);
-            final List<EventEntry> entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
-            eventTO.entries = entries;
+            eventTO.entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
             eventForm = form(EventTO.class).fill(eventTO);
         }catch(IOException e){
             e.printStackTrace();
@@ -109,9 +106,7 @@ public class Kalendar extends Controller {
 
     public static Result update(String eventType, String id) {
         try {
-            Form<EventTO> eventForm = form(EventTO.class).bindFromRequest();
-            EventTO eventTO = eventForm.get();
-
+            EventTO eventTO = form(EventTO.class).bindFromRequest().get();
             String parseId = id.split("@")[0];
             EventType type = EventType.valueOf(eventType);
             Event event = findEvent(parseId, type);
@@ -120,14 +115,12 @@ public class Kalendar extends Controller {
             for(EventEntry e : entries){
                 e.delete();
             }
-
             for(EventEntry e : eventTO.entries){
                 e.eventId = parseId;
                 e.eventType = type;
                 e.save();
             }
-
-        }catch(IOException e){
+        }catch(IOException | ParseException e){
             e.printStackTrace();
             return badRequest("NO");
         }
@@ -157,6 +150,11 @@ public class Kalendar extends Controller {
                 .move(calIds.get(type), event.getId(), calIds.get(to))
                 .setOauthToken(session("accessToken"))
                 .execute();
+            final List<EventEntry> entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
+            for(EventEntry e: entries){
+                e.eventType = to;
+                e.update(e.id);
+            }
         }catch(IOException e){
             e.printStackTrace();
             return badRequest("NO");
@@ -249,7 +247,7 @@ public class Kalendar extends Controller {
 
     private static EventTO convert(Event event){
         EventTO eventTO = new EventTO();
-        eventTO.name = event.getSummary();
+        eventTO.name = event.getSummary().split("#")[0];
 
         DateTime start;
         DateTime end;
@@ -276,32 +274,34 @@ public class Kalendar extends Controller {
         return eventTO;
     }
 
-    private static Event setEventFromTO(Event e, EventTO eventTO){
-        try {
-            e.setSummary(eventTO.name);
-            EventDateTime eventStart;
-            EventDateTime eventEnd;
-
-            //allday event
-            if (eventTO.allDay != null) {
-                DateTime start = new DateTime(true, eventTO.startDate.getTime() + 86_400_000, 0);
-                DateTime end = new DateTime(true, eventTO.endDate.getTime() + 2 * 86_400_000, 0);
-
-                eventStart = new EventDateTime().setDate(start);
-                eventEnd = new EventDateTime().setDate(end);
-            } else {//day scheduled event
-                DateFormat df = new SimpleDateFormat("HH:mm");
-                DateTime start = new DateTime(eventTO.startDate.getTime() + df.parse(eventTO.startTime).getTime() + 3_600_000);
-                DateTime end = new DateTime(eventTO.endDate.getTime() + df.parse(eventTO.endTime).getTime() + 3_600_000);
-
-                eventStart = new EventDateTime().setDateTime(start);
-                eventEnd = new EventDateTime().setDateTime(end);
-            }
-            return e.setStart(eventStart).setEnd(eventEnd);
-        }catch(ParseException ex){
-            ex.printStackTrace();
-            return null;
+    private static Event setEventFromTO(Event e, EventTO eventTO) throws ParseException {
+        BigDecimal weight = new BigDecimal("0.00");
+        StringBuilder name = new StringBuilder(eventTO.name).append(" #");
+        for(EventEntry entry: eventTO.entries){
+            entry.item = Item.find.ref(entry.item.id);
+            name.append(entry.getInfo());
+            weight = weight.add(entry.getWeight());
         }
+        name.append(" | ").append(EventEntry.df.format(weight)).append(" kg");
+        e.setSummary(name.toString());
+        EventDateTime eventStart;
+        EventDateTime eventEnd;
 
+        //allday event
+        if (eventTO.allDay != null) {
+            DateTime start = new DateTime(true, eventTO.startDate.getTime() + 86_400_000, 0);
+            DateTime end = new DateTime(true, eventTO.endDate.getTime() + 2 * 86_400_000, 0);
+
+            eventStart = new EventDateTime().setDate(start);
+            eventEnd = new EventDateTime().setDate(end);
+        } else {//day scheduled event
+            DateFormat df = new SimpleDateFormat("HH:mm");
+            DateTime start = new DateTime(eventTO.startDate.getTime() + df.parse(eventTO.startTime).getTime() + 3_600_000);
+            DateTime end = new DateTime(eventTO.endDate.getTime() + df.parse(eventTO.endTime).getTime() + 3_600_000);
+
+            eventStart = new EventDateTime().setDateTime(start);
+            eventEnd = new EventDateTime().setDateTime(end);
+        }
+        return e.setStart(eventStart).setEnd(eventEnd);
     }
 }

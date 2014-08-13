@@ -95,7 +95,14 @@ public class Store extends Controller {
     public static Result listInCategory(String sCat) {
         if("TENTS".equals(sCat)){
             final List<Tent> items = Tent.find.all();
-            return ok(toJson(items));
+            StringBuilder s = new StringBuilder("[");
+            for (Tent t: items){
+                s.append("{\"id\":").append(t.id)
+                    .append(",\"name\":\"").append(t.name).append("\"},");
+            }
+            s.deleteCharAt(s.length()-1);
+            s.append("]");
+            return ok(s.toString()).as("application/json");
         }else {
             Category category = Category.valueOf(sCat);
             final List<StoredItem> items = StoredItem.find.where().eq("category", category).findList();

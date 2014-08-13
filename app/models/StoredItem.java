@@ -18,9 +18,6 @@ import java.util.Map;
 public class StoredItem extends Item {
 
     @Required
-    public Category category;
-
-    @Required
     @Column(precision = 6, scale = 2)
     public BigDecimal amount;
 
@@ -39,7 +36,7 @@ public class StoredItem extends Item {
 
     public static Map<String,String> options(String sCat) {
         LinkedHashMap<String, String> options = new LinkedHashMap<>();
-        if ("TENTS".equals(sCat)){
+        if ("Some(TENTS)".equals(sCat)){
             final List<Tent> items = Tent.find.all();
             for (Tent item : items) {
                 options.put(item.id.toString(), item.name);
@@ -58,6 +55,11 @@ public class StoredItem extends Item {
             }
             return options;
         }
+    }
+
+    @Override
+    public BigDecimal getWeight() {
+        return weight;
     }
 
     @Override

@@ -5,6 +5,7 @@ import play.db.ebean.Model;
 
 import javax.persistence.*;
 import javax.validation.Valid;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,4 +20,18 @@ public class Tent extends Item {
     public List<Accessory> accessories = new ArrayList<>();
 
     public static Finder<Long, Tent> find = new Finder<>(Long.class, Tent.class);
+
+    public Tent() {
+        category = Category.TENTS;
+    }
+
+    @Override
+    public BigDecimal getWeight() {
+        BigDecimal ret = new BigDecimal("0.00");
+        for(Accessory a: accessories){
+            String s = a.item.name;
+            ret = ret.add(a.item.weight.multiply(a.amount));
+        }
+        return ret;
+    }
 }

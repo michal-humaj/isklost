@@ -10,11 +10,14 @@ import java.util.Map;
  */
 public enum Category {
     TABLES, CHAIRS, COVERS, TARPS, HEATING, LIGHTS, INFLATABLES, FLOORS, ACCESSORIES, TOOLS, BALDACHINS, OTHERS,
-    CONSTRUCTIONS, CARPETS, PB;
+    CONSTRUCTIONS, CARPETS, PB, TENTS;
 
     public static Map<String,String> options() {
         LinkedHashMap<String,String> options = new LinkedHashMap<>();
         for(Category c : Category.values()) {
+            switch (c){
+                case TENTS: continue;
+            }
             options.put(c.toString(), Messages.get(c.toString()) );
         }
         return options;
@@ -23,9 +26,11 @@ public enum Category {
     public static Map<String,String> eventOptions() {
         LinkedHashMap<String,String> options = new LinkedHashMap<>();
         for(Category c : Category.values()) {
+            switch (c){
+                case CARPETS: continue;
+            }
             options.put(c.toString(), Messages.get(c.toString()) );
         }
-        options.put("TENTS", "Stany");
         return options;
     }
 
@@ -34,6 +39,7 @@ public enum Category {
         for(Category c : Category.values()) {
             switch (c){
                 case PB: continue;
+                case TENTS: continue;
                 case CARPETS: continue;
                 case HEATING: continue;
             }

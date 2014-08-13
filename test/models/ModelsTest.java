@@ -27,14 +27,18 @@ public class ModelsTest extends WithApplication {
 
     @Test
     public void eventEntries() {
-        StoredItem i = new StoredItem("hojdacka pre deti", Category.ACCESSORIES, new BigDecimal("15"), new BigDecimal("12.35"));
+        StoredItem i = new StoredItem("hojdacka pre deti", Category.CARPETS, new BigDecimal("15"), new BigDecimal("12.35"));
         i.save();
-        System.out.println("-------------------------- " +i.id);
         StoredItem item = StoredItem.find.ref(i.id);
 
-        EventEntry e = new EventEntry("dad1484d8fef3ef@google.com", EventType.ACTION, item, new BigDecimal("14"));
+        EventEntry e = new EventEntry("dad1484d8fef3ef@google.com", EventType.ACTION, item, new BigDecimal("25"));
         e.save();
-        System.out.println("----------------------------- " + e.id);
+        e = new EventEntry("dad1484d8fef3ef@google.com", EventType.ACTION, item, new BigDecimal("25"));
+        e = new EventEntry("dad1484d8fef3ef@google.com", EventType.ACTION, item, new BigDecimal("25"));
+        e = new EventEntry("dad1484d8fef3ef@google.com", EventType.ACTION, item, new BigDecimal("25"));
+        System.out.println("----------------------------- " + e);
+        System.out.println("----------------------------- " + e);
+        System.out.println("----------------------------- " + e);
 
         assertEquals(e.item.id, item.id);
     }
