@@ -56,22 +56,25 @@ public class Kalendar extends Controller {
     }
 
     public static Result create() {
-        DynamicForm eventForm = form().bindFromRequest();
-
-        EventType type = EventType.valueOf(eventForm.get("eventType"));
-        String name = eventForm.get("name");
-
-        Event event = new Event().setSummary(name);
-        event = setStartEndFromRequest(event, eventForm);
-
         try {
-            insertEvent(event, type);
+            DynamicForm eventForm = form().bindFromRequest();
+
+            EventType type = EventType.valueOf(eventForm.get("eventType"));
+            String name = eventForm.get("name");
+
+            Event event = new Event().setSummary(name);
+            event = setStartEndFromRequest(event, eventForm);
+
+            Event createdEvent = insertEvent(event, type);
+            if (type.equals(EventType.INSTALLATION)) {
+                new Installation(createdEvent.getId(), eventForm.get("actionId")).save();
+            }
+
+            return HOME;
         } catch (IOException e) {
             e.printStackTrace();
             return badRequest("NO");
         }
-
-        return HOME;
     }
 
     public static Result drag() {
