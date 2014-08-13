@@ -15,12 +15,14 @@ import dtos.EventInfoTO;
 import models.*;
 import play.data.DynamicForm;
 import play.data.Form;
+import play.i18n.Messages;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Results;
 import play.mvc.Security;
 import views.html.calendar;
 import views.html.events.eventEdit;
+import views.html.events.installationEdit;
 import views.html.modals.eventDelete;
 import views.html.modals.itemEdit;
 
@@ -100,11 +102,21 @@ public class Kalendar extends Controller {
             Event event = findEvent(parseId, type);
             EventTO eventTO = convert(event);
             eventTO.entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
+            if (type.equals(EventType.INSTALLATION)){
+                final Installation installation = Installation.find.ref(parseId);
+                eventTO.actionId = installation.actionId;
+            }
             eventForm = form(EventTO.class).fill(eventTO);
+
+            if (type.equals(EventType.INSTALLATION)){
+                return ok(installationEdit.render(eventType, id, eventForm));
+            }else{
+                return ok(eventEdit.render(eventType, id, eventForm));
+            }
         }catch(IOException e){
             e.printStackTrace();
+            return badRequest("NO");
         }
-        return ok(eventEdit.render(eventType, id, eventForm));
     }
 
     public static Result update(String eventType, String id) {
@@ -114,14 +126,20 @@ public class Kalendar extends Controller {
             EventType type = EventType.valueOf(eventType);
             Event event = findEvent(parseId, type);
             updateEvent(setEventFromTO(event, eventTO), type);
-            final List<EventEntry> entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
-            for(EventEntry e : entries){
-                e.delete();
-            }
-            for(EventEntry e : eventTO.entries){
-                e.eventId = parseId;
-                e.eventType = type;
-                e.save();
+            if (type.equals(EventType.INSTALLATION)){
+                final Installation installation = Installation.find.ref(parseId);
+                installation.delete();
+                new Installation(parseId, eventTO.actionId).save();
+            }else {
+                final List<EventEntry> entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
+                for (EventEntry e : entries) {
+                    e.delete();
+                }
+                for (EventEntry e : eventTO.entries) {
+                    e.eventId = parseId;
+                    e.eventType = type;
+                    e.save();
+                }
             }
         }catch(IOException | ParseException e){
             e.printStackTrace();
@@ -206,6 +224,26 @@ public class Kalendar extends Controller {
     }
 
     //---------------------------HELPER METHODS---------------------------------------------
+
+    public static Map<String,String> options() {
+        try {
+            LinkedHashMap<String,String> options = new LinkedHashMap<>();
+            List<EventInfoTO> events = new ArrayList<>();
+            Events googleEvents = calendar()
+                    .events()
+                    .list(calIds.get(EventType.ACTION))
+                    .setTimeMin(new DateTime(new Date()))
+                    .setOauthToken(session("accessToken"))
+                    .execute();
+            for (Event e : googleEvents.getItems()) {
+                options.put(e.getId(), e.getSummary().split("#")[0]);
+            }
+            return options;
+        }catch(IOException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
 
     private static Calendar calendar() {
         Calendar.Builder builder = new Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, null);

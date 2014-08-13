@@ -49,7 +49,7 @@
     </tr>
 }
 
-@masters.calendar("IS Klost | Uprava udalosti"){
+@masters.calendar("IS Klost | " + Messages(eventType)){
 
 }{
     <div class="row">
@@ -58,7 +58,7 @@
             <div class="box box-solid box-primary" style="width:960px;">
 
                 <div class="box-header">
-                    <h3 class="box-title">Uprava akcie</h3>
+                    <h3 class="box-title">@Messages(eventType)</h3>
                 </div>
 
                 @form(routes.Kalendar.update(eventType, id), 'id -> "form", 'class -> "form-horizontal"){

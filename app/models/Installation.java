@@ -24,5 +24,5 @@ public class Installation extends Model {
         this.actionId = actionId;
     }
 
-    public static Finder<Long, Installation> find = new Finder<>(Long.class, Installation.class);
+    public static Finder<String, Installation> find = new Finder<>(String.class, Installation.class);
 }

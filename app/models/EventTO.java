@@ -16,6 +16,7 @@ public class EventTO {
     public Boolean allDay;
     public String name;
     public List<EventEntry> entries = new ArrayList<>();
+    public String actionId;
 
     public EventTO() {
     }

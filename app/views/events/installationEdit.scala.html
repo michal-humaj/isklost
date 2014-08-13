@@ -1,0 +1,83 @@
+@(eventType: String)(id: String)(eventForm: Form[EventTO])
+
+@import helper._
+@import views.html.helpers._
+@implicitField = @{ FieldConstructor(plainElement.f) }
+
+@masters.calendar("IS Klost | Montáž"){
+
+}{
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="box box-solid box-primary" style="width:960px;">
+
+                <div class="box-header">
+                    <h3 class="box-title">Montáž</h3>
+                </div>
+
+                @form(routes.Kalendar.update(eventType, id), 'id -> "form", 'class -> "form-horizontal"){
+                    <div class="box-body">
+
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">Názov</label>
+                            <div class="col-sm-11">
+                            @inputText(eventForm("name"), 'class -> "form-control", 'required -> "true")
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label"></label>
+                            <div class="col-sm-11">
+                                <div class="checkbox">
+                                    <label id="checkboxAllDay">
+                                        @if(eventForm.apply("allDay").value.equals("true")){
+                                            @inputText(eventForm("allDay"), 'type -> "checkbox", 'checked -> "true")
+                                        }else {
+                                            @inputText(eventForm("allDay"), 'type -> "checkbox")
+                                        }
+                                        Celý deň
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">Začiatok</label>
+                            <div class="col-sm-3">
+                            @inputText(eventForm("startDate"), 'id -> "startDate", 'type -> "date", 'class -> "form-control", 'required -> "true")
+                            </div>
+                            <div class="col-sm-2">
+                            @inputText(eventForm("startTime"), 'id -> "timeInputStart", 'type -> "time", 'class -> "form-control", 'required -> "true")
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">Koniec</label>
+                            <div class="col-sm-3">
+                            @inputText(eventForm("endDate"), 'id -> "endDate",  'type -> "date", 'class -> "form-control", 'required -> "true")
+                            </div>
+                            <div class="col-sm-2">
+                            @inputText(eventForm("endTime"), 'id -> "timeInputEnd", 'type -> "time", 'class -> "form-control", 'required -> "true")
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">Ku akcii</label>
+                            <div class="col-sm-5">
+                                @select(
+                                    eventForm("actionId"),
+                                    options(Kalendar.options),
+                                    'class -> "form-control", 'required -> "true"
+                                )
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">Uložiť</button>
+                        <a type="button" class="btn btn-default" href="@routes.Kalendar.list()">Späť</a>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+}{
+    <script type="text/javascript" src='@routes.Assets.at("js/event.js")'></script>
+}

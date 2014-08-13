@@ -16,6 +16,7 @@ public class SecuredAdmin extends Security.Authenticator{
         final AuthUser u = PlayAuthenticate.getUser(ctx.session());
         if (u == null) return null;
         if ("104577664461666247347".equals(u.getId())) {
+        //if ("111607400690713539816".equals(u.getId())) {
             return u.getId();
         } else {
             return null;
