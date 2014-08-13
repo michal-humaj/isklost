@@ -20,6 +20,15 @@ public enum Category {
         return options;
     }
 
+    public static Map<String,String> eventOptions() {
+        LinkedHashMap<String,String> options = new LinkedHashMap<>();
+        for(Category c : Category.values()) {
+            options.put(c.toString(), Messages.get(c.toString()) );
+        }
+        options.put("TENTS", "Stany");
+        return options;
+    }
+
     public static Map<String,String> tentOptions() {
         LinkedHashMap<String,String> options = new LinkedHashMap<>();
         for(Category c : Category.values()) {

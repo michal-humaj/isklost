@@ -2,6 +2,7 @@ package controllers;
 
 import models.Category;
 import models.StoredItem;
+import models.Tent;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Controller;
@@ -92,8 +93,13 @@ public class Store extends Controller {
     }
 
     public static Result listInCategory(String sCat) {
-        Category category = Category.valueOf(sCat);
-        final List<StoredItem> items = StoredItem.find.where().eq("category", category).findList();
-        return ok(toJson(items));
+        if("TENTS".equals(sCat)){
+            final List<Tent> items = Tent.find.all();
+            return ok(toJson(items));
+        }else {
+            Category category = Category.valueOf(sCat);
+            final List<StoredItem> items = StoredItem.find.where().eq("category", category).findList();
+            return ok(toJson(items));
+        }
     }
 }

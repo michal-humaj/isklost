@@ -19,6 +19,9 @@ public class EventEntry extends Model {
     @Required
     public String eventId;
 
+    @Required
+    public EventType eventType;
+
     @ManyToOne
     public Item item;
 
@@ -26,8 +29,12 @@ public class EventEntry extends Model {
     @Column(precision = 6, scale = 2)
     public BigDecimal amount;
 
-    public EventEntry(String eventId, Item item, BigDecimal amount) {
+    public EventEntry() {
+    }
+
+    public EventEntry(String eventId, EventType eventType, Item item, BigDecimal amount) {
         this.eventId = eventId;
+        this.eventType = eventType;
         this.item = item;
         this.amount = amount;
     }

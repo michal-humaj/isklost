@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="ITEM_TYPE", discriminatorType=DiscriminatorType.STRING)
-public abstract class Item extends Model {
+public class Item extends Model {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,4 +20,12 @@ public abstract class Item extends Model {
 
     @Required
     public String name;
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

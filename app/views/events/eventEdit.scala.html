@@ -4,6 +4,51 @@
 @import views.html.helpers._
 @implicitField = @{ FieldConstructor(plainElement.f) }
 
+@entryGroup(field: Field, className: String = "entryGroup", style: String = "") = {
+    <tr class="@className" style="@style">
+        <td>
+        @select(
+            field("item.category"),
+            options(Category.eventOptions),
+            'id -> "categorySelect0", 'class -> "form-control categorySelect"
+        )(implicitField, null)
+        </td>
+        <td>
+        @if(style.equals("")) {
+            @select(
+                field("item.id"),
+                options(StoredItem.options( field("item.category").value.toString)),
+                'id -> "itemSelect0", 'class -> "form-control itemSelect", 'required -> "true"
+            )(implicitField, null)
+        }else{
+            @select(
+                field("item.id"),
+                options(StoredItem.options( field("item.category").value.toString)),
+                'id -> "itemSelect0", 'class -> "form-control itemSelect"
+            )(implicitField, null)
+        }
+        </td>
+        <td>
+        @if(style.equals("")) {
+            @inputText(
+                field("amount"),
+                'type -> "number", 'class -> "form-control amountInput", 'min -> "1", 'required -> "true"
+            )
+        }else{
+            @inputText(
+                field("amount"),
+                'class -> "form-control amountInput"
+            )
+        }
+        </td>
+        <td>
+            <button type="button" class="btn btn-danger removeEntry">
+                <i class="fa fa-times"></i>
+            </button>
+        </td>
+    </tr>
+}
+
 @masters.calendar("IS Klost | Uprava udalosti"){
 
 }{
@@ -43,7 +88,7 @@
                         <div class="form-group">
                             <label class="col-sm-1 control-label">Začiatok</label>
                             <div class="col-sm-3">
-                                @inputText(eventForm("startDate"), 'id -> "startDate", 'type -> "date", 'class -> "form-control", 'required -> "true", 'value -> "12011584")
+                                @inputText(eventForm("startDate"), 'id -> "startDate", 'type -> "date", 'class -> "form-control", 'required -> "true")
                             </div>
                             <div class="col-sm-2">
                                 @inputText(eventForm("startTime"), 'id -> "timeInputStart", 'type -> "time", 'class -> "form-control", 'required -> "true")
@@ -59,12 +104,11 @@
                             </div>
                         </div>
                         <hr>
-                        <h4>Položky stanu</h4>
+                        <h4>Potrebné položky</h4>
 
                     </div>
 
                     <div class="box-body no-padding">
-
                         <table class="table">
                             <thead>
                                 <tr>
@@ -75,17 +119,23 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                                @repeat(eventForm("entries")) { entry =>
+                                    @entryGroup(entry)
+                                }
+                                @entryGroup(
+                                    eventForm("entries[x]"),
+                                    "entryGroupTemplate",
+                                    "display:none;"
+                                )
                             </tbody>
                         </table>
-
                     </div>
 
                     <div class="box-footer">
 
                         <button type="submit" class="btn btn-primary">Uložiť</button>
                         <a type="button" class="btn btn-default" href="@routes.Kalendar.list()">Späť</a>
-                        <button type="button" style="margin-right: -2px;" class="pull-right btn btn-info" id="addAccessory">
+                        <button type="button" style="margin-right: -2px;" class="pull-right btn btn-info" id="addEntry">
                             <i class="fa fa-plus"></i>
                         </button>
 

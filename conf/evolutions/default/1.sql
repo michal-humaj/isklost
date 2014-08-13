@@ -14,8 +14,10 @@ create table accessory (
 create table event_entry (
   id                        bigint not null,
   event_id                  varchar(255),
+  event_type                integer,
   item_id                   bigint,
   amount                    decimal(6,2),
+  constraint ck_event_entry_event_type check (event_type in (0,1,2,3)),
   constraint pk_event_entry primary key (id))
 ;
 

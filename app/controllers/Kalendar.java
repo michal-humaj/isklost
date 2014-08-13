@@ -9,6 +9,7 @@ import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventDateTime;
 import com.google.common.collect.ImmutableMap;
+import models.EventEntry;
 import models.EventTO;
 import models.EventType;
 import models.StoredItem;
@@ -110,6 +111,13 @@ public class Kalendar extends Controller {
             EventType type = EventType.valueOf(eventType);
             Event event = findEvent(parseId, type);
             updateEvent(setEventFromTO(event, eventTO), type);
+
+            for(EventEntry e : eventTO.entries){
+                e.eventId = parseId;
+                e.eventType = type;
+                e.save();
+            }
+
         }catch(IOException e){
             e.printStackTrace();
             return badRequest("NO");

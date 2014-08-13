@@ -15,7 +15,7 @@ public class EventTO {
     public String endTime;
     public Boolean allDay;
     public String name;
-    //public List<EventEntry> entries = new ArrayList<>();
+    public List<EventEntry> entries = new ArrayList<>();
 
 
     public EventTO() {
@@ -39,6 +39,7 @@ public class EventTO {
                 ", endTime='" + endTime + '\'' +
                 ", allDay=" + allDay +
                 ", name='" + name + '\'' +
+                ", entries=" + entries +
                 '}';
     }
 }
