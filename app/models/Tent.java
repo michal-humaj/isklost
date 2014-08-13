@@ -16,7 +16,7 @@ import java.util.List;
 @DiscriminatorValue("TENT")
 public class Tent extends Item {
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tent")
     public List<Accessory> accessories = new ArrayList<>();
 
     public static Finder<Long, Tent> find = new Finder<>(Long.class, Tent.class);

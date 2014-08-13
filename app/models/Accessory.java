@@ -18,6 +18,9 @@ public class Accessory extends Model {
     public Long id;
 
     @ManyToOne
+    public Tent tent;
+
+    @ManyToOne
     public StoredItem item;
 
     @Required

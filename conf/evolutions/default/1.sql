@@ -5,7 +5,7 @@
 
 create table accessory (
   id                        bigint not null,
-  tent_id                   bigint not null,
+  tent_id                   bigint,
   item_id                   bigint,
   amount                    decimal(6,2),
   constraint pk_accessory primary key (id))
@@ -38,8 +38,8 @@ create sequence event_entry_seq;
 
 create sequence item_seq;
 
-alter table accessory add constraint fk_accessory_item_1 foreign key (tent_id) references item (id) on delete restrict on update restrict;
-create index ix_accessory_item_1 on accessory (tent_id);
+alter table accessory add constraint fk_accessory_tent_1 foreign key (tent_id) references item (id) on delete restrict on update restrict;
+create index ix_accessory_tent_1 on accessory (tent_id);
 alter table accessory add constraint fk_accessory_item_2 foreign key (item_id) references item (id) on delete restrict on update restrict;
 create index ix_accessory_item_2 on accessory (item_id);
 alter table event_entry add constraint fk_event_entry_item_3 foreign key (item_id) references item (id) on delete restrict on update restrict;
