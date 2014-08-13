@@ -1,5 +1,8 @@
 # Calendar
 GET         /                                     controllers.Kalendar.list()
+
+GET         /events                               controllers.Kalendar.upcomingActions()
+
 POST        /event/new                            controllers.Kalendar.create()
 POST        /event/drag                           controllers.Kalendar.drag()
 

@@ -8,7 +8,7 @@
     </div>
     <div class="form-group">
         <div class="col-sm-12">
-            <select name="eventType" id="eventCat" class="form-control" required="true">
+            <select name="eventType" class="form-control selectEventType" required="true">
                 <option value="ACTION">Akcia</option>
                 <option value="RESERVATION">Rezervácia</option>
                 <option value="SELFTRANSPORT">Vlastná doprava</option>
@@ -16,6 +16,8 @@
             </select>
         </div>
     </div>
+    <div class="selectActionContainer"></div>
+
     <input type="hidden" id="startDate" name="startDate">
     <input type="hidden" id="endDate" name="endDate">
     <input type="hidden" id="allDay" name="allDay">

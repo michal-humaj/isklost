@@ -9,7 +9,9 @@ import com.google.api.client.util.DateTime;
 import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventDateTime;
+import com.google.api.services.calendar.model.Events;
 import com.google.common.collect.ImmutableMap;
+import dtos.EventInfoTO;
 import models.*;
 import play.data.DynamicForm;
 import play.data.Form;
@@ -27,12 +29,10 @@ import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.TimeZone;
+import java.util.*;
 
 import static play.data.Form.form;
+import static play.libs.Json.toJson;
 
 /**
  * Created by MiHu on 29.7.2014.
@@ -181,6 +181,25 @@ public class Kalendar extends Controller {
             return badRequest("NO");
         }
         return HOME;
+    }
+
+    public static Result upcomingActions(){
+        try {
+            List<EventInfoTO> events = new ArrayList<>();
+            Events googleEvents = calendar()
+                    .events()
+                    .list(calIds.get(EventType.ACTION))
+                    .setTimeMin(new DateTime(new Date()))
+                    .setOauthToken(session("accessToken"))
+                    .execute();
+            for (Event e : googleEvents.getItems()) {
+                events.add(new EventInfoTO(e.getId(), e.getSummary().split("#")[0]));
+            }
+            return ok(toJson(events));
+        }catch(IOException e){
+            e.printStackTrace();
+            return badRequest("NO");
+        }
     }
 
     //---------------------------HELPER METHODS---------------------------------------------

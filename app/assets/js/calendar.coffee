@@ -62,9 +62,24 @@ $(document).ready ->
           $("#newEventPopover").html()
       $(jsEvent.target).popover "show"
       $(".inputEventName").focus()
+      $(".selectEventType").change (e) ->
+        s = e.currentTarget
+        eventType = s.options[s.selectedIndex].value
+        if eventType is 'INSTALLATION'
+          $.get "/events", (events) ->
+            $(".selectAction").html '<option class="blank" value="">-- Priradená akcia --</option>'
+            $.each events, (index, event) ->
+              opt = $("<option>").text(event.name)
+              opt.prop "value", event.id
+              $(".selectAction").append opt
+            $(".selectActionContainer").html $("#selectActionGroup").html()
+        else
+          $(".selectActionContainer").html ""
+
 
     unselect: (view, jsEvent) ->
       $(".popover").remove()
+      $(".selectActionContainer").html ""
 
     eventClick: (event, jsEvent, view) ->
       $(".popover").remove()
