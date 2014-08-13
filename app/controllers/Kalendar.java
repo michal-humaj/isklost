@@ -193,9 +193,13 @@ public class Kalendar extends Controller {
                     .delete(calIds.get(type), parseId)
                     .setOauthToken(session("accessToken"))
                     .execute();
-            final List<EventEntry> entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
-            for(EventEntry e : entries){
-                e.delete();
+            if (type.equals(EventType.INSTALLATION)) {
+                Installation.find.ref(parseId).delete();
+            }else {
+                final List<EventEntry> entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
+                for (EventEntry e : entries) {
+                    e.delete();
+                }
             }
         }catch(IOException e){
             e.printStackTrace();
