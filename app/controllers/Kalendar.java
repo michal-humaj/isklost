@@ -13,6 +13,8 @@ import com.google.common.collect.ImmutableMap;
 
 import dtos.EventInfoTO;
 import models.*;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Controller;
@@ -223,20 +225,77 @@ public class Kalendar extends Controller {
 
     public static Result toDateEvents(String millis){
         try {
-            DateTime sDateTime = new DateTime(new Date(Long.parseLong(millis)));
-            DateTime eDateTime = new DateTime(new Date(Long.parseLong(millis) + 86_400_000));
+            long findAtMillis = Long.parseLong(millis);
             List<EventInfoTO> events = new ArrayList<>();
-            List<Event> googleEvents = removeNotInDateEvents(findEvents(EventType.ACTION, sDateTime, eDateTime), Long.parseLong(millis));
-            for (Event e : googleEvents) {
-                events.add(
-                        new EventInfoTO(
-                                EventType.ACTION,
-                                e.getId(),
-                                e.getSummary().split("#")[0],
-                                "fef",
-                                "fefe"
-                        )
-                );
+
+            List<Event> instRelatedActions = new ArrayList<>();
+            final Set<Event> atDayInstallations = removeNotInDateEvents(findEvents(EventType.INSTALLATION, new DateTime(findAtMillis), new DateTime(findAtMillis + 86_400_000)), findAtMillis);
+            for(Event e:atDayInstallations){
+                Event action = findEvent(Installation.find.ref(e.getId()).actionId, EventType.ACTION);
+                instRelatedActions.add(action);
+            }
+
+            for(EventType eventType : EventType.values()) {
+                if(eventType.equals(EventType.INSTALLATION)) continue;
+                Set<Event> googleEvents = removeNotInDateEvents(findEvents(eventType, new DateTime(findAtMillis), new DateTime(findAtMillis + 86_400_000)), findAtMillis);
+                if(eventType.equals(EventType.ACTION)){
+                    googleEvents.addAll(instRelatedActions);
+                }
+                for (Event e : googleEvents) {
+                    String sStart = null;
+                    String sEnd = null;
+                    if(e.getStart().getDateTime() != null){ //if event is scheduled (not all day)
+
+                        long minMillis;
+                        long maxMillis;
+                        if(eventType.equals(EventType.ACTION)){//if event is action look for its installations
+                            List<Long> startMillis = new ArrayList<>();
+                            List<Long> endMillis = new ArrayList<>();
+                            List<Installation> installs = Installation.find.where().eq("actionId", e.getId()).findList();
+                            for(Installation inst: installs) {
+                                Event instEvent = findEvent(inst.installationId, EventType.INSTALLATION);
+                                DateTime start = instEvent.getStart().getDateTime();
+                                DateTime end = instEvent.getEnd().getDateTime();
+                                if (start != null){
+                                    startMillis.add(start.getValue());
+                                }
+                                if (end != null){
+                                    endMillis.add(end.getValue());
+                                }
+                            }
+                            startMillis.add(e.getStart().getDateTime().getValue());
+                            endMillis.add(e.getEnd().getDateTime().getValue());
+                            minMillis = Collections.min(startMillis);
+                            maxMillis = Collections.max(endMillis);
+                        }else {
+                            minMillis = e.getStart().getDateTime().getValue();
+                            maxMillis = e.getEnd().getDateTime().getValue();
+                        }
+
+                        LocalDate jodaStart = new LocalDate(minMillis);
+                        LocalDate jodaEnd = new LocalDate(maxMillis);
+                        LocalDate jodaFind = new LocalDate(findAtMillis);
+                        if(jodaStart.equals(jodaFind)){
+                            LocalTime time = new LocalTime(minMillis);
+                            sStart = time.toString("HH:mm");
+                        }
+                        if(jodaEnd.equals(jodaFind)){
+                            LocalTime time = new LocalTime(maxMillis);
+                            sEnd = time.toString("HH:mm");
+                        }
+                    }
+
+
+                    events.add(
+                            new EventInfoTO(
+                                    eventType,
+                                    e.getId(),
+                                    e.getSummary().split("#")[0],
+                                    sStart,
+                                    sEnd
+                            )
+                    );
+                }
             }
             return ok(toJson(events));
         }catch(IOException e){
@@ -397,7 +456,7 @@ public class Kalendar extends Controller {
         return e.setStart(eventStart).setEnd(eventEnd);
     }
 
-    private static List<Event> removeNotInDateEvents(Events googleEvents, long millis){
+    private static Set<Event> removeNotInDateEvents(Events googleEvents, long millis){
         final DateTime dateTime = new DateTime(true, millis + 7_200_000, 0);
         List<Event> events = googleEvents.getItems();
         for (Iterator<Event> iter = events.listIterator(); iter.hasNext(); ) {
@@ -408,6 +467,6 @@ public class Kalendar extends Controller {
                 iter.remove();
             }
         }
-        return events;
+        return new HashSet(events);
     }
 }

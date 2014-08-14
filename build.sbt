@@ -12,6 +12,7 @@ libraryDependencies ++= Seq(
   "com.google.http-client" % "google-http-client-jackson2" % "1.18.0-rc",
   "com.feth" %% "play-authenticate" % "0.6.4-SNAPSHOT",
   "mysql" % "mysql-connector-java" % "5.1.31",
+  "joda-time" % "joda-time" % "2.4",
   javaJdbc,
   javaEbean,
   cache,

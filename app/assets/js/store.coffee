@@ -18,6 +18,7 @@ $(document).ready ->
     language: "sk"
     todayHighlight: true
   ).on "changeDate", (ev) ->
+    return if typeof ev.date is "undefined"
     d = ev.date
     $("#titleEvents").html "#{d.getDate()}.#{d.getMonth()+1}. #{d.getFullYear()} Udalosti"
     $("#titleItems").html "#{d.getDate()}.#{d.getMonth()+1}. #{d.getFullYear()} Dostupnosť položiek"
