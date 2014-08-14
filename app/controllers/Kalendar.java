@@ -1,6 +1,5 @@
 package controllers;
 
-import com.avaje.ebean.ExpressionList;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
@@ -11,11 +10,11 @@ import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventDateTime;
 import com.google.api.services.calendar.model.Events;
 import com.google.common.collect.ImmutableMap;
+
 import dtos.EventInfoTO;
 import models.*;
 import play.data.DynamicForm;
 import play.data.Form;
-import play.i18n.Messages;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Results;
@@ -211,14 +210,33 @@ public class Kalendar extends Controller {
     public static Result upcomingActions(){
         try {
             List<EventInfoTO> events = new ArrayList<>();
-            Events googleEvents = calendar()
-                    .events()
-                    .list(calIds.get(EventType.ACTION))
-                    .setTimeMin(new DateTime(new Date()))
-                    .setOauthToken(session("accessToken"))
-                    .execute();
+            Events googleEvents = findEvents(EventType.ACTION, new DateTime(new Date()), null);
             for (Event e : googleEvents.getItems()) {
                 events.add(new EventInfoTO(e.getId(), e.getSummary().split("#")[0]));
+            }
+            return ok(toJson(events));
+        }catch(IOException e){
+            e.printStackTrace();
+            return badRequest("NO");
+        }
+    }
+
+    public static Result toDateEvents(String millis){
+        try {
+            DateTime sDateTime = new DateTime(new Date(Long.parseLong(millis)));
+            DateTime eDateTime = new DateTime(new Date(Long.parseLong(millis) + 86_400_000));
+            List<EventInfoTO> events = new ArrayList<>();
+            List<Event> googleEvents = removeNotInDateEvents(findEvents(EventType.ACTION, sDateTime, eDateTime), Long.parseLong(millis));
+            for (Event e : googleEvents) {
+                events.add(
+                        new EventInfoTO(
+                                EventType.ACTION,
+                                e.getId(),
+                                e.getSummary().split("#")[0],
+                                "fef",
+                                "fefe"
+                        )
+                );
             }
             return ok(toJson(events));
         }catch(IOException e){
@@ -266,6 +284,16 @@ public class Kalendar extends Controller {
         return calendar()
                 .events()
                 .get(calIds.get(eventType), id)
+                .setOauthToken(session("accessToken"))
+                .execute();
+    }
+
+    private static Events findEvents(EventType type, DateTime timeMin, DateTime timeMax) throws IOException {
+        return calendar()
+                .events()
+                .list(calIds.get(type))
+                .setTimeMin(timeMin)
+                .setTimeMax(timeMax)
                 .setOauthToken(session("accessToken"))
                 .execute();
     }
@@ -367,5 +395,19 @@ public class Kalendar extends Controller {
             eventEnd = new EventDateTime().setDateTime(end);
         }
         return e.setStart(eventStart).setEnd(eventEnd);
+    }
+
+    private static List<Event> removeNotInDateEvents(Events googleEvents, long millis){
+        final DateTime dateTime = new DateTime(true, millis + 7_200_000, 0);
+        List<Event> events = googleEvents.getItems();
+        for (Iterator<Event> iter = events.listIterator(); iter.hasNext(); ) {
+            Event e = iter.next();
+            if (e.getStart().getDateTime() != null) continue;
+            final DateTime eDateTime = e.getEnd().getDate();
+            if(eDateTime.equals(dateTime)) {
+                iter.remove();
+            }
+        }
+        return events;
     }
 }

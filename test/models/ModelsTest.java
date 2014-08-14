@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Ebean;
+import com.google.api.client.util.DateTime;
 import org.junit.Before;
 import org.junit.Test;
 import play.libs.Yaml;
@@ -27,20 +28,9 @@ public class ModelsTest extends WithApplication {
 
     @Test
     public void eventEntries() {
-        StoredItem i = new StoredItem("hojdacka pre deti", Category.CARPETS, new BigDecimal("15"), new BigDecimal("12.35"));
-        i.save();
-        StoredItem item = StoredItem.find.ref(i.id);
+        DateTime d = new DateTime(123456l);
+        System.out.println(d.getValue());
 
-        EventEntry e = new EventEntry("dad1484d8fef3ef@google.com", EventType.ACTION, item, new BigDecimal("25"));
-        e.save();
-        e = new EventEntry("dad1484d8fef3ef@google.com", EventType.ACTION, item, new BigDecimal("25"));
-        e = new EventEntry("dad1484d8fef3ef@google.com", EventType.ACTION, item, new BigDecimal("25"));
-        e = new EventEntry("dad1484d8fef3ef@google.com", EventType.ACTION, item, new BigDecimal("25"));
-        System.out.println("----------------------------- " + e);
-        System.out.println("----------------------------- " + e);
-        System.out.println("----------------------------- " + e);
-
-        assertEquals(e.item.id, item.id);
     }
 
 }

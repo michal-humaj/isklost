@@ -2,6 +2,7 @@
 GET         /                                     controllers.Kalendar.list()
 
 GET         /events                               controllers.Kalendar.upcomingActions()
+GET         /events/:millis                       controllers.Kalendar.toDateEvents(millis: String)
 
 POST        /event/new                            controllers.Kalendar.create()
 POST        /event/drag                           controllers.Kalendar.drag()
