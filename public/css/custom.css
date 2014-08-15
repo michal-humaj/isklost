@@ -26,6 +26,6 @@ table.scrollTable thead {
 
 
 table.scrollTable tbody td,table.scrollTable thead th {
-    width: 20%;
+    width: 100px;
     float: left;
 }

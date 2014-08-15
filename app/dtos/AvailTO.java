@@ -9,13 +9,15 @@ import java.math.BigDecimal;
  */
 public class AvailTO {
 
+    public Long id;
     public String name;
     public Category category;
     public int available;
     public int reserved;
     public int rented;
 
-    public AvailTO(String name, Category category, int available, int reserved, int rented) {
+    public AvailTO(Long id, String name, Category category, int available, int reserved, int rented) {
+        this.id = id;
         this.name = name;
         this.category = category;
         this.available = available;

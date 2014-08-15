@@ -6,8 +6,6 @@ $(document).ready ->
   $(window).resize ->
     $("#scroll-table").height $(window).height() - 450
 
-  $("#scroll-table").scrollspy target: "#scroll-target"
-
   $("body").on "hidden.bs.modal", ".modal", ->
     $(this).removeData "bs.modal"
 
@@ -50,6 +48,21 @@ loadAvailability = ->
   $.post("/store/items",
     types: types
     ids: ids
-  ).done (data) ->
+  ).done (items) ->
+    $("#scroll-table").html ""
+    $.each items, (i, item) ->
+      tr = $('<tr>')
+      tr.attr "id", item.category
+      tr.append $("<td style='width: 510px;'>").text item.name
+      tr.append $("<td>").text item.available
+      tr.append $("<td>").text item.reserved
+      tr.append $("<td>").text item.rented
+      $("#btnInc").attr "href", "/store/item/#{item.id}/inc"
+      $("#linkDec").attr "href", "/store/item/#{item.id}/dec"
+      $("#linkEdit").attr "href", "/store/item/#{item.id}"
+      $("#linkDelete").attr "href", "/store/item/#{item.id}/delete"
+      tr.append $("<td style='width: 133px;'>").html $("#itemManipulationBtnsDiv").html()
+      $("#scroll-table").append tr
     $("#overlayItems").attr "class", ""
     $("#loadingItems").attr "class", ""
+    $("#scroll-table").scrollspy target: "#scroll-target"

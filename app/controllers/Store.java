@@ -97,13 +97,14 @@ public class Store extends Controller {
         Map<Long, AvailTO> availMap = new LinkedHashMap<>();// get ready map of all items
         List<StoredItem> items = StoredItem.find.orderBy("category").findList();
         for(StoredItem i: items){
-            availMap.put(i.id, new AvailTO(i.name, i.category, i.amount.intValue(), 0, 0));
+            availMap.put(i.id, new AvailTO(i.id, i.name, i.category, i.amount.intValue(), 0, 0));
         }
         items = null;
 
         EventListTO eventList = form(EventListTO.class).bindFromRequest().get();//get ready list with all event entries colliding
         List<EventEntry> entryList = new ArrayList<>();
-        for(int i = 0; i < eventList.ids.size(); i++){
+
+        for(int i = 0; i < (eventList.ids == null ? 0 : eventList.ids.size()); i++){
             final List<EventEntry> eventEntries = EventEntry.find.where()
                     .eq("eventType", eventList.types.get(i))
                     .eq("eventId", eventList.ids.get(i))
