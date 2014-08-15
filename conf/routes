@@ -16,6 +16,7 @@ GET         /event/delete/:eventType/:id          controllers.Kalendar.deleteMod
 POST        /event/delete/:eventType/:id          controllers.Kalendar.delete(eventType: String, id: String)
 # StoredItem
 GET         /store/items                          controllers.Store.list()
+POST        /store/items                          controllers.Store.availability()
 GET         /store/items/:category                controllers.Store.listInCategory(category: String)
 
 POST        /store/item                           controllers.Store.create()

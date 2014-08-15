@@ -1,8 +1,9 @@
 package controllers;
 
-import models.Category;
-import models.StoredItem;
-import models.Tent;
+import dtos.AvailTO;
+import dtos.EventInfoTO;
+import dtos.EventListTO;
+import models.*;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Controller;
@@ -13,7 +14,7 @@ import views.html.store;
 import views.html.modals.*;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.*;
 
 import static play.data.Form.form;
 import static play.libs.Json.toJson;
@@ -90,6 +91,50 @@ public class Store extends Controller {
         item.amount = item.amount.subtract(amount);
         item.update(id);
         return STORE_HOME;
+    }
+
+    public static Result availability(){
+        Map<Long, AvailTO> availMap = new LinkedHashMap<>();// get ready map of all items
+        List<StoredItem> items = StoredItem.find.orderBy("category").findList();
+        for(StoredItem i: items){
+            availMap.put(i.id, new AvailTO(i.name, i.category, i.amount.intValue(), 0, 0));
+        }
+        items = null;
+
+        EventListTO eventList = form(EventListTO.class).bindFromRequest().get();//get ready list with all event entries colliding
+        List<EventEntry> entryList = new ArrayList<>();
+        for(int i = 0; i < eventList.ids.size(); i++){
+            final List<EventEntry> eventEntries = EventEntry.find.where()
+                    .eq("eventType", eventList.types.get(i))
+                    .eq("eventId", eventList.ids.get(i))
+                    .findList();
+            entryList.addAll(eventEntries);
+        }
+        eventList = null;
+
+        for(EventEntry e : entryList){
+            if(e.item instanceof StoredItem){
+                if(e.eventType.equals(EventType.RESERVATION)) {
+                    availMap.get(e.item.id).reserve(e.amount.intValue());
+                }else{
+                    availMap.get(e.item.id).rent(e.amount.intValue());
+                }
+            } else if(e.item instanceof Tent){
+                Tent t = (Tent) e.item;
+                for(Accessory a : t.accessories){
+                    if(e.eventType.equals(EventType.RESERVATION)) {
+                        availMap.get(a.item.id).reserve(
+                            e.amount.multiply(a.amount).intValue()
+                        );
+                    }else{
+                        availMap.get(a.item.id).rent(
+                            e.amount.multiply(a.amount).intValue()
+                        );
+                    }
+                }
+            }
+        }
+        return ok(toJson(availMap.values()));
     }
 
     public static Result listInCategory(String sCat) {

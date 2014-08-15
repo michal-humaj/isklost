@@ -19,9 +19,37 @@ $(document).ready ->
     todayHighlight: true
   ).on "changeDate", (ev) ->
     return if typeof ev.date is "undefined"
+    $("#overlayEvents").attr "class", "overlay"
+    $("#loadingEvents").attr "class", "loading-img"
+    $("#overlayItems").attr "class", "overlay"
+    $("#loadingItems").attr "class", "loading-img"
     d = ev.date
     $("#titleEvents").html "#{d.getDate()}.#{d.getMonth()+1}. #{d.getFullYear()} Udalosti"
     $("#titleItems").html "#{d.getDate()}.#{d.getMonth()+1}. #{d.getFullYear()} Dostupnosť položiek"
     $.get "/events/#{d.getTime()}", (events) ->
+      $("#overlayEvents").attr "class", ""
+      $("#loadingEvents").attr "class", ""
+      $("#tableEvents").html ""
       $.each events, (index, e) ->
-        console.log e
+        tr = $('<tr class="event">')
+        tr.attr "eventType", e.eventType
+        tr.attr "eventId", e.id
+        tr.append $("<td>").text e.name
+        tr.append $("<td>").text (if e.start is null then "" else e.start )
+        tr.append $("<td>").text (if e.end is null then "" else e.end )
+        tr.append $("<td>").html $("#availCalcGroup").html()
+        $("#tableEvents").append tr
+      loadAvailability()
+
+loadAvailability = ->
+  types = new Array()
+  ids = new Array()
+  $(".event").each (i, obj) ->
+    types[i] = $(this).attr "eventtype"
+    ids[i] = $(this).attr "eventid"
+  $.post("/store/items",
+    types: types
+    ids: ids
+  ).done (data) ->
+    $("#overlayItems").attr "class", ""
+    $("#loadingItems").attr "class", ""

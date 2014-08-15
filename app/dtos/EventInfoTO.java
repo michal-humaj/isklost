@@ -13,9 +13,17 @@ public class EventInfoTO {
     public String start;
     public String end;
 
+    public EventInfoTO() {
+    }
+
     public EventInfoTO(String id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public EventInfoTO(EventType eventType, String id) {
+        this.eventType = eventType;
+        this.id = id;
     }
 
     public EventInfoTO(EventType eventType, String id, String name, String start, String end) {

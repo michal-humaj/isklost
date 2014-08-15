@@ -27,6 +27,7 @@ import views.html.events.installationEdit;
 import views.html.modals.eventDelete;
 import views.html.modals.itemEdit;
 
+import javax.persistence.EntityNotFoundException;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.DateFormat;
@@ -231,7 +232,14 @@ public class Kalendar extends Controller {
             List<Event> instRelatedActions = new ArrayList<>();
             final Set<Event> atDayInstallations = removeNotInDateEvents(findEvents(EventType.INSTALLATION, new DateTime(findAtMillis), new DateTime(findAtMillis + 86_400_000)), findAtMillis);
             for(Event e:atDayInstallations){
-                Event action = findEvent(Installation.find.ref(e.getId()).actionId, EventType.ACTION);
+                Installation inst;
+                Event action;
+                try {
+                    inst = Installation.find.ref(e.getId());
+                    action = findEvent(inst.actionId, EventType.ACTION);
+                }catch(EntityNotFoundException ex){
+                    continue;
+                }
                 instRelatedActions.add(action);
             }
 

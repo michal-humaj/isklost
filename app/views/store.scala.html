@@ -17,25 +17,39 @@
     <!-- Modal for item pieces removal from store -->
     <div class="modal" id="modal-item-dec" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"></div>
 
+    <div id="availCalcGroup" class="hide">
+        <div class="btn-group btn-group-xs" data-toggle="btn-toggle" >
+            <button type="button" class="btn btn-success"><i class="fa fa-check"></i></button>
+            <button type="button" class="btn btn-default"><i class="fa fa-times"></i></button>
+        </div>
+    </div>
+
     <!-- Page content -->
     <div class="row">
         <div class="col-md-12">
 
-            <div class="box box-primary">
+            <div class="box box-primary" style="width:960px;">
                 <div class="box-header">
                     <h3 class="box-title" id="titleEvents">Udalosti</h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-primary" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     </div>
                 </div>
-                <div class="box-body">
-                    Box class: <code>.box.box-solid.box-warning</code>
-                    <p>
-                        amber, microbrewery abbey hydrometer, brewpub ale lauter tun saccharification oxidized barrel.
-                        berliner weisse wort chiller adjunct hydrometer alcohol aau!
-                        sour/acidic sour/acidic chocolate malt ipa ipa hydrometer.
-                    </p>
+                <div class="box-body no-padding">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Udalosť</th>
+                                <th style="width :100px;">Začiatok</th>
+                                <th style="width :100px;">Koniec</th>
+                                <th style="width :150px;">Výpočet dostupnosti</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableEvents"></tbody>
+                    </table>
                 </div>
+                <div id="overlayEvents"></div>
+                <div id="loadingEvents"></div>
             </div>
 
             <div class="box box-primary">
@@ -49,13 +63,13 @@
                     </div>
                 </div><!-- /.box-header -->
                 <div class="box-body no-padding">
-                    <table class="table">
+                    <table class="table scrollTable">
                         <thead>
                             <tr>
-                                <th>Kategória</th>
                                 <th>Položka</th>
-                                <th>Hmotnosť</th>
-                                <th>Počet</th>
+                                <th>Dostupné</th>
+                                <th>Rezervované</th>
+                                <th>Prenajaté</th>
                                 <th>Akcia</th>
                             </tr>
                         </thead>
@@ -86,6 +100,8 @@
                         </tbody>
                     </table>
                 </div><!-- /.box-body -->
+                <div id="overlayItems"></div>
+                <div id="loadingItems"></div>
             </div><!-- /.box -->
 
 
