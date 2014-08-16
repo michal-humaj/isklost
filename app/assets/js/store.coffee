@@ -9,6 +9,10 @@ $(document).ready ->
   $("body").on "hidden.bs.modal", ".modal", ->
     $(this).removeData "bs.modal"
 
+  d = new Date()
+  d.setHours 0,0,0,0
+  loadEvents d
+
   $("#datepicker").datepicker(
     format: "mm.dd. yyyy"
     weekStart: 1
@@ -17,34 +21,53 @@ $(document).ready ->
     todayHighlight: true
   ).on "changeDate", (ev) ->
     return if typeof ev.date is "undefined"
-    $("#overlayEvents").attr "class", "overlay"
-    $("#loadingEvents").attr "class", "loading-img"
-    $("#overlayItems").attr "class", "overlay"
-    $("#loadingItems").attr "class", "loading-img"
-    d = ev.date
-    $("#titleEvents").html "#{d.getDate()}.#{d.getMonth()+1}. #{d.getFullYear()} Udalosti"
-    $("#titleItems").html "#{d.getDate()}.#{d.getMonth()+1}. #{d.getFullYear()} Dostupnosť položiek"
-    $.get "/events/#{d.getTime()}", (events) ->
-      $("#overlayEvents").attr "class", ""
-      $("#loadingEvents").attr "class", ""
-      $("#tableEvents").html ""
-      $.each events, (index, e) ->
-        tr = $('<tr class="event">')
-        tr.attr "eventType", e.eventType
-        tr.attr "eventId", e.id
-        tr.append $("<td>").text e.name
-        tr.append $("<td>").text (if e.start is null then "" else e.start )
-        tr.append $("<td>").text (if e.end is null then "" else e.end )
-        tr.append $("<td>").html $("#availCalcGroup").html()
-        $("#tableEvents").append tr
+    loadEvents ev.date
+
+loadEvents = (d) ->
+  $("#overlayEvents").attr "class", "overlay"
+  $("#loadingEvents").attr "class", "loading-img"
+  $("#overlayItems").attr "class", "overlay"
+  $("#loadingItems").attr "class", "loading-img"
+  $("#titleEvents").html "#{d.getDate()}.#{d.getMonth()+1}. #{d.getFullYear()} Udalosti"
+  $("#titleItems").html "#{d.getDate()}.#{d.getMonth()+1}. #{d.getFullYear()} Dostupnosť položiek"
+  $.get "/events/#{d.getTime()}", (events) ->
+    $("#overlayEvents").attr "class", ""
+    $("#loadingEvents").attr "class", ""
+    $("#tableEvents").html ""
+    $.each events, (index, e) ->
+      tr = $('<tr class="event">')
+      tr.attr "eventType", e.eventType
+      tr.attr "eventId", e.id
+      tr.append $("<td>").text e.name
+      tr.append $("<td>").text (if e.start is null then "" else e.start )
+      tr.append $("<td>").text (if e.end is null then "" else e.end )
+      tr.append $("<td>").html $("#availCalcGroup").html()
+      $("#tableEvents").append tr
+    $(".btnTimes").click (e) ->
+      a = $(e.currentTarget.parentNode).find ".btnCheck"
+      a.attr "class", "btn btn-default btnCheck"
+      $(this).attr "class", "btn btn-danger btnTimes"
+      $("#overlayItems").attr "class", "overlay"
+      $("#loadingItems").attr "class", "loading-img"
       loadAvailability()
+    $(".btnCheck").click (e) ->
+      a = $(e.currentTarget.parentNode).find ".btnTimes"
+      a.attr "class", "btn btn-default btnTimes"
+      $(this).attr "class", "btn btn-success btnCheck"
+      $("#overlayItems").attr "class", "overlay"
+      $("#loadingItems").attr "class", "loading-img"
+      loadAvailability()
+    loadAvailability()
 
 loadAvailability = ->
   types = new Array()
   ids = new Array()
   $(".event").each (i, obj) ->
-    types[i] = $(this).attr "eventtype"
-    ids[i] = $(this).attr "eventid"
+    a = $(this).find ".btnCheck"
+    s = a.attr "class"
+    if s is "btn btn-success btnCheck"
+      types[i] = $(this).attr "eventtype"
+      ids[i] = $(this).attr "eventid"
   $.post("/store/items",
     types: types
     ids: ids
@@ -66,3 +89,4 @@ loadAvailability = ->
     $("#overlayItems").attr "class", ""
     $("#loadingItems").attr "class", ""
     $("#scroll-table").scrollspy target: "#scroll-target"
+
