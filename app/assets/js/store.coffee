@@ -35,7 +35,12 @@ loadEvents = (d) ->
     $("#loadingEvents").attr "class", ""
     $("#tableEvents").html ""
     $.each events, (index, e) ->
-      tr = $('<tr class="event">')
+      if e.eventType is "ACTION"
+        tr = $('<tr class="event" style="background-color: #92E1C0;">')
+      else if e.eventType is "RESERVATION"
+        tr = $('<tr class="event" style="background-color: #FAD165;">')
+      else
+        tr = $('<tr class="event" style="background-color: #CABDBF;">')
       tr.attr "eventType", e.eventType
       tr.attr "eventId", e.id
       tr.append $("<td>").text e.name
@@ -74,12 +79,15 @@ loadAvailability = ->
   ).done (items) ->
     $("#scroll-table").html ""
     $.each items, (i, item) ->
-      tr = $('<tr>')
+      if item.available < 0
+        tr = $('<tr class="bg-red">')
+      else
+        tr = $('<tr>')
       tr.attr "id", item.category
-      tr.append $("<td style='width: 510px;'>").text item.name
-      tr.append $("<td>").text item.available
-      tr.append $("<td>").text item.reserved
-      tr.append $("<td>").text item.rented
+      tr.append $("<td style='width: 390px;'>").text item.name
+      tr.append $('<td>').text item.available
+      tr.append $('<td>').text item.reserved
+      tr.append $('<td>').text item.rented
       $("#btnInc").attr "href", "/store/item/#{item.id}/inc"
       $("#linkDec").attr "href", "/store/item/#{item.id}/dec"
       $("#linkEdit").attr "href", "/store/item/#{item.id}"
