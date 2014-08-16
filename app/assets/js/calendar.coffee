@@ -95,11 +95,11 @@ $(document).ready ->
       $("h4").html event.title
       type = calUrlToEventType event.source.url
       if type is "ACTION"
-        $("#eventClickUl").html '<li><a class="linkMove" href="#" >Zmenit na rezervaciu</a></li><li><a href="#">Cenova ponuka</a></li>'
+        $("#eventClickUl").html '<li><a class="linkMove" href="#" >Zmenit na rezervaciu</a></li><li><a href="/event/priceOffer/' + type + '/' + event.id + '">Cenova ponuka</a></li>'
       if type is "RESERVATION"
-        $("#eventClickUl").html '<li><a class="linkMove" href="#">Zmenit na akciu</a></li><li><a href="#">Cenova ponuka</a></li>'
+        $("#eventClickUl").html '<li><a class="linkMove" href="#">Zmenit na akciu</a></li><li><a href="/event/priceOffer/' + type + '/' + event.id + '">Cenova ponuka</a></li>'
       if type is "SELFTRANSPORT"
-        $("#eventClickUl").html '<li><a href="#">Cenova ponuka</a></li>'
+        $("#eventClickUl").html '<li><a href="/event/priceOffer/' + type + '/' + event.id + '">Cenova ponuka</a></li>'
       if type is "INSTALLATION"
         $("#eventClickUl").html ''
       $(".btnDelete").attr "href", "/event/delete/#{type}/#{event.id}"

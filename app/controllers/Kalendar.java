@@ -10,9 +10,15 @@ import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventDateTime;
 import com.google.api.services.calendar.model.Events;
 import com.google.common.collect.ImmutableMap;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 
 import dtos.EventInfoTO;
 import models.*;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
 import play.data.DynamicForm;
@@ -29,6 +35,8 @@ import views.html.modals.itemEdit;
 
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.OptimisticLockException;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.DateFormat;
@@ -494,5 +502,55 @@ public class Kalendar extends Controller {
             }
         }
         return new HashSet(events);
+    }
+
+    public static Result priceOffer(String eventType, String id) {
+        String parseId = id.split("@")[0];
+        EventType type = EventType.valueOf(eventType);
+        response().setContentType("application/x-download");
+        final List<EventEntry> entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
+        if (type.equals(EventType.SELFTRANSPORT)){
+            response().setHeader("Content-disposition", "attachment; filename=ponuka_dasa_VD.xlsx");
+            return ok(excel("public/docs/ponuka_dasa_VD.xlsx", entries, 18, 0, 5).toByteArray());
+        }else {
+            response().setHeader("Content-disposition", "attachment; filename=ponuka_dasa.xlsx");
+            return ok(excel("public/docs/ponuka_dasa.xlsx", entries, 18, 0, 5).toByteArray());
+        }
+    }
+
+    public static Result ferko(String eventType, String id) {
+        String parseId = id.split("@")[0];
+        EventType type = EventType.valueOf(eventType);
+        response().setContentType("application/x-download");
+        final List<EventEntry> entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
+        if (type.equals(EventType.SELFTRANSPORT)){
+            response().setHeader("Content-disposition", "attachment; filename=zmluva-vlastna_doprava.xlsx");
+            return ok(excel("public/docs/zmluva-vlastna_doprava.xlsx", entries, 11, 1, 2).toByteArray());
+        }else {
+            response().setHeader("Content-disposition", "attachment; filename=vykaz_na_akciu_NEW.xlsx");
+            return ok(excel("public/docs/vykaz_na_akciu_NEW.xlsx", entries, 9, 0, 5).toByteArray());
+        }
+    }
+
+    public static ByteArrayOutputStream excel(String fileName, List<EventEntry> entries, int beginRownum, int nameColnum, int amountColnum) {
+        try {
+            XSSFWorkbook workbook = new XSSFWorkbook(fileName);
+            XSSFSheet sheet = workbook.getSheetAt(0);
+            int rowCounter = beginRownum;
+            for (EventEntry e : entries) {
+                XSSFRow row = sheet.getRow(rowCounter);
+                XSSFCell cell = row.getCell(nameColnum);
+                cell.setCellValue(e.item.name);
+                cell = row.getCell(amountColnum);
+                cell.setCellValue(e.amount.intValue());
+                rowCounter++;
+            }
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            workbook.write(out);
+            out.close();
+            return out;
+        } catch (IOException ex) {
+            return null;
+        }
     }
 }

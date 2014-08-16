@@ -13,6 +13,8 @@ libraryDependencies ++= Seq(
   "com.feth" %% "play-authenticate" % "0.6.4-SNAPSHOT",
   "mysql" % "mysql-connector-java" % "5.1.31",
   "joda-time" % "joda-time" % "2.4",
+  "org.apache.poi" % "poi-ooxml" % "3.10-FINAL",
+  "org.apache.poi" % "poi" % "3.10-FINAL",
   javaJdbc,
   javaEbean,
   cache,
