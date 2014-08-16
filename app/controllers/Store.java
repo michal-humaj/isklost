@@ -142,10 +142,14 @@ public class Store extends Controller {
         if("TENTS".equals(sCat)){
             final List<Tent> items = Tent.find.all();
             StringBuilder s = new StringBuilder("[");
+            if (items.size() == 0){
+                return ok("[]").as("application/json");
+            }
             for (Tent t: items){
                 s.append("{\"id\":").append(t.id)
                     .append(",\"name\":\"").append(t.name).append("\"},");
             }
+            s.deleteCharAt(s.length()-1);
             s.append("]");
             return ok(s.toString()).as("application/json");
         }else {

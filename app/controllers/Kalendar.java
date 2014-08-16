@@ -213,7 +213,10 @@ public class Kalendar extends Controller {
                     .setOauthToken(session("accessToken"))
                     .execute();
             if (type.equals(EventType.INSTALLATION)) {
-                Installation.find.ref(parseId).delete();
+                try {
+                    Installation.find.ref(parseId).delete();
+                }catch (OptimisticLockException e){
+                }
             }else {
                 final List<EventEntry> entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
                 for (EventEntry e : entries) {
