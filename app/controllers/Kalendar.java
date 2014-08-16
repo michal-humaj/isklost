@@ -28,6 +28,7 @@ import views.html.modals.eventDelete;
 import views.html.modals.itemEdit;
 
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.OptimisticLockException;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.DateFormat;
@@ -105,8 +106,12 @@ public class Kalendar extends Controller {
             EventTO eventTO = convert(event);
             eventTO.entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
             if (type.equals(EventType.INSTALLATION)){
-                final Installation installation = Installation.find.ref(parseId);
-                eventTO.actionId = installation.actionId;
+                try {
+                    final Installation installation = Installation.find.ref(parseId);
+                    eventTO.actionId = installation.actionId;
+                }catch(EntityNotFoundException e){
+                    eventTO.actionId = null;
+                }
             }
             eventForm = form(EventTO.class).fill(eventTO);
 
@@ -129,8 +134,12 @@ public class Kalendar extends Controller {
             Event event = findEvent(parseId, type);
             updateEvent(setEventFromTO(event, eventTO), type);
             if (type.equals(EventType.INSTALLATION)){
-                final Installation installation = Installation.find.ref(parseId);
-                installation.delete();
+                try{
+                    final Installation installation = Installation.find.ref(parseId);
+                    installation.delete();
+                }catch(OptimisticLockException e){
+
+                }
                 new Installation(parseId, eventTO.actionId).save();
             }else {
                 final List<EventEntry> entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
