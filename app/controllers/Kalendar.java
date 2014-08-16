@@ -265,6 +265,7 @@ public class Kalendar extends Controller {
 
                         long minMillis;
                         long maxMillis;
+                        System.out.println("----EVENT " + eventType + " " + e.getSummary().split("#")[0]);
                         if(eventType.equals(EventType.ACTION)){//if event is action look for its installations
                             List<Long> startMillis = new ArrayList<>();
                             List<Long> endMillis = new ArrayList<>();
@@ -273,6 +274,9 @@ public class Kalendar extends Controller {
                                 Event instEvent = findEvent(inst.installationId, EventType.INSTALLATION);
                                 DateTime start = instEvent.getStart().getDateTime();
                                 DateTime end = instEvent.getEnd().getDateTime();
+                                System.out.println("----its install-- " + instEvent.getSummary() );
+                                System.out.println("----start-- " + start);
+                                System.out.println("----end-- " + end);
                                 if (start != null){
                                     startMillis.add(start.getValue());
                                 }
@@ -282,11 +286,15 @@ public class Kalendar extends Controller {
                             }
                             startMillis.add(e.getStart().getDateTime().getValue());
                             endMillis.add(e.getEnd().getDateTime().getValue());
+                            System.out.println("------ACTION date time start --- " + e.getStart().getDateTime());
+                            System.out.println("------ACTION date time end --- " + e.getEnd().getDateTime());
                             minMillis = Collections.min(startMillis);
                             maxMillis = Collections.max(endMillis);
                         }else {
                             minMillis = e.getStart().getDateTime().getValue();
                             maxMillis = e.getEnd().getDateTime().getValue();
+                            System.out.println("------event date time start --- " + e.getStart().getDateTime());
+                            System.out.println("------event date time end --- " + e.getEnd().getDateTime());
                         }
 
                         LocalDate jodaStart = new LocalDate(minMillis);
@@ -302,7 +310,8 @@ public class Kalendar extends Controller {
                         }
                     }
 
-
+                    System.out.println("---sStart " + sStart);
+                    System.out.println("---sEnd " + sEnd);
                     events.add(
                             new EventInfoTO(
                                     eventType,
