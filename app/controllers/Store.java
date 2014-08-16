@@ -146,7 +146,6 @@ public class Store extends Controller {
                 s.append("{\"id\":").append(t.id)
                     .append(",\"name\":\"").append(t.name).append("\"},");
             }
-            s.deleteCharAt(s.length()-1);
             s.append("]");
             return ok(s.toString()).as("application/json");
         }else {
