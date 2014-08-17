@@ -4,7 +4,7 @@
 # --- !Ups
 
 create table accessory (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   tent_id                   bigint,
   item_id                   bigint,
   amount                    decimal(6,2),
@@ -12,7 +12,7 @@ create table accessory (
 ;
 
 create table event_entry (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   event_id                  varchar(255),
   event_type                integer,
   item_id                   bigint,
@@ -29,7 +29,7 @@ create table installation (
 
 create table item (
   ITEM_TYPE                 varchar(31) not null,
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   name                      varchar(255),
   category                  integer,
   amount                    decimal(6,2),
@@ -37,14 +37,6 @@ create table item (
   constraint ck_item_category check (category in (0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)),
   constraint pk_item primary key (id))
 ;
-
-create sequence accessory_seq;
-
-create sequence event_entry_seq;
-
-create sequence installation_seq;
-
-create sequence item_seq;
 
 alter table accessory add constraint fk_accessory_tent_1 foreign key (tent_id) references item (id) on delete restrict on update restrict;
 create index ix_accessory_tent_1 on accessory (tent_id);
@@ -57,23 +49,15 @@ create index ix_event_entry_item_3 on event_entry (item_id);
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+SET FOREIGN_KEY_CHECKS=0;
 
-drop table if exists accessory;
+drop table accessory;
 
-drop table if exists event_entry;
+drop table event_entry;
 
-drop table if exists installation;
+drop table installation;
 
-drop table if exists item;
+drop table item;
 
-SET REFERENTIAL_INTEGRITY TRUE;
-
-drop sequence if exists accessory_seq;
-
-drop sequence if exists event_entry_seq;
-
-drop sequence if exists installation_seq;
-
-drop sequence if exists item_seq;
+SET FOREIGN_KEY_CHECKS=1;
 

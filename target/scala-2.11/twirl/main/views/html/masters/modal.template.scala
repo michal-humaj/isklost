@@ -61,7 +61,7 @@ Seq[Any](format.raw/*1.96*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Sun Aug 17 22:57:24 CEST 2014
+                  DATE: Sun Aug 17 23:37:31 CEST 2014
                   SOURCE: C:/Users/MiHu/Documents/projects-Idea/my-first-app/app/views/masters/modal.scala.html
                   HASH: 4be153af83ffae94d0fc2d217ab2c0f0762eaa94
                   MATRIX: 768->1|965->95|995->117|1023->119|1116->187|1163->226|1202->228|1238->238|1533->506|1559->511|1656->581|1684->588|1721->598|1838->688|1867->696|1897->699|1929->710|2085->836|2120->844
