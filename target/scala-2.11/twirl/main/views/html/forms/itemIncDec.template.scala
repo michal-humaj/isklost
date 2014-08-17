@@ -53,7 +53,7 @@ Seq[Any](format.raw/*1.20*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Sun Aug 17 23:37:31 CEST 2014
+                  DATE: Sun Aug 17 23:49:44 CEST 2014
                   SOURCE: C:/Users/MiHu/Documents/projects-Idea/my-first-app/app/views/forms/itemIncDec.scala.html
                   HASH: a5ab7caa6b055b63c6ecaa89c7afa59e9995f5cf
                   MATRIX: 738->1|844->19|872->21|966->89|978->93|1003->98|1112->181|1157->218|1195->219|1239->236|1417->395|1430->399|1469->400|1514->417|1699->571|1735->580

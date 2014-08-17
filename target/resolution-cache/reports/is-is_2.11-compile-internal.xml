@@ -7,7 +7,7 @@
 		revision="1.0-SNAPSHOT"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, echo-trace-compile, echo-trace-test, echo-weave, echo-sigar"
-		date="20140817233728"/>
+		date="20140817234943"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="play-java-ebean_2.11">
 			<revision name="2.3.1" status="release" pubdate="20140715073054" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="83">
