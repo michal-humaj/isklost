@@ -40,7 +40,7 @@ Seq[Any](format.raw/*1.24*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Sun Aug 17 23:49:44 CEST 2014
+                  DATE: Mon Aug 18 00:00:22 CEST 2014
                   SOURCE: C:/Users/MiHu/Documents/projects-Idea/my-first-app/app/views/tent/tentNew.scala.html
                   HASH: f8461dffc86dbdf98b9934ea2691487e77b09468
                   MATRIX: 734->1|844->23|874->28|886->33|909->48|941->72|972->95|993->108

@@ -44,7 +44,7 @@ Seq[Any](format.raw/*1.20*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Sun Aug 17 23:49:44 CEST 2014
+                  DATE: Mon Aug 18 00:00:22 CEST 2014
                   SOURCE: C:/Users/MiHu/Documents/projects-Idea/my-first-app/app/views/modals/itemDec.scala.html
                   HASH: a8153431860e3542d617038bced0137b759341e0
                   MATRIX: 736->1|908->19|936->90|963->92|995->116|1017->130|1057->162|1080->177|1118->178|1149->184|1185->200

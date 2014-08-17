@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aec25477-bc93-4922-8e45-12cffd6a350b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/application.conf" afterPath="$PROJECT_DIR$/conf/application.conf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/my-first-app.time" afterPath="$PROJECT_DIR$/.idea/my-first-app.time" />
     </list>
     <ignored path="my-first-app.iws" />
@@ -637,7 +636,7 @@
       <workItem from="1408213296838" duration="820000" />
       <workItem from="1408220382036" duration="4458000" />
       <workItem from="1408256912845" duration="2110000" />
-      <workItem from="1408309747604" duration="1765000" />
+      <workItem from="1408309747604" duration="1881000" />
     </task>
     <task id="LOCAL-00001" summary="Change Stored item amount and weight to BigDecimal">
       <created>1406702947676</created>
@@ -878,7 +877,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="271394000" />
+    <option name="totallyTimeSpent" value="271510000" />
     <option name="suspendDelayInSeconds" value="120" />
   </component>
   <component name="ToolWindowManager">
