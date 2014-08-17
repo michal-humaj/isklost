@@ -48,17 +48,17 @@ loadEvents = (d) ->
       tr.append $("<td>").text (if e.end is null then "" else e.end )
       tr.append $("<td>").html $("#availCalcGroup").html()
       $("#tableEvents").append tr
-    $(".btn-default.btnTimes").click (e) ->
+    $(".btnTimes").click (e) ->
       a = $(e.currentTarget.parentNode).find ".btnCheck"
       a.attr "class", "btn btn-default btnCheck"
-      $(this).attr "class", "btn btn-danger btnTimes"
+      $(this).attr "class", "btn btn-danger disabled btnTimes"
       $("#overlayItems").attr "class", "overlay"
       $("#loadingItems").attr "class", "loading-img"
       loadAvailability()
-    $(".btn-default.btnCheck").click (e) ->
+    $(".btnCheck").click (e) ->
       a = $(e.currentTarget.parentNode).find ".btnTimes"
       a.attr "class", "btn btn-default btnTimes"
-      $(this).attr "class", "btn btn-success btnCheck"
+      $(this).attr "class", "btn btn-success disabled btnCheck"
       $("#overlayItems").attr "class", "overlay"
       $("#loadingItems").attr "class", "loading-img"
       loadAvailability()
