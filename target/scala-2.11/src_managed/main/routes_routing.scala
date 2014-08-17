@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/MiHu/Documents/projects-Idea/my-first-app/conf/routes
 // @HASH:bb5c37e73306a48dd79cfa14e3cb5525ca1fc32e
-// @DATE:Sun Aug 17 22:21:34 CEST 2014
+// @DATE:Sun Aug 17 22:48:06 CEST 2014
 
 
 import play.core._

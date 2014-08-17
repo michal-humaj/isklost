@@ -65,7 +65,7 @@ Seq[Any](format.raw/*1.71*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Sun Aug 17 22:21:36 CEST 2014
+                  DATE: Sun Aug 17 22:48:07 CEST 2014
                   SOURCE: C:/Users/MiHu/Documents/projects-Idea/my-first-app/app/views/masters/tents.scala.html
                   HASH: 6d71bcc56c26c1582aa0681e810b41d25b66e945
                   MATRIX: 746->1|903->70|931->73|945->80|965->92|1004->94|1035->100|1066->111|1085->113|1123->115|1155->121|1754->693|1782->700|1823->713|1940->812|1979->814|2011->820|2043->831
