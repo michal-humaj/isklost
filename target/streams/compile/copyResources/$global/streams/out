@@ -1,0 +1,12 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(C:\Users\MiHu\Documents\projects-Idea\my-first-app\conf\application.conf,C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\application.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\MiHu\Documents\projects-Idea\my-first-app\conf\evolutions,C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\evolutions)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\MiHu\Documents\projects-Idea\my-first-app\conf\initial-data.yml,C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\initial-data.yml)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\MiHu\Documents\projects-Idea\my-first-app\conf\messages.sk,C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\messages.sk)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\MiHu\Documents\projects-Idea\my-first-app\conf\openshift.conf,C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\openshift.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\MiHu\Documents\projects-Idea\my-first-app\conf\play-authenticate,C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\play-authenticate)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\MiHu\Documents\projects-Idea\my-first-app\conf\play.plugins,C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\play.plugins)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\MiHu\Documents\projects-Idea\my-first-app\conf\routes,C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\routes)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\MiHu\Documents\projects-Idea\my-first-app\conf\evolutions\default,C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\evolutions\default)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\MiHu\Documents\projects-Idea\my-first-app\conf\evolutions\default\1.sql,C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\evolutions\default\1.sql)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\MiHu\Documents\projects-Idea\my-first-app\conf\play-authenticate\mine.conf,C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\play-authenticate\mine.conf)[0m
