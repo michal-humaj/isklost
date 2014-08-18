@@ -19,8 +19,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import dtos.EventInfoTO;
 import models.*;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.joda.time.DateTimeZone;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
+import org.joda.time.tz.FixedDateTimeZone;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Controller;
@@ -310,18 +312,18 @@ public class Kalendar extends Controller {
                         }
                         System.out.println("min millis " + minMillis);
                         System.out.println("max millis " + maxMillis);
-                        LocalDate jodaStart = new LocalDate(minMillis);
-                        LocalDate jodaEnd = new LocalDate(maxMillis);
-                        LocalDate jodaFind = new LocalDate(findAtMillis);
+                        LocalDate jodaStart = new LocalDate(minMillis, FixedDateTimeZone.UTC);
+                        LocalDate jodaEnd = new LocalDate(maxMillis, FixedDateTimeZone.UTC);
+                        LocalDate jodaFind = new LocalDate(findAtMillis, FixedDateTimeZone.UTC);
                         System.out.println("joda start " + jodaStart);
                         System.out.println("joda end " +jodaEnd);
                         System.out.println("joda find " + jodaFind);
                         if(jodaStart.equals(jodaFind)){
-                            LocalTime time = new LocalTime(minMillis);
+                            LocalTime time = new LocalTime(minMillis, FixedDateTimeZone.UTC);
                             sStart = time.toString("HH:mm");
                         }
                         if(jodaEnd.equals(jodaFind)){
-                            LocalTime time = new LocalTime(maxMillis);
+                            LocalTime time = new LocalTime(maxMillis, FixedDateTimeZone.UTC);
                             sEnd = time.toString("HH:mm");
                         }
                     }
@@ -456,9 +458,8 @@ public class Kalendar extends Controller {
         }else{
             start = event.getStart().getDateTime();
             end = event.getEnd().getDateTime();
-            System.out.println("GOOGLE datetim start " + eventTO.startDate);
-            System.out.println("GOOGLE datetime end  " + eventTO.endDate);
-            System.out.println("GOOGLE datetime end  " + eventTO.endDate);
+            System.out.println("GOOGLE datetim start " + start + " its value " + start.getValue());
+            System.out.println("GOOGLE datetime end  " + end + " its  value " +end.getValue());
 
             eventTO.startDate = new Date(start.getValue());
             eventTO.endDate = new Date(end.getValue());
@@ -466,6 +467,7 @@ public class Kalendar extends Controller {
             System.out.println("created Java end date " + eventTO.endDate);
         }
         DateFormat df = new SimpleDateFormat("HH:mm");
+        df.setTimeZone(TimeZone.getTimeZone("UTC"));
         eventTO.startTime = df.format(eventTO.startDate);
         eventTO.endTime = df.format(eventTO.endDate);
 
