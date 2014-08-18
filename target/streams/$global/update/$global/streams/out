@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for is#is_2.11;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies is#is_2.11;1.0-SNAPSHOT->org.scala-lang#scala-library;2.11.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@636daa83[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@53a8c5a3[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.1 in sbt-chain[0m
@@ -11540,7 +11540,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.11!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.aspectj#aspectjweaver;1.7.3!aspectjweaver.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.trace#trace-sigar-libs;0.1.3!trace-sigar-libs.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 10670ms :: artifacts dl 138ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 11091ms :: artifacts dl 135ms[0m
 [0m[[0mdebug[0m] [0m	report for is#is_2.11;1.0-SNAPSHOT compile produced in C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for is#is_2.11;1.0-SNAPSHOT runtime produced in C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for is#is_2.11;1.0-SNAPSHOT test produced in C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-test.xml[0m
@@ -11558,5 +11558,5 @@
 [0m[[0mdebug[0m] [0m	report for is#is_2.11;1.0-SNAPSHOT echo-trace-test produced in C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-echo-trace-test.xml[0m
 [0m[[0mdebug[0m] [0m	report for is#is_2.11;1.0-SNAPSHOT echo-weave produced in C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-echo-weave.xml[0m
 [0m[[0mdebug[0m] [0m	report for is#is_2.11;1.0-SNAPSHOT echo-sigar produced in C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-echo-sigar.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (10670ms resolve - 138ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (11091ms resolve - 135ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

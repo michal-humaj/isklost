@@ -312,18 +312,18 @@ public class Kalendar extends Controller {
                         }
                         System.out.println("min millis " + minMillis);
                         System.out.println("max millis " + maxMillis);
-                        LocalDate jodaStart = new LocalDate(minMillis, FixedDateTimeZone.UTC);
-                        LocalDate jodaEnd = new LocalDate(maxMillis, FixedDateTimeZone.UTC);
-                        LocalDate jodaFind = new LocalDate(findAtMillis, FixedDateTimeZone.UTC);
+                        LocalDate jodaStart = new LocalDate(minMillis + 7_200_000, FixedDateTimeZone.UTC);
+                        LocalDate jodaEnd = new LocalDate(maxMillis + 7_200_000, FixedDateTimeZone.UTC);
+                        LocalDate jodaFind = new LocalDate(findAtMillis + 7_200_000, FixedDateTimeZone.UTC);
                         System.out.println("joda start " + jodaStart);
                         System.out.println("joda end " +jodaEnd);
                         System.out.println("joda find " + jodaFind);
                         if(jodaStart.equals(jodaFind)){
-                            LocalTime time = new LocalTime(minMillis, FixedDateTimeZone.UTC);
+                            LocalTime time = new LocalTime(minMillis + 7_200_000, FixedDateTimeZone.UTC);
                             sStart = time.toString("HH:mm");
                         }
                         if(jodaEnd.equals(jodaFind)){
-                            LocalTime time = new LocalTime(maxMillis, FixedDateTimeZone.UTC);
+                            LocalTime time = new LocalTime(maxMillis + 7_200_000, FixedDateTimeZone.UTC);
                             sEnd = time.toString("HH:mm");
                         }
                     }
@@ -461,8 +461,8 @@ public class Kalendar extends Controller {
             System.out.println("GOOGLE datetim start " + start + " its value " + start.getValue());
             System.out.println("GOOGLE datetime end  " + end + " its  value " +end.getValue());
 
-            eventTO.startDate = new Date(start.getValue());
-            eventTO.endDate = new Date(end.getValue());
+            eventTO.startDate = new Date(start.getValue() + 7_200_000);
+            eventTO.endDate = new Date(end.getValue() + + 7_200_000);
             System.out.println("created Java start date " + eventTO.startDate);
             System.out.println("created Java end date " + eventTO.endDate);
         }

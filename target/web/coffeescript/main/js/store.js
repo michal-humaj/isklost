@@ -42,16 +42,16 @@
       $("#tableEvents").html("");
       $.each(events, function(index, e) {
         var tr;
-        if (e.eventType === "ACTION") {
-          tr = $('<tr class="event" style="background-color: #92E1C0;">');
-        } else if (e.eventType === "RESERVATION") {
-          tr = $('<tr class="event" style="background-color: #FAD165;">');
-        } else {
-          tr = $('<tr class="event" style="background-color: #CABDBF;">');
-        }
+        tr = $('<tr class="event" >');
         tr.attr("eventType", e.eventType);
         tr.attr("eventId", e.id);
-        tr.append($("<td>").text(e.name));
+        if (e.eventType === "ACTION") {
+          tr.append($("<td>").html("<span class='badge' style='background-color: #92E1C0;'>" + e.name + "</span>"));
+        } else if (e.eventType === "RESERVATION") {
+          tr.append($("<td>").html("<span class='badge' style='background-color: #FAD165;'>" + e.name + "</span>"));
+        } else {
+          tr.append($("<td>").html("<span class='badge' style='background-color: #CABDBF;'>" + e.name + "</span>"));
+        }
         tr.append($("<td>").text((e.start === null ? "" : e.start)));
         tr.append($("<td>").text((e.end === null ? "" : e.end)));
         tr.append($("<td>").html($("#availCalcGroup").html()));
