@@ -15,10 +15,14 @@ import controllers.routes;
 import play.mvc.Http;
 
 import java.util.List;
+import java.util.TimeZone;
 
 public class Global extends GlobalSettings {
 
     public void onStart(final Application app) {
+
+        System.setProperty("user.timezone", "UTC");
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
 
         if(Ebean.find(StoredItem.class).findRowCount() == 0) {
             Ebean.save((List) Yaml.load("initial-data.yml"));
