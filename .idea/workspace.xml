@@ -763,8 +763,9 @@
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\web\coffeescript\main\js\store.js.map" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\web\coffeescript\main\js\tents.js" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\web\coffeescript\main\js\tents.js.map" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Global.java" afterPath="$PROJECT_DIR$/app/Global.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Kalendar.java" afterPath="$PROJECT_DIR$/app/controllers/Kalendar.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/my-first-app.time" afterPath="$PROJECT_DIR$/.idea/my-first-app.time" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="my-first-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -800,18 +801,8 @@
       <file leaf-file-name="Kalendar.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Kalendar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6990" max-vertical-offset="9078">
-              <caret line="470" column="52" selection-start-line="470" selection-start-column="52" selection-end-line="470" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Global.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Global.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1309">
-              <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="7058" max-vertical-offset="9044">
+              <caret line="492" column="74" selection-start-line="492" selection-start-column="74" selection-end-line="492" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -822,6 +813,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.65384614" vertical-offset="408" max-vertical-offset="1581">
               <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Global.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Global.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1309">
+              <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -851,8 +852,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/app/assets/js/store.coffee" />
-        <option value="$PROJECT_DIR$/app/controllers/Kalendar.java" />
         <option value="$PROJECT_DIR$/app/Global.java" />
+        <option value="$PROJECT_DIR$/app/controllers/Kalendar.java" />
         <option value="$PROJECT_DIR$/conf/application.conf" />
       </list>
     </option>
@@ -1112,17 +1113,17 @@
       <changelist id="750c8945-a4d7-4b82-8600-06ed5de90041" name="Default" comment="" />
       <created>1408349653127</created>
       <updated>1408349653127</updated>
-      <workItem from="1408349645316" duration="11749000" />
+      <workItem from="1408349645316" duration="12385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="11749000" />
+    <option name="totallyTimeSpent" value="12385000" />
     <option name="suspendDelayInSeconds" value="120" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1245,18 +1246,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Kalendar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6990" max-vertical-offset="9078">
-          <caret line="470" column="52" selection-start-line="470" selection-start-column="52" selection-end-line="470" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Global.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1309">
           <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Kalendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7058" max-vertical-offset="9044">
+          <caret line="492" column="74" selection-start-line="492" selection-start-column="74" selection-end-line="492" selection-end-column="74" />
           <folding />
         </state>
       </provider>

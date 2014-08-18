@@ -468,7 +468,6 @@ public class Kalendar extends Controller {
             System.out.println("created Java end date " + eventTO.endDate);
         }
         DateFormat df = new SimpleDateFormat("HH:mm");
-        df.setTimeZone(TimeZone.getTimeZone("UTC"));
         eventTO.startTime = df.format(eventTO.startDate);
         eventTO.endTime = df.format(eventTO.endDate);
 
@@ -490,8 +489,8 @@ public class Kalendar extends Controller {
 
         //allday event
         if (eventTO.allDay != null) {
-            DateTime start = new DateTime(true, eventTO.startDate.getTime() + 86_400_000, 0);
-            DateTime end = new DateTime(true, eventTO.endDate.getTime() + 2 * 86_400_000, 0);
+            DateTime start = new DateTime(true, eventTO.startDate.getTime(), 0);
+            DateTime end = new DateTime(true, eventTO.endDate.getTime() + 86_400_000, 0);
             System.out.println("all day event start value " +eventTO.startDate.getTime());
             System.out.println("all day event end value " +eventTO.endDate.getTime());
 
@@ -499,11 +498,10 @@ public class Kalendar extends Controller {
             eventEnd = new EventDateTime().setDate(end);
         } else {//day scheduled event
             DateFormat df = new SimpleDateFormat("HH:mm");
-            df.setTimeZone(TimeZone.getTimeZone("UTC"));
             System.out.println(" day sche event start date value " +eventTO.startDate.getTime() + " parsed startime value " +df.parse(eventTO.startTime).getTime());
             System.out.println("day sche event end date value " +eventTO.endDate.getTime() + " parsed end time value " +df.parse(eventTO.endTime).getTime());
-            DateTime start = new DateTime(eventTO.startDate.getTime() + df.parse(eventTO.startTime).getTime());
-            DateTime end = new DateTime(eventTO.endDate.getTime() + df.parse(eventTO.endTime).getTime());
+            DateTime start = new DateTime(eventTO.startDate.getTime() + df.parse(eventTO.startTime).getTime() - 7_200_000);
+            DateTime end = new DateTime(eventTO.endDate.getTime() + df.parse(eventTO.endTime).getTime() - 7_200_000);
 
             eventStart = new EventDateTime().setDateTime(start);
             eventEnd = new EventDateTime().setDateTime(end);
