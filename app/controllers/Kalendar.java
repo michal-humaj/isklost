@@ -452,7 +452,8 @@ public class Kalendar extends Controller {
         if (eventTO.allDay){
             start = event.getStart().getDate();
             end = event.getEnd().getDate();
-
+            System.out.println("all day event start value " + start.getValue());
+            System.out.println("all day event end value " + end.getValue());
             eventTO.startDate = new Date(start.getValue());
             eventTO.endDate = new Date(end.getValue() - 86_400_000);
         }else{
@@ -462,7 +463,7 @@ public class Kalendar extends Controller {
             System.out.println("GOOGLE datetime end  " + end + " its  value " +end.getValue());
 
             eventTO.startDate = new Date(start.getValue() + 7_200_000);
-            eventTO.endDate = new Date(end.getValue() + + 7_200_000);
+            eventTO.endDate = new Date(end.getValue() + 7_200_000);
             System.out.println("created Java start date " + eventTO.startDate);
             System.out.println("created Java end date " + eventTO.endDate);
         }
@@ -491,12 +492,16 @@ public class Kalendar extends Controller {
         if (eventTO.allDay != null) {
             DateTime start = new DateTime(true, eventTO.startDate.getTime() + 86_400_000, 0);
             DateTime end = new DateTime(true, eventTO.endDate.getTime() + 2 * 86_400_000, 0);
+            System.out.println("all day event start value " +eventTO.startDate.getTime());
+            System.out.println("all day event end value " +eventTO.endDate.getTime());
 
             eventStart = new EventDateTime().setDate(start);
             eventEnd = new EventDateTime().setDate(end);
         } else {//day scheduled event
             DateFormat df = new SimpleDateFormat("HH:mm");
             df.setTimeZone(TimeZone.getTimeZone("UTC"));
+            System.out.println(" day sche event start date value " +eventTO.startDate.getTime() + " parsed startime value " +df.parse(eventTO.startTime).getTime());
+            System.out.println("day sche event end date value " +eventTO.endDate.getTime() + " parsed end time value " +df.parse(eventTO.endTime).getTime());
             DateTime start = new DateTime(eventTO.startDate.getTime() + df.parse(eventTO.startTime).getTime());
             DateTime end = new DateTime(eventTO.endDate.getTime() + df.parse(eventTO.endTime).getTime());
 
