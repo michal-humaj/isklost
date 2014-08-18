@@ -483,7 +483,7 @@ public class Kalendar extends Controller {
             weight = weight.add(entry.getWeight());
         }
         name.append(" | ").append(EventEntry.df.format(weight)).append(" kg");
-        e.setSummary(name.toString());
+        e.setSummary(eventTO.entries.size() == 0 ? eventTO.name : name.toString());
         EventDateTime eventStart;
         EventDateTime eventEnd;
 
@@ -496,8 +496,9 @@ public class Kalendar extends Controller {
             eventEnd = new EventDateTime().setDate(end);
         } else {//day scheduled event
             DateFormat df = new SimpleDateFormat("HH:mm");
-            DateTime start = new DateTime(eventTO.startDate.getTime() + df.parse(eventTO.startTime).getTime() + 3_600_000);
-            DateTime end = new DateTime(eventTO.endDate.getTime() + df.parse(eventTO.endTime).getTime() + 3_600_000);
+            df.setTimeZone(TimeZone.getTimeZone("UTC"));
+            DateTime start = new DateTime(eventTO.startDate.getTime() + df.parse(eventTO.startTime).getTime());
+            DateTime end = new DateTime(eventTO.endDate.getTime() + df.parse(eventTO.endTime).getTime());
 
             eventStart = new EventDateTime().setDateTime(start);
             eventEnd = new EventDateTime().setDateTime(end);

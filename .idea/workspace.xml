@@ -2,6 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="750c8945-a4d7-4b82-8600-06ed5de90041" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\is-1.0-SNAPSHOT-assets.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\is\is_2.11\1.0-SNAPSHOT\resolved.xml.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\is\is_2.11\1.0-SNAPSHOT\resolved.xml.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-compile-internal.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-compile.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-docs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-echo-sigar.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-echo-trace-compile.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-echo-trace-test.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-echo-weave.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-optional.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-plugin.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-provided.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-runtime-internal.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-runtime.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-scala-tool.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-sources.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-test-internal.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\is-is_2.11-test.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\ivy-report.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\resolution-cache\reports\ivy-report.xsl" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\Global.html" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\Routes$.html" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\com\feth\package.html" afterPath="" />
@@ -181,6 +203,331 @@
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\views\html\tent\tentNew$.html" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\views\html\tents$.html" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\views\package.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\cache\root\compile\play_instrumentation" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\cache\root\global\packager-mappings-universal" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Global$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Global.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$com_feth_play_module_pa_controllers_Authenticate_authenticate33_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$com_feth_play_module_pa_controllers_Authenticate_logout32_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Application_login31_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Application_oAuthDenied34_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Assets_at35_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Kalendar_create3_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Kalendar_delete10_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Kalendar_deleteModal9_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Kalendar_drag4_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Kalendar_edit7_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Kalendar_list0_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Kalendar_move5_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Kalendar_priceOffer6_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Kalendar_toDateEvents2_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Kalendar_upcomingActions1_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Kalendar_update8_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Store_availability12_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Store_create14_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Store_decrease22_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Store_decreaseModal23_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Store_delete18_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Store_deleteModal19_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Store_editModal17_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Store_increase20_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Store_increaseModal21_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Store_list11_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Store_listInCategory13_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Store_newModal15_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Store_update16_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Tents_create26_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Tents_delete30_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Tents_deleteModal29_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Tents_edit27_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Tents_list24_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Tents_neu25_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$Routes$$controllers_Tents_update28_invoker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$documentation$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$10$$anonfun$apply$10.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$10.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$11.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$12.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$13.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$14$$anonfun$apply$14.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$14.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$15$$anonfun$apply$15.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$15.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$16$$anonfun$apply$16.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$16.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$17$$anonfun$apply$17.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$17.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$18$$anonfun$apply$18.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$18.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$19$$anonfun$apply$19.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$19.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$20$$anonfun$apply$20.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$20.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$21$$anonfun$apply$21.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$21.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$22$$anonfun$apply$22.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$22.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$23$$anonfun$apply$23.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$23.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$24$$anonfun$apply$24.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$24.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$25.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$26$$anonfun$apply$26.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$26.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$27$$anonfun$apply$27.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$27.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$28$$anonfun$apply$28.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$28.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$29$$anonfun$apply$29.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$29.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$30$$anonfun$apply$30.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$30.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$31$$anonfun$apply$31.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$31.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$32$$anonfun$apply$32.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$32.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$33$$anonfun$apply$33.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$33.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$34$$anonfun$apply$34.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$34.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$35$$anonfun$apply$35.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$35.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$36$$anonfun$apply$36.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$36.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$4$$anonfun$apply$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$5$$anonfun$apply$5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$6$$anonfun$apply$6.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$6.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$7$$anonfun$apply$7.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$7.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$8$$anonfun$apply$8.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$8.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$9$$anonfun$apply$9.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1$$anonfun$applyOrElse$9.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$routes$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$$anonfun$setPrefix$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\Routes.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\application.conf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\com\feth\play\module\pa\controllers\ReverseAuthenticate.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\com\feth\play\module\pa\controllers\javascript\ReverseAuthenticate.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\com\feth\play\module\pa\controllers\ref\ReverseAuthenticate$$anonfun$authenticate$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\com\feth\play\module\pa\controllers\ref\ReverseAuthenticate$$anonfun$logout$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\com\feth\play\module\pa\controllers\ref\ReverseAuthenticate.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\com\feth\play\module\pa\controllers\routes$javascript.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\com\feth\play\module\pa\controllers\routes$ref.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\com\feth\play\module\pa\controllers\routes.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\Application.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\Kalendar.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ReverseApplication.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ReverseAssets.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ReverseKalendar.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ReverseStore.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ReverseTents.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\SecuredAdmin.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\SecuredStoreman.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\Store.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\Tents.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\javascript\ReverseApplication.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\javascript\ReverseAssets.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\javascript\ReverseKalendar.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\javascript\ReverseStore.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\javascript\ReverseTents.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseApplication$$anonfun$login$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseApplication$$anonfun$oAuthDenied$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseApplication.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseAssets$$anonfun$at$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseAssets.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseKalendar$$anonfun$create$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseKalendar$$anonfun$delete$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseKalendar$$anonfun$deleteModal$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseKalendar$$anonfun$drag$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseKalendar$$anonfun$edit$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseKalendar$$anonfun$list$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseKalendar$$anonfun$move$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseKalendar$$anonfun$priceOffer$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseKalendar$$anonfun$toDateEvents$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseKalendar$$anonfun$upcomingActions$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseKalendar$$anonfun$update$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseKalendar.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseStore$$anonfun$availability$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseStore$$anonfun$create$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseStore$$anonfun$decrease$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseStore$$anonfun$decreaseModal$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseStore$$anonfun$delete$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseStore$$anonfun$deleteModal$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseStore$$anonfun$editModal$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseStore$$anonfun$increase$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseStore$$anonfun$increaseModal$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseStore$$anonfun$list$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseStore$$anonfun$listInCategory$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseStore$$anonfun$newModal$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseStore$$anonfun$update$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseStore.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseTents$$anonfun$create$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseTents$$anonfun$delete$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseTents$$anonfun$deleteModal$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseTents$$anonfun$edit$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseTents$$anonfun$list$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseTents$$anonfun$neu$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseTents$$anonfun$update$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\ref\ReverseTents.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\routes$javascript.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\routes$ref.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\controllers\routes.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\dtos\AvailTO.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\dtos\EventInfoTO.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\dtos\EventListTO.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\evolutions\default\1.sql" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\initial-data.yml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\messages.sk" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\models\Accessory.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\models\Category$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\models\Category.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\models\EventEntry.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\models\EventTO.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\models\EventType.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\models\Installation.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\models\Item.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\models\StoredItem.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\models\Tent.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\openshift.conf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\play-authenticate\mine.conf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\play.plugins" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\routes" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\services\MyUserServicePlugin.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\calendar$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\calendar$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\calendar.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\events\eventEdit$$anonfun$apply$1$$anonfun$apply$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\events\eventEdit$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\events\eventEdit$$anonfun$f$1$$anonfun$apply$3$$anonfun$apply$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\events\eventEdit$$anonfun$f$1$$anonfun$apply$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\events\eventEdit$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\events\eventEdit$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\events\eventEdit.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\events\installationEdit$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\events\installationEdit$$anonfun$f$1$$anonfun$apply$2$$anonfun$apply$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\events\installationEdit$$anonfun$f$1$$anonfun$apply$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\events\installationEdit$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\events\installationEdit$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\events\installationEdit.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\eventClickPopover$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\eventClickPopover$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\eventClickPopover$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\eventClickPopover.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\item$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\item$$anonfun$implicitFieldConstructor$1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\item$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\item.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\itemIncDec$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\itemIncDec$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\itemIncDec.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\newEventPopover$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\newEventPopover$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\newEventPopover$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\newEventPopover.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\tent$$anonfun$apply$1$$anonfun$apply$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\tent$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\tent$$anonfun$f$1$$anonfun$apply$3$$anonfun$apply$4$$anonfun$apply$5$$anonfun$apply$6.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\tent$$anonfun$f$1$$anonfun$apply$3$$anonfun$apply$4$$anonfun$apply$5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\tent$$anonfun$f$1$$anonfun$apply$3$$anonfun$apply$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\tent$$anonfun$f$1$$anonfun$apply$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\tent$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\tent$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\forms\tent.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\helpers\horizontalForm$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\helpers\horizontalForm$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\helpers\horizontalForm.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\helpers\plainElement$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\helpers\plainElement$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\helpers\plainElement.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\login$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\login$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\login$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\login.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\calendar$$anonfun$f$1$$anonfun$apply$1$$anonfun$apply$2$$anonfun$apply$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\calendar$$anonfun$f$1$$anonfun$apply$1$$anonfun$apply$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\calendar$$anonfun$f$1$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\calendar$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\calendar$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\calendar.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\main$$anonfun$f$1$$anonfun$apply$1$$anonfun$apply$2$$anonfun$apply$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\main$$anonfun$f$1$$anonfun$apply$1$$anonfun$apply$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\main$$anonfun$f$1$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\main$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\main$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\main.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\modal$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\modal$$anonfun$f$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$apply$4$$anonfun$apply$5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\modal$$anonfun$f$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$apply$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\modal$$anonfun$f$1$$anonfun$apply$2$$anonfun$apply$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\modal$$anonfun$f$1$$anonfun$apply$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\modal$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\modal$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\modal.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\store$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\store$$anonfun$f$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$apply$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\store$$anonfun$f$1$$anonfun$apply$2$$anonfun$apply$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\store$$anonfun$f$1$$anonfun$apply$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\store$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\store$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\store.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\tents$$anonfun$f$1$$anonfun$apply$1$$anonfun$apply$2$$anonfun$apply$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\tents$$anonfun$f$1$$anonfun$apply$1$$anonfun$apply$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\tents$$anonfun$f$1$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\tents$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\tents$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\masters\tents.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\eventDelete$$anonfun$f$1$$anonfun$apply$1$$anonfun$apply$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\eventDelete$$anonfun$f$1$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\eventDelete$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\eventDelete$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\eventDelete.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemDec$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemDec$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemDec.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemDelete$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemDelete$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemDelete.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemEdit$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemEdit$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemEdit.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemInc$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemInc$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemInc.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemNew$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemNew$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\itemNew.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\tentDelete$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\tentDelete$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\modals\tentDelete.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\store$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\store$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\store.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\tent\tentEdit$$anonfun$f$1$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\tent\tentEdit$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\tent\tentEdit$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\tent\tentEdit.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\tent\tentNew$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\tent\tentNew$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\tent\tentNew.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\tents$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\tents$$anonfun$f$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\tents$.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes\views\html\tents.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes_managed\Routes$$anonfun$Routes$$com_feth_play_module_pa_controllers_Authenticate_authenticate33_invoker$1.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes_managed\Routes$$anonfun$Routes$$com_feth_play_module_pa_controllers_Authenticate_logout32_invoker$1.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes_managed\Routes$$anonfun$Routes$$controllers_Application_login31_invoker$1.class" afterPath="" />
@@ -474,6 +821,37 @@
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes_managed\views\html\tents$$anonfun$f$1.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes_managed\views\html\tents$.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\classes_managed\views\html\tents.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\is_2.11-1.0-SNAPSHOT-javadoc.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\is_2.11-1.0-SNAPSHOT-sources.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\is_2.11-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\is_2.11-1.0-SNAPSHOT.pom" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\calendar.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\events\eventEdit.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\events\installationEdit.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\forms\eventClickPopover.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\forms\item.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\forms\itemIncDec.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\forms\newEventPopover.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\forms\tent.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\helpers\horizontalForm.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\helpers\plainElement.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\login.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\masters\calendar.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\masters\main.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\masters\modal.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\masters\store.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\masters\tents.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\modals\eventDelete.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\modals\itemDec.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\modals\itemDelete.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\modals\itemEdit.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\modals\itemInc.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\modals\itemNew.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\modals\tentDelete.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\store.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\tent\tentEdit.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\tent\tentNew.template.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\twirl\main\views\html\tents.template.scala" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\universal\stage\README" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\universal\stage\README.md" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\universal\stage\bin\is" afterPath="" />
@@ -763,7 +1141,10 @@
       <change type="DELETED" beforePath="C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\web\coffeescript\main\js\tents.js.map" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Kalendar.java" afterPath="$PROJECT_DIR$/app/controllers/Kalendar.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/my-first-app.time" afterPath="$PROJECT_DIR$/.idea/my-first-app.time" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/js/store.coffee" afterPath="$PROJECT_DIR$/app/assets/js/store.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/src_managed/main/com/feth/play/module/pa/controllers/routes.java" afterPath="$PROJECT_DIR$/target/scala-2.11/src_managed/main/com/feth/play/module/pa/controllers/routes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/src_managed/main/controllers/routes.java" afterPath="$PROJECT_DIR$/target/scala-2.11/src_managed/main/controllers/routes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/src_managed/main/routes_reverseRouting.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/src_managed/main/routes_reverseRouting.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/src_managed/main/routes_routing.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/src_managed/main/routes_routing.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="my-first-app.iws" />
@@ -800,8 +1181,18 @@
       <file leaf-file-name="Kalendar.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Kalendar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.92" vertical-offset="4193" max-vertical-offset="8976">
-              <caret line="322" column="37" selection-start-line="322" selection-start-column="37" selection-end-line="322" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="7092" max-vertical-offset="8993">
+              <caret line="500" column="103" selection-start-line="500" selection-start-column="103" selection-end-line="500" selection-end-column="103" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventTO.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/EventTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -826,8 +1217,8 @@
       <file leaf-file-name="application.conf" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/conf/application.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4857143" vertical-offset="408" max-vertical-offset="1581">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.65384614" vertical-offset="408" max-vertical-offset="1581">
+              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -856,8 +1247,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/Kalendar.java" />
         <option value="$PROJECT_DIR$/app/assets/js/store.coffee" />
+        <option value="$PROJECT_DIR$/app/controllers/Kalendar.java" />
         <option value="$PROJECT_DIR$/conf/application.conf" />
       </list>
     </option>
@@ -1117,13 +1508,13 @@
       <changelist id="750c8945-a4d7-4b82-8600-06ed5de90041" name="Default" comment="" />
       <created>1408349653127</created>
       <updated>1408349653127</updated>
-      <workItem from="1408349645316" duration="9003000" />
+      <workItem from="1408349645316" duration="10248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="9003000" />
+    <option name="totallyTimeSpent" value="10248000" />
     <option name="suspendDelayInSeconds" value="120" />
   </component>
   <component name="ToolWindowManager">
@@ -1220,14 +1611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Kalendar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.92" vertical-offset="4193" max-vertical-offset="8976">
-          <caret line="322" column="37" selection-start-line="322" selection-start-column="37" selection-end-line="322" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/js/calendar.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2737">
@@ -1250,10 +1633,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/EventTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Kalendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7092" max-vertical-offset="8993">
+          <caret line="500" column="103" selection-start-line="500" selection-start-column="103" selection-end-line="500" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/conf/application.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4857143" vertical-offset="408" max-vertical-offset="1581">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.65384614" vertical-offset="408" max-vertical-offset="1581">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding />
         </state>
       </provider>
