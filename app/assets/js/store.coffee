@@ -70,7 +70,7 @@ loadAvailability = ->
   $(".event").each (i, obj) ->
     a = $(this).find ".btnCheck"
     s = a.attr "class"
-    if s is "btn btn-success btnCheck"
+    if s is "btn btn-success disabled btnCheck"
       types[i] = $(this).attr "eventtype"
       ids[i] = $(this).attr "eventid"
   $.post("/store/items",

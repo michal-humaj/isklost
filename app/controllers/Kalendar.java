@@ -245,6 +245,7 @@ public class Kalendar extends Controller {
     }
 
     public static Result toDateEvents(String millis){
+        System.out.println("Method to Date events with param " + millis);
         try {
             long findAtMillis = Long.parseLong(millis);
             List<EventInfoTO> events = new ArrayList<>();
@@ -307,10 +308,14 @@ public class Kalendar extends Controller {
                             System.out.println("------event date time start --- " + e.getStart().getDateTime());
                             System.out.println("------event date time end --- " + e.getEnd().getDateTime());
                         }
-
+                        System.out.println("min millis " + minMillis);
+                        System.out.println("max millis " + maxMillis);
                         LocalDate jodaStart = new LocalDate(minMillis);
                         LocalDate jodaEnd = new LocalDate(maxMillis);
                         LocalDate jodaFind = new LocalDate(findAtMillis);
+                        System.out.println("joda start " + jodaStart);
+                        System.out.println("joda end " +jodaEnd);
+                        System.out.println("joda find " + jodaFind);
                         if(jodaStart.equals(jodaFind)){
                             LocalTime time = new LocalTime(minMillis);
                             sStart = time.toString("HH:mm");
@@ -451,9 +456,14 @@ public class Kalendar extends Controller {
         }else{
             start = event.getStart().getDateTime();
             end = event.getEnd().getDateTime();
+            System.out.println("GOOGLE datetim start " + eventTO.startDate);
+            System.out.println("GOOGLE datetime end  " + eventTO.endDate);
+            System.out.println("GOOGLE datetime end  " + eventTO.endDate);
 
             eventTO.startDate = new Date(start.getValue());
             eventTO.endDate = new Date(end.getValue());
+            System.out.println("created Java start date " + eventTO.startDate);
+            System.out.println("created Java end date " + eventTO.endDate);
         }
         DateFormat df = new SimpleDateFormat("HH:mm");
         eventTO.startTime = df.format(eventTO.startDate);

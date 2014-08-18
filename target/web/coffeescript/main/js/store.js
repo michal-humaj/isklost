@@ -87,7 +87,7 @@
       var a, s;
       a = $(this).find(".btnCheck");
       s = a.attr("class");
-      if (s === "btn btn-success btnCheck") {
+      if (s === "btn btn-success disabled btnCheck") {
         types[i] = $(this).attr("eventtype");
         return ids[i] = $(this).attr("eventid");
       }
