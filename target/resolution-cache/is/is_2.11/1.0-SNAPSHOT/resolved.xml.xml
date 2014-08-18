@@ -4,7 +4,7 @@
 		module="is_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20140818150314"
+		publication="20140818224322"
 	>
 		<description>
 		is
@@ -53,6 +53,7 @@
 		<dependency org="joda-time" name="joda-time" rev="2.4" conf="compile->default(compile)"/>
 		<dependency org="org.apache.poi" name="poi-ooxml" rev="3.10-FINAL" conf="compile->default(compile)"/>
 		<dependency org="org.apache.poi" name="poi" rev="3.10-FINAL" conf="compile->default(compile)"/>
+		<dependency org="org.json" name="json" rev="20140107" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-jdbc_2.11" rev="2.3.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ebean_2.11" rev="2.3.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.3.1" conf="compile->default(compile)"/>

@@ -6,8 +6,11 @@ import com.feth.play.module.pa.user.AuthUser;
 import com.feth.play.module.pa.user.AuthUserIdentity;
 import com.feth.play.module.pa.user.EmailIdentity;
 import com.feth.play.module.pa.user.NameIdentity;
+import models.User;
 import play.Application;
 import play.mvc.Http;
+
+import java.util.Date;
 
 /**
  * Created by MiHu on 17.7.2014.
@@ -20,14 +23,38 @@ public class MyUserServicePlugin extends UserServicePlugin {
 
     @Override
     public Object save(AuthUser authUser) {
-        return 1L;
+        System.out.println("SAVE");
+        if (authUser instanceof OAuth2AuthUser){
+            OAuth2AuthUser oAuth2AuthUser = (OAuth2AuthUser) authUser;
+            new User(
+                    authUser.getId(),
+                    oAuth2AuthUser.getOAuth2AuthInfo().getRefreshToken(),
+                    new Date().getTime()
+            ).save();
+            String accessToken = oAuth2AuthUser.getOAuth2AuthInfo().getAccessToken();
+            Http.Context.current().session().put("accessToken", accessToken);
+        }
+
+        if (authUser instanceof NameIdentity) {
+            final NameIdentity identity = (NameIdentity) authUser;
+            final String name = identity.getName();
+            if (name != null) {
+                Http.Context.current().session().put("username", name);
+            }
+        }
+        return authUser;
     }
 
     @Override
     public AuthUser update(final AuthUser knownUser)
     {
+        System.out.println("UPDATE");
         if (knownUser instanceof OAuth2AuthUser){
             OAuth2AuthUser oAuth2AuthUser = (OAuth2AuthUser) knownUser;
+            User u = User.find.ref(knownUser.getId());
+            u.refreshToken = oAuth2AuthUser.getOAuth2AuthInfo().getRefreshToken();
+            u.lastUpdate = new Date().getTime();
+            u.update();
             String accessToken = oAuth2AuthUser.getOAuth2AuthInfo().getAccessToken();
             Http.Context.current().session().put("accessToken", accessToken);
         }
@@ -44,7 +71,13 @@ public class MyUserServicePlugin extends UserServicePlugin {
     }
 
     @Override
-    public Object getLocalIdentity(AuthUserIdentity authUserIdentity) {
+    public Object getLocalIdentity(AuthUserIdentity authUserIdentity){
+        int a = User.find.where().eq("userId", authUserIdentity.getId()).findRowCount();
+        if (a == 1) {
+            System.out.println("Get Local Identity returned ID");
+            return authUserIdentity.getId();
+        }
+        System.out.println("Get Local Identity returned NULL");
         return null;
     }
 

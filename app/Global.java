@@ -1,10 +1,14 @@
 import com.avaje.ebean.Ebean;
 import controllers.Kalendar;
 import models.StoredItem;
-import play.Application;
-import play.GlobalSettings;
 import play.libs.Yaml;
 import play.mvc.Call;
+import play.Application;
+import play.GlobalSettings;
+import play.libs.Akka;
+import scala.concurrent.duration.Duration;
+import akka.actor.ActorRef;
+import akka.actor.Props;
 
 import com.feth.play.module.pa.PlayAuthenticate;
 import com.feth.play.module.pa.PlayAuthenticate.Resolver;
@@ -13,9 +17,11 @@ import com.feth.play.module.pa.exceptions.AuthException;
 
 import controllers.routes;
 import play.mvc.Http;
+import scala.concurrent.duration.Duration;
 
 import java.util.List;
 import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 public class Global extends GlobalSettings {
 
@@ -27,6 +33,19 @@ public class Global extends GlobalSettings {
         if(Ebean.find(StoredItem.class).findRowCount() == 0) {
             Ebean.save((List) Yaml.load("initial-data.yml"));
         }
+
+        /*Akka.system().scheduler().schedule(
+                Duration.create(3, TimeUnit.SECONDS),
+                Duration.create(1, TimeUnit.SECONDS),
+                    new Runnable() {
+                        @Override
+                        public void run() {
+
+                                System.out.println("Goro mrtvy pes");
+                        }
+                    },
+                Akka.system().dispatcher()
+        );*/
 
         PlayAuthenticate.setResolver(new Resolver() {
 

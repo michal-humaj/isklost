@@ -38,6 +38,13 @@ create table item (
   constraint pk_item primary key (id))
 ;
 
+create table user (
+  user_id                   varchar(255) not null,
+  refresh_token             varchar(255),
+  last_update               bigint,
+  constraint pk_user primary key (user_id))
+;
+
 create sequence accessory_seq;
 
 create sequence event_entry_seq;
@@ -45,6 +52,8 @@ create sequence event_entry_seq;
 create sequence installation_seq;
 
 create sequence item_seq;
+
+create sequence user_seq;
 
 alter table accessory add constraint fk_accessory_tent_1 foreign key (tent_id) references item (id) on delete restrict on update restrict;
 create index ix_accessory_tent_1 on accessory (tent_id);
@@ -67,6 +76,8 @@ drop table if exists installation;
 
 drop table if exists item;
 
+drop table if exists user;
+
 SET REFERENTIAL_INTEGRITY TRUE;
 
 drop sequence if exists accessory_seq;
@@ -76,4 +87,6 @@ drop sequence if exists event_entry_seq;
 drop sequence if exists installation_seq;
 
 drop sequence if exists item_seq;
+
+drop sequence if exists user_seq;
 

@@ -15,6 +15,7 @@ libraryDependencies ++= Seq(
   "joda-time" % "joda-time" % "2.4",
   "org.apache.poi" % "poi-ooxml" % "3.10-FINAL",
   "org.apache.poi" % "poi" % "3.10-FINAL",
+  "org.json" % "json" % "20140107",
   javaJdbc,
   javaEbean,
   cache,
