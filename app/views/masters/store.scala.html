@@ -18,9 +18,11 @@
                 <ul class="sidebar-menu nav">
                     @for(cat <- Category.values()) {
                         <li>
-                            <a href="#@cat">
-                                <span>@Messages(cat.toString())</span>
-                            </a>
+                            @if(!cat.equals(Category.TENTS)) {
+                                <a href="#@cat">
+                                    <span>@Messages(cat.toString())</span>
+                                </a>
+                            }
                         </li>
                     }
                 </ul>

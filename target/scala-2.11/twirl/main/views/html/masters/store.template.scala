@@ -46,12 +46,14 @@ Seq[Any](format.raw/*1.71*/("""
                 <ul class="sidebar-menu nav">
                     """),_display_(/*19.22*/for(cat <- Category.values()) yield /*19.51*/ {_display_(Seq[Any](format.raw/*19.53*/("""
                         """),format.raw/*20.25*/("""<li>
-                            <a href="#"""),_display_(/*21.40*/cat),format.raw/*21.43*/("""">
-                                <span>"""),_display_(/*22.40*/Messages(cat.toString())),format.raw/*22.64*/("""</span>
-                            </a>
-                        </li>
-                    """)))}),format.raw/*25.22*/("""
-                """),format.raw/*26.17*/("""</ul>
+                            """),_display_(/*21.30*/if(!cat.equals(Category.TENTS))/*21.61*/ {_display_(Seq[Any](format.raw/*21.63*/("""
+                                """),format.raw/*22.33*/("""<a href="#"""),_display_(/*22.44*/cat),format.raw/*22.47*/("""">
+                                    <span>"""),_display_(/*23.44*/Messages(cat.toString())),format.raw/*23.68*/("""</span>
+                                </a>
+                            """)))}),format.raw/*25.30*/("""
+                        """),format.raw/*26.25*/("""</li>
+                    """)))}),format.raw/*27.22*/("""
+                """),format.raw/*28.17*/("""</ul>
             </section>
                 <!-- /.sidebar -->
         </aside>
@@ -60,16 +62,16 @@ Seq[Any](format.raw/*1.71*/("""
         <aside class="right-side">
                 <!-- Main content -->
             <section class="content">
-                """),_display_(/*35.18*/content),format.raw/*35.25*/("""
-            """),format.raw/*36.13*/("""</section><!-- /.content -->
+                """),_display_(/*37.18*/content),format.raw/*37.25*/("""
+            """),format.raw/*38.13*/("""</section><!-- /.content -->
         </aside><!-- /.right-side -->
     </div><!-- ./wrapper -->
 
-""")))}/*40.2*/ {_display_(Seq[Any](format.raw/*40.4*/("""
-    """),format.raw/*41.5*/("""<!-- Datepicker for bootstrap -->
-    <script src='"""),_display_(/*42.19*/routes/*42.25*/.Assets.at("js/bootstrap-datepicker.js")),format.raw/*42.65*/("""' type='text/javascript'></script>
-    <script src='"""),_display_(/*43.19*/routes/*43.25*/.Assets.at("js/bootstrap-datepicker.sk.js")),format.raw/*43.68*/("""' type='text/javascript'></script>
-    """),_display_(/*44.6*/javascripts),format.raw/*44.17*/("""
+""")))}/*42.2*/ {_display_(Seq[Any](format.raw/*42.4*/("""
+    """),format.raw/*43.5*/("""<!-- Datepicker for bootstrap -->
+    <script src='"""),_display_(/*44.19*/routes/*44.25*/.Assets.at("js/bootstrap-datepicker.js")),format.raw/*44.65*/("""' type='text/javascript'></script>
+    <script src='"""),_display_(/*45.19*/routes/*45.25*/.Assets.at("js/bootstrap-datepicker.sk.js")),format.raw/*45.68*/("""' type='text/javascript'></script>
+    """),_display_(/*46.6*/javascripts),format.raw/*46.17*/("""
 """)))}))}
   }
 
@@ -82,11 +84,11 @@ Seq[Any](format.raw/*1.71*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Aug 18 15:03:25 CEST 2014
+                  DATE: Tue Aug 19 09:55:17 UTC 2014
                   SOURCE: C:/Users/MiHu/Documents/projects-Idea/my-first-app/app/views/masters/store.scala.html
-                  HASH: b0b93f91b2e6b90a4f6372c681f2c0f50ea99f95
-                  MATRIX: 746->1|903->70|931->73|945->80|965->92|1004->94|1035->99|1112->150|1126->156|1179->189|1247->232|1278->243|1297->245|1335->247|1367->253|1935->794|1980->823|2020->825|2073->850|2144->894|2168->897|2237->939|2282->963|2405->1055|2450->1072|2771->1366|2799->1373|2840->1386|2956->1484|2995->1486|3027->1491|3106->1543|3121->1549|3182->1589|3262->1642|3277->1648|3341->1691|3407->1731|3439->1742
-                  LINES: 26->1|29->1|31->3|31->3|31->3|31->3|32->4|33->5|33->5|33->5|34->6|34->6|35->7|35->7|37->9|47->19|47->19|47->19|48->20|49->21|49->21|50->22|50->22|53->25|54->26|63->35|63->35|64->36|68->40|68->40|69->41|70->42|70->42|70->42|71->43|71->43|71->43|72->44|72->44
+                  HASH: 25a5ee6ce8307fc13ac673a667f33dafb36ea44f
+                  MATRIX: 746->1|903->70|931->73|945->80|965->92|1004->94|1035->99|1112->150|1126->156|1179->189|1247->232|1278->243|1297->245|1335->247|1367->253|1935->794|1980->823|2020->825|2073->850|2134->884|2174->915|2214->917|2275->950|2313->961|2337->964|2410->1010|2455->1034|2560->1108|2613->1133|2671->1160|2716->1177|3037->1471|3065->1478|3106->1491|3222->1589|3261->1591|3293->1596|3372->1648|3387->1654|3448->1694|3528->1747|3543->1753|3607->1796|3673->1836|3705->1847
+                  LINES: 26->1|29->1|31->3|31->3|31->3|31->3|32->4|33->5|33->5|33->5|34->6|34->6|35->7|35->7|37->9|47->19|47->19|47->19|48->20|49->21|49->21|49->21|50->22|50->22|50->22|51->23|51->23|53->25|54->26|55->27|56->28|65->37|65->37|66->38|70->42|70->42|71->43|72->44|72->44|72->44|73->45|73->45|73->45|74->46|74->46
                   -- GENERATED --
               */
           

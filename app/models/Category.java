@@ -26,9 +26,6 @@ public enum Category {
     public static Map<String,String> eventOptions() {
         LinkedHashMap<String,String> options = new LinkedHashMap<>();
         for(Category c : Category.values()) {
-            switch (c){
-                case CARPETS: continue;
-            }
             options.put(c.toString(), Messages.get(c.toString()) );
         }
         return options;

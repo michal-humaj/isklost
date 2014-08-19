@@ -66,7 +66,6 @@ public class MyUserServicePlugin extends UserServicePlugin {
                 Http.Context.current().session().put("username", name);
             }
         }
-
         return knownUser;
     }
 

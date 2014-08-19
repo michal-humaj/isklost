@@ -203,3 +203,28 @@
     category: TARPS
     amount: 2
     weight: 4.8
+- !!models.StoredItem
+    name: Propánová nápln 11kg
+    category: PB
+    amount: 42
+    weight: 11.3
+- !!models.StoredItem
+    name: Propánová nápln 33kg
+    category: PB
+    amount: 150
+    weight: 35.2
+- !!models.StoredItem
+    name: PB malá
+    category: PB
+    amount: 32
+    weight: 0.45
+- !!models.StoredItem
+    name: ultrasil tmavomodrý
+    category: CARPETS
+    amount: 45.65
+    weight: 0.46
+- !!models.StoredItem
+    name: koberec chlpatý hrubý
+    category: CARPETS
+    amount: 105.36
+    weight: 1.28

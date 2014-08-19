@@ -1,4 +1,5 @@
 import com.avaje.ebean.Ebean;
+import controllers.Cron;
 import controllers.Kalendar;
 import models.StoredItem;
 import play.libs.Yaml;
@@ -34,16 +35,10 @@ public class Global extends GlobalSettings {
             Ebean.save((List) Yaml.load("initial-data.yml"));
         }
 
-        /*Akka.system().scheduler().schedule(
+       /* Akka.system().scheduler().schedule(
                 Duration.create(3, TimeUnit.SECONDS),
                 Duration.create(1, TimeUnit.SECONDS),
-                    new Runnable() {
-                        @Override
-                        public void run() {
-
-                                System.out.println("Goro mrtvy pes");
-                        }
-                    },
+                new Cron(),
                 Akka.system().dispatcher()
         );*/
 
