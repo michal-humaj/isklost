@@ -21,6 +21,7 @@ $(document).ready ->
     todayHighlight: true
   ).on "changeDate", (ev) ->
     return if typeof ev.date is "undefined"
+    return if ev.date.getTime() < d.getTime()
     loadEvents ev.date
 
 loadEvents = (d) ->
@@ -62,9 +63,17 @@ loadEvents = (d) ->
       $("#overlayItems").attr "class", "overlay"
       $("#loadingItems").attr "class", "loading-img"
       loadAvailability()
-    loadAvailability()
+    $.get "/events/sincenow/#{d.getTime()}", (events) ->
+      $.each events, (index, e) ->
+        tr = $('<tr class="eventSinceNow" >')
+        tr.attr "eventType", e.eventType
+        tr.attr "eventId", e.id
+        $("#tableEvents").append tr
+      loadAvailability()
+
 
 loadAvailability = ->
+  console.log "load availability"
   types = new Array()
   ids = new Array()
   $(".event").each (i, obj) ->
@@ -94,7 +103,32 @@ loadAvailability = ->
       $("#linkDelete").attr "href", "/store/item/#{item.id}/delete"
       tr.append $("<td style='width: 133px;'>").html $("#itemManipulationBtnsDiv").html()
       $("#scroll-table").append tr
-    $("#overlayItems").attr "class", ""
-    $("#loadingItems").attr "class", ""
-    $("#scroll-table").scrollspy target: "#scroll-target"
+    typesSinceNow = new Array()
+    idsSinceNow = new Array()
+    $(".eventSinceNow").each (i, obj) ->
+      typesSinceNow[i] = $(this).attr "eventtype"
+      idsSinceNow[i] = $(this).attr "eventid"
+    $.post("/store/carpets",
+      types: typesSinceNow.concat types
+      ids: idsSinceNow.concat ids
+    ).done (carpets) ->
+      $.each carpets, (i, item) ->
+        if item.available < 0
+          tr = $('<tr class="bg-red">')
+        else
+          tr = $('<tr>')
+        tr.attr "id", item.category
+        tr.append $("<td style='width: 390px;'>").text item.name
+        tr.append $('<td>').text item.available
+        tr.append $('<td>').text item.reserved
+        tr.append $('<td>').text item.rented
+        $("#btnInc").attr "href", "/store/item/#{item.id}/inc"
+        $("#linkDec").attr "href", "/store/item/#{item.id}/dec"
+        $("#linkEdit").attr "href", "/store/item/#{item.id}"
+        $("#linkDelete").attr "href", "/store/item/#{item.id}/delete"
+        tr.append $("<td style='width: 133px;'>").html $("#itemManipulationBtnsDiv").html()
+        $("#scroll-table").append tr
+      $("#overlayItems").attr "class", ""
+      $("#loadingItems").attr "class", ""
+      $("#scroll-table").scrollspy target: "#scroll-target"
 

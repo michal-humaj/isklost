@@ -348,6 +348,39 @@ public class Kalendar extends Controller {
         }
     }
 
+    public static Result sinceNowToDateEvents(String millis) throws IOException {
+        List<EventInfoTO> events = new ArrayList<>();
+        long findMaxMillis = Long.parseLong(millis);
+        long findMinMillis = new Date().getTime();
+
+        List<Event> instRelatedActions = new ArrayList<>();
+        final List<Event> installs = findEvents(EventType.INSTALLATION, new DateTime(findMinMillis), new DateTime(findMaxMillis)).getItems();
+        for(Event e:installs){
+            Installation inst;
+            Event action;
+            try {
+                inst = Installation.find.ref(e.getId());
+                action = findEvent(inst.actionId, EventType.ACTION);
+            }catch(EntityNotFoundException ex){
+                continue;
+            }
+            instRelatedActions.add(action);
+        }
+
+        for(EventType eventType : EventType.values()) {
+            if(eventType.equals(EventType.INSTALLATION)) continue;
+            final Set<Event> googleEvents =
+                    new HashSet<>(findEvents(eventType, new DateTime(findMinMillis), new DateTime(findMaxMillis)).getItems());
+            if(eventType.equals(EventType.ACTION)){
+                googleEvents.addAll(instRelatedActions);
+            }
+            for (Event e:googleEvents){
+                events.add(new EventInfoTO(eventType, e.getId()));
+            }
+        }
+        return ok(toJson(events));
+    }
+
     //---------------------------HELPER METHODS---------------------------------------------
 
     public static Map<String,String> options() {

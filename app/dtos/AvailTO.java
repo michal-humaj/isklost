@@ -12,11 +12,11 @@ public class AvailTO {
     public Long id;
     public String name;
     public Category category;
-    public int available;
-    public int reserved;
-    public int rented;
+    public BigDecimal available;
+    public BigDecimal reserved;
+    public BigDecimal rented;
 
-    public AvailTO(Long id, String name, Category category, int available, int reserved, int rented) {
+    public AvailTO(Long id, String name, Category category, BigDecimal available, BigDecimal reserved, BigDecimal rented) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -25,13 +25,13 @@ public class AvailTO {
         this.rented = rented;
     }
 
-    public void reserve(int a){
-        available -= a;
-        reserved += a;
+    public void reserve(BigDecimal a){
+        available = available.subtract(a);
+        reserved = reserved.add(a);
     }
 
-    public void rent(int a){
-        available -= a;
-        rented += a;
+    public void rent(BigDecimal a){
+        available = available.subtract(a);
+        rented = rented.add(a);
     }
 }

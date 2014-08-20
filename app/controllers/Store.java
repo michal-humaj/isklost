@@ -1,5 +1,6 @@
 package controllers;
 
+import com.avaje.ebean.Expr;
 import dtos.AvailTO;
 import dtos.EventInfoTO;
 import dtos.EventListTO;
@@ -16,6 +17,8 @@ import views.html.modals.*;
 import java.math.BigDecimal;
 import java.util.*;
 
+import static com.avaje.ebean.Expr.eq;
+import static com.avaje.ebean.Expr.or;
 import static play.data.Form.form;
 import static play.libs.Json.toJson;
 
@@ -97,7 +100,10 @@ public class Store extends Controller {
         Map<Long, AvailTO> availMap = new LinkedHashMap<>();// get ready map of all items
         List<StoredItem> items = StoredItem.find.orderBy("category").findList();
         for(StoredItem i: items){
-            availMap.put(i.id, new AvailTO(i.id, i.name, i.category, i.amount.intValue(), 0, 0));
+            if(i.category.equals(Category.PB) || i.category.equals(Category.CARPETS)){
+                continue;
+            }
+            availMap.put(i.id, new AvailTO(i.id, i.name, i.category, i.amount, new BigDecimal("0.00"), new BigDecimal("0.00")));
         }
         items = null;
 
@@ -108,6 +114,7 @@ public class Store extends Controller {
             final List<EventEntry> eventEntries = EventEntry.find.where()
                     .eq("eventType", eventList.types.get(i))
                     .eq("eventId", eventList.ids.get(i))
+                    .not(or(eq("item.category", Category.PB), eq("item.category", Category.CARPETS)))
                     .findList();
             entryList.addAll(eventEntries);
         }
@@ -116,23 +123,55 @@ public class Store extends Controller {
         for(EventEntry e : entryList){
             if(e.item instanceof StoredItem){
                 if(e.eventType.equals(EventType.RESERVATION)) {
-                    availMap.get(e.item.id).reserve(e.amount.intValue());
+                    availMap.get(e.item.id).reserve(e.amount);
                 }else{
-                    availMap.get(e.item.id).rent(e.amount.intValue());
+                    availMap.get(e.item.id).rent(e.amount);
                 }
             } else if(e.item instanceof Tent){
                 Tent t = (Tent) e.item;
                 for(Accessory a : t.accessories){
                     if(e.eventType.equals(EventType.RESERVATION)) {
                         availMap.get(a.item.id).reserve(
-                            e.amount.multiply(a.amount).intValue()
+                                e.amount.multiply(a.amount)
                         );
                     }else{
                         availMap.get(a.item.id).rent(
-                            e.amount.multiply(a.amount).intValue()
+                            e.amount.multiply(a.amount)
                         );
                     }
                 }
+            }
+        }
+        return ok(toJson(availMap.values()));
+    }
+
+    public static Result carpetsPbAvailability(){
+        Map<Long, AvailTO> availMap = new LinkedHashMap<>();
+        List<StoredItem> items = StoredItem.find.where().or(
+                eq("category", Category.CARPETS),
+                eq("category", Category.PB)
+        ).orderBy("category").findList();
+        for(StoredItem i: items){
+            availMap.put(i.id, new AvailTO(i.id, i.name, i.category, i.amount, new BigDecimal("0.00"), new BigDecimal("0.00")));
+        }
+        items = null;
+        EventListTO eventList = form(EventListTO.class).bindFromRequest().get();//get ready list with all event entries colliding
+        Set<EventEntry> entrySet = new HashSet<>();
+        for(int i = 0; i < (eventList.ids == null ? 0 : eventList.ids.size()); i++){
+            final List<EventEntry> eventEntries = EventEntry.find.where()
+                    .eq("eventType", eventList.types.get(i))
+                    .eq("eventId", eventList.ids.get(i))
+                    .or(eq("item.category", Category.PB), eq("item.category", Category.CARPETS))
+                    .findList();
+            entrySet.addAll(eventEntries);
+        }
+        eventList = null;
+
+        for(EventEntry e : entrySet){
+            if(e.eventType.equals(EventType.RESERVATION)) {
+                availMap.get(e.item.id).reserve(e.amount);
+            }else{
+                availMap.get(e.item.id).rent(e.amount);
             }
         }
         return ok(toJson(availMap.values()));
