@@ -65,8 +65,12 @@ Seq[Any](format.raw/*1.71*/("""
                     <ul class="nav navbar-nav">
                         <li><a href='"""),_display_(/*39.39*/routes/*39.45*/.Kalendar.list()),format.raw/*39.61*/("""'>Kalendár</a></li>
                         <li><a href='"""),_display_(/*40.39*/routes/*40.45*/.Store.list()),format.raw/*40.58*/("""'>Sklad</a></li>
-                        <li><a href='"""),_display_(/*41.39*/routes/*41.45*/.Tents.list()),format.raw/*41.58*/("""'>Stany</a></li>
-                    </ul>
+                        """),_display_(/*41.26*/currentAuth()/*41.39*/ { auth =>_display_(Seq[Any](format.raw/*41.49*/("""
+                            """),_display_(/*42.30*/if(SecuredAdmin.ADMIN_ID.equals(auth.getId()))/*42.76*/ {_display_(Seq[Any](format.raw/*42.78*/("""
+                                """),format.raw/*43.33*/("""<li><a href='"""),_display_(/*43.47*/routes/*43.53*/.Tents.list()),format.raw/*43.66*/("""'>Stany</a></li>
+                            """)))}),format.raw/*44.30*/("""
+                        """)))}),format.raw/*45.26*/("""
+                    """),format.raw/*46.21*/("""</ul>
                 </div>
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
@@ -74,12 +78,12 @@ Seq[Any](format.raw/*1.71*/("""
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span>"""),_display_(/*50.40*/session/*50.47*/.get("username")),format.raw/*50.63*/("""<i class="caret"></i></span>
+                                <span>"""),_display_(/*54.40*/session/*54.47*/.get("username")),format.raw/*54.63*/("""<i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                     <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src='"""),_display_(/*55.48*/routes/*55.54*/.Assets.at("img/avatar3.png")),format.raw/*55.83*/("""' class="img-circle" alt="User Image" />
+                                    <img src='"""),_display_(/*59.48*/routes/*59.54*/.Assets.at("img/avatar3.png")),format.raw/*59.83*/("""' class="img-circle" alt="User Image" />
                                     <p>
                                         Jane Doe - Web Developer
                                         <small>Member since Nov. 2012</small>
@@ -88,7 +92,7 @@ Seq[Any](format.raw/*1.71*/("""
                                     <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-right">
-                                        <a href=""""),_display_(/*64.51*/com/*64.54*/.feth.play.module.pa.controllers.routes.Authenticate.logout),format.raw/*64.113*/("""" class="btn btn-default btn-flat">
+                                        <a href=""""),_display_(/*68.51*/com/*68.54*/.feth.play.module.pa.controllers.routes.Authenticate.logout),format.raw/*68.113*/("""" class="btn btn-default btn-flat">
                                             Odhlásiť sa</a>
                                     </div>
                                 </li>
@@ -99,15 +103,15 @@ Seq[Any](format.raw/*1.71*/("""
                 </div>
             </nav>
         </header>
-        """),_display_(/*75.10*/content),format.raw/*75.17*/("""
-            """),format.raw/*76.13*/("""<!-- jQuery 2.0.2 -->
+        """),_display_(/*79.10*/content),format.raw/*79.17*/("""
+            """),format.raw/*80.13*/("""<!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
             <!-- Bootstrap -->
-        <script src='"""),_display_(/*79.23*/routes/*79.29*/.Assets.at("js/bootstrap.min.js")),format.raw/*79.62*/("""' type="text/javascript"></script>
+        <script src='"""),_display_(/*83.23*/routes/*83.29*/.Assets.at("js/bootstrap.min.js")),format.raw/*83.62*/("""' type="text/javascript"></script>
             <!-- AdminLTE App -->
-        <script src='"""),_display_(/*81.23*/routes/*81.29*/.Assets.at("js/AdminLTE/app.js")),format.raw/*81.61*/("""' type="text/javascript"></script>
-        """),_display_(/*82.10*/javascripts),format.raw/*82.21*/("""
-    """),format.raw/*83.5*/("""</body>
+        <script src='"""),_display_(/*85.23*/routes/*85.29*/.Assets.at("js/AdminLTE/app.js")),format.raw/*85.61*/("""' type="text/javascript"></script>
+        """),_display_(/*86.10*/javascripts),format.raw/*86.21*/("""
+    """),format.raw/*87.5*/("""</body>
 </html>"""))}
   }
 
@@ -120,11 +124,11 @@ Seq[Any](format.raw/*1.71*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Aug 18 15:03:25 CEST 2014
+                  DATE: Wed Aug 20 16:03:27 UTC 2014
                   SOURCE: C:/Users/MiHu/Documents/projects-Idea/my-first-app/app/views/masters/main.scala.html
-                  HASH: baca9aca1b091d9e5f9621ff01ca69df2461fecb
-                  MATRIX: 745->1|945->70|973->117|1000->118|1107->199|1132->204|1338->383|1353->389|1409->424|1529->517|1544->523|1603->561|1719->650|1734->656|1789->690|1908->782|1923->788|1974->818|2048->865|2080->876|2112->881|2298->1040|2313->1046|2350->1062|2525->1210|2540->1216|2587->1242|3297->1925|3312->1931|3349->1947|3434->2005|3449->2011|3483->2024|3565->2079|3580->2085|3614->2098|4146->2603|4162->2610|4199->2626|4517->2917|4532->2923|4582->2952|5136->3479|5148->3482|5229->3541|5593->3878|5621->3885|5662->3898|5860->4069|5875->4075|5929->4108|6047->4199|6062->4205|6115->4237|6186->4281|6218->4292|6250->4297
-                  LINES: 26->1|29->1|31->4|32->5|36->9|36->9|39->12|39->12|39->12|41->14|41->14|41->14|43->16|43->16|43->16|45->18|45->18|45->18|46->19|46->19|47->20|51->24|51->24|51->24|53->26|53->26|53->26|66->39|66->39|66->39|67->40|67->40|67->40|68->41|68->41|68->41|77->50|77->50|77->50|82->55|82->55|82->55|91->64|91->64|91->64|102->75|102->75|103->76|106->79|106->79|106->79|108->81|108->81|108->81|109->82|109->82|110->83
+                  HASH: ea27a3fdcbd3fa56488d2cca9e73ea743ab787ea
+                  MATRIX: 745->1|945->70|973->117|1000->118|1107->199|1132->204|1338->383|1353->389|1409->424|1529->517|1544->523|1603->561|1719->650|1734->656|1789->690|1908->782|1923->788|1974->818|2048->865|2080->876|2112->881|2298->1040|2313->1046|2350->1062|2525->1210|2540->1216|2587->1242|3297->1925|3312->1931|3349->1947|3434->2005|3449->2011|3483->2024|3552->2066|3574->2079|3622->2089|3679->2119|3734->2165|3774->2167|3835->2200|3876->2214|3891->2220|3925->2233|4002->2279|4059->2305|4108->2326|4603->2794|4619->2801|4656->2817|4974->3108|4989->3114|5039->3143|5593->3670|5605->3673|5686->3732|6050->4069|6078->4076|6119->4089|6317->4260|6332->4266|6386->4299|6504->4390|6519->4396|6572->4428|6643->4472|6675->4483|6707->4488
+                  LINES: 26->1|29->1|31->4|32->5|36->9|36->9|39->12|39->12|39->12|41->14|41->14|41->14|43->16|43->16|43->16|45->18|45->18|45->18|46->19|46->19|47->20|51->24|51->24|51->24|53->26|53->26|53->26|66->39|66->39|66->39|67->40|67->40|67->40|68->41|68->41|68->41|69->42|69->42|69->42|70->43|70->43|70->43|70->43|71->44|72->45|73->46|81->54|81->54|81->54|86->59|86->59|86->59|95->68|95->68|95->68|106->79|106->79|107->80|110->83|110->83|110->83|112->85|112->85|112->85|113->86|113->86|114->87
                   -- GENERATED --
               */
           

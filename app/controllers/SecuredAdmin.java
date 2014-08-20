@@ -30,13 +30,13 @@ import java.util.List;
  */
 public class SecuredAdmin extends Security.Authenticator{
 
-    public static final String ADMIN_ID = "104577664461666247347"; //michal.jumaj
+    public static final String ADMIN_ID = "111607400690713539816"; //xhrasko
 
     @Override
     public String getUsername(final Http.Context ctx) {
         final AuthUser u = PlayAuthenticate.getUser(ctx.session());
         if (u == null) return null;
-        if (ADMIN_ID.equals(u.getId()) || "111607400690713539816".equals(u.getId())) {
+        if (ADMIN_ID.equals(u.getId())) {
             System.out.println("SECURED ADMIN nech sa paci");
             final User user = User.find.ref(u.getId());
             if (new Date().getTime() - user.lastUpdate > 3_500_000){
@@ -51,10 +51,9 @@ public class SecuredAdmin extends Security.Authenticator{
                 System.out.println("A sakra POST sa nerobil ubehlo zatial:  " + (new Date().getTime() - user.lastUpdate));
             }
             return u.getId();
-        } else {
-            System.out.println("SECURED ADMIN NULL pristup odoporeny");
-            return null;
         }
+        System.out.println("SECURED ADMIN NULL pristup odoporeny");
+        return null;
     }
 
     @Override

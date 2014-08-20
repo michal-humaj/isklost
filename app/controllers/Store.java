@@ -25,7 +25,7 @@ import static play.libs.Json.toJson;
 /**
  * Created by MiHu on 22.7.2014.
  */
-@Security.Authenticated(SecuredAdmin.class)
+@Security.Authenticated(SecuredStoreman.class)
 public class Store extends Controller {
 
     public static Result STORE_HOME = redirect(routes.Store.list());

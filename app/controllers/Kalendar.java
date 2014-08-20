@@ -52,7 +52,7 @@ import static play.libs.Json.toJson;
 /**
  * Created by MiHu on 29.7.2014.
  */
-@Security.Authenticated(SecuredAdmin.class)
+@Security.Authenticated(SecuredStoreman.class)
 public class Kalendar extends Controller {
 
     private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();

@@ -151,7 +151,7 @@
 - !!models.StoredItem
     name: krov MO 4x2
     category: CONSTRUCTIONS
-    amount: 12.10
+    amount: 12
     weight: 35
 - !!models.StoredItem
     name: stan noha dlha

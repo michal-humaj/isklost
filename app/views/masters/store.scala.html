@@ -1,5 +1,7 @@
 @(title: String)(stylesheets: Html)(content: Html)(javascripts : Html)
 
+@import com.feth.play.module.pa.views.html._
+
 @masters.main(title) {
     <!-- Datepicker for bootstrap -->
     <link href='@routes.Assets.at("css/datepicker3.css")' rel="stylesheet" type="text/css" />
@@ -12,18 +14,22 @@
                 <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar" id="scroll-target">
                     <!-- Inline datepicker -->
-                <div id="datepicker"></div>
+                @currentAuth() { auth =>
+                    @if(SecuredAdmin.ADMIN_ID.equals(auth.getId())) {
+                        <div id="datepicker"></div>
+                    }
+                }
 
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu nav">
                     @for(cat <- Category.values()) {
-                        <li>
                             @if(!cat.equals(Category.TENTS)) {
+                                <li>
                                 <a href="#@cat">
                                     <span>@Messages(cat.toString())</span>
                                 </a>
+                                </li>
                             }
-                        </li>
                     }
                 </ul>
             </section>

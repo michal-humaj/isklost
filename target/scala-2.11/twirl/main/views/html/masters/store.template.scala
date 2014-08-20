@@ -24,36 +24,41 @@ object store extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Form
 
   /**/
   def apply/*1.2*/(title: String)(stylesheets: Html)(content: Html)(javascripts : Html):play.twirl.api.HtmlFormat.Appendable = {
-      _display_ {
+      _display_ {import com.feth.play.module.pa.views.html._
 
 Seq[Any](format.raw/*1.71*/("""
 
-"""),_display_(/*3.2*/masters/*3.9*/.main(title)/*3.21*/ {_display_(Seq[Any](format.raw/*3.23*/("""
-    """),format.raw/*4.5*/("""<!-- Datepicker for bootstrap -->
-    <link href='"""),_display_(/*5.18*/routes/*5.24*/.Assets.at("css/datepicker3.css")),format.raw/*5.57*/("""' rel="stylesheet" type="text/css" />
-    """),_display_(/*6.6*/stylesheets),format.raw/*6.17*/("""
-""")))}/*7.2*/ {_display_(Seq[Any](format.raw/*7.4*/("""
+"""),format.raw/*4.1*/("""
+"""),_display_(/*5.2*/masters/*5.9*/.main(title)/*5.21*/ {_display_(Seq[Any](format.raw/*5.23*/("""
+    """),format.raw/*6.5*/("""<!-- Datepicker for bootstrap -->
+    <link href='"""),_display_(/*7.18*/routes/*7.24*/.Assets.at("css/datepicker3.css")),format.raw/*7.57*/("""' rel="stylesheet" type="text/css" />
+    """),_display_(/*8.6*/stylesheets),format.raw/*8.17*/("""
+""")))}/*9.2*/ {_display_(Seq[Any](format.raw/*9.4*/("""
 
-    """),format.raw/*9.5*/("""<div class="wrapper row-offcanvas row-offcanvas-left">
+    """),format.raw/*11.5*/("""<div class="wrapper row-offcanvas row-offcanvas-left">
             <!-- Left side column. contains the logo and sidebar -->
         <aside class="left-side sidebar-offcanvas">
                 <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar" id="scroll-target">
                     <!-- Inline datepicker -->
-                <div id="datepicker"></div>
+                """),_display_(/*17.18*/currentAuth()/*17.31*/ { auth =>_display_(Seq[Any](format.raw/*17.41*/("""
+                    """),_display_(/*18.22*/if(SecuredAdmin.ADMIN_ID.equals(auth.getId()))/*18.68*/ {_display_(Seq[Any](format.raw/*18.70*/("""
+                        """),format.raw/*19.25*/("""<div id="datepicker"></div>
+                    """)))}),format.raw/*20.22*/("""
+                """)))}),format.raw/*21.18*/("""
 
-                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    """),format.raw/*23.21*/("""<!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu nav">
-                    """),_display_(/*19.22*/for(cat <- Category.values()) yield /*19.51*/ {_display_(Seq[Any](format.raw/*19.53*/("""
-                        """),format.raw/*20.25*/("""<li>
-                            """),_display_(/*21.30*/if(!cat.equals(Category.TENTS))/*21.61*/ {_display_(Seq[Any](format.raw/*21.63*/("""
-                                """),format.raw/*22.33*/("""<a href="#"""),_display_(/*22.44*/cat),format.raw/*22.47*/("""">
-                                    <span>"""),_display_(/*23.44*/Messages(cat.toString())),format.raw/*23.68*/("""</span>
+                    """),_display_(/*25.22*/for(cat <- Category.values()) yield /*25.51*/ {_display_(Seq[Any](format.raw/*25.53*/("""
+                            """),_display_(/*26.30*/if(!cat.equals(Category.TENTS))/*26.61*/ {_display_(Seq[Any](format.raw/*26.63*/("""
+                                """),format.raw/*27.33*/("""<li>
+                                <a href="#"""),_display_(/*28.44*/cat),format.raw/*28.47*/("""">
+                                    <span>"""),_display_(/*29.44*/Messages(cat.toString())),format.raw/*29.68*/("""</span>
                                 </a>
-                            """)))}),format.raw/*25.30*/("""
-                        """),format.raw/*26.25*/("""</li>
-                    """)))}),format.raw/*27.22*/("""
-                """),format.raw/*28.17*/("""</ul>
+                                </li>
+                            """)))}),format.raw/*32.30*/("""
+                    """)))}),format.raw/*33.22*/("""
+                """),format.raw/*34.17*/("""</ul>
             </section>
                 <!-- /.sidebar -->
         </aside>
@@ -62,16 +67,16 @@ Seq[Any](format.raw/*1.71*/("""
         <aside class="right-side">
                 <!-- Main content -->
             <section class="content">
-                """),_display_(/*37.18*/content),format.raw/*37.25*/("""
-            """),format.raw/*38.13*/("""</section><!-- /.content -->
+                """),_display_(/*43.18*/content),format.raw/*43.25*/("""
+            """),format.raw/*44.13*/("""</section><!-- /.content -->
         </aside><!-- /.right-side -->
     </div><!-- ./wrapper -->
 
-""")))}/*42.2*/ {_display_(Seq[Any](format.raw/*42.4*/("""
-    """),format.raw/*43.5*/("""<!-- Datepicker for bootstrap -->
-    <script src='"""),_display_(/*44.19*/routes/*44.25*/.Assets.at("js/bootstrap-datepicker.js")),format.raw/*44.65*/("""' type='text/javascript'></script>
-    <script src='"""),_display_(/*45.19*/routes/*45.25*/.Assets.at("js/bootstrap-datepicker.sk.js")),format.raw/*45.68*/("""' type='text/javascript'></script>
-    """),_display_(/*46.6*/javascripts),format.raw/*46.17*/("""
+""")))}/*48.2*/ {_display_(Seq[Any](format.raw/*48.4*/("""
+    """),format.raw/*49.5*/("""<!-- Datepicker for bootstrap -->
+    <script src='"""),_display_(/*50.19*/routes/*50.25*/.Assets.at("js/bootstrap-datepicker.js")),format.raw/*50.65*/("""' type='text/javascript'></script>
+    <script src='"""),_display_(/*51.19*/routes/*51.25*/.Assets.at("js/bootstrap-datepicker.sk.js")),format.raw/*51.68*/("""' type='text/javascript'></script>
+    """),_display_(/*52.6*/javascripts),format.raw/*52.17*/("""
 """)))}))}
   }
 
@@ -84,11 +89,11 @@ Seq[Any](format.raw/*1.71*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Tue Aug 19 09:55:17 UTC 2014
+                  DATE: Wed Aug 20 18:08:30 UTC 2014
                   SOURCE: C:/Users/MiHu/Documents/projects-Idea/my-first-app/app/views/masters/store.scala.html
-                  HASH: 25a5ee6ce8307fc13ac673a667f33dafb36ea44f
-                  MATRIX: 746->1|903->70|931->73|945->80|965->92|1004->94|1035->99|1112->150|1126->156|1179->189|1247->232|1278->243|1297->245|1335->247|1367->253|1935->794|1980->823|2020->825|2073->850|2134->884|2174->915|2214->917|2275->950|2313->961|2337->964|2410->1010|2455->1034|2560->1108|2613->1133|2671->1160|2716->1177|3037->1471|3065->1478|3106->1491|3222->1589|3261->1591|3293->1596|3372->1648|3387->1654|3448->1694|3528->1747|3543->1753|3607->1796|3673->1836|3705->1847
-                  LINES: 26->1|29->1|31->3|31->3|31->3|31->3|32->4|33->5|33->5|33->5|34->6|34->6|35->7|35->7|37->9|47->19|47->19|47->19|48->20|49->21|49->21|49->21|50->22|50->22|50->22|51->23|51->23|53->25|54->26|55->27|56->28|65->37|65->37|66->38|70->42|70->42|71->43|72->44|72->44|72->44|73->45|73->45|73->45|74->46|74->46
+                  HASH: 7644adc81c701d85e1d058a8587b3817798eccb7
+                  MATRIX: 746->1|946->70|974->117|1001->119|1015->126|1035->138|1074->140|1105->145|1182->196|1196->202|1249->235|1317->278|1348->289|1367->291|1405->293|1438->299|1831->665|1853->678|1901->688|1950->710|2005->756|2045->758|2098->783|2178->832|2227->850|2277->872|2431->999|2476->1028|2516->1030|2573->1060|2613->1091|2653->1093|2714->1126|2789->1174|2813->1177|2886->1223|2931->1247|3074->1359|3127->1381|3172->1398|3493->1692|3521->1699|3562->1712|3678->1810|3717->1812|3749->1817|3828->1869|3843->1875|3904->1915|3984->1968|3999->1974|4063->2017|4129->2057|4161->2068
+                  LINES: 26->1|29->1|31->4|32->5|32->5|32->5|32->5|33->6|34->7|34->7|34->7|35->8|35->8|36->9|36->9|38->11|44->17|44->17|44->17|45->18|45->18|45->18|46->19|47->20|48->21|50->23|52->25|52->25|52->25|53->26|53->26|53->26|54->27|55->28|55->28|56->29|56->29|59->32|60->33|61->34|70->43|70->43|71->44|75->48|75->48|76->49|77->50|77->50|77->50|78->51|78->51|78->51|79->52|79->52
                   -- GENERATED --
               */
           
