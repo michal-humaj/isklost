@@ -26,12 +26,13 @@ public class MyUserServicePlugin extends UserServicePlugin {
         System.out.println("SAVE");
         if (authUser instanceof OAuth2AuthUser){
             OAuth2AuthUser oAuth2AuthUser = (OAuth2AuthUser) authUser;
+            String accessToken = oAuth2AuthUser.getOAuth2AuthInfo().getAccessToken();
             new User(
                     authUser.getId(),
+                    accessToken,
                     oAuth2AuthUser.getOAuth2AuthInfo().getRefreshToken(),
                     new Date().getTime()
             ).save();
-            String accessToken = oAuth2AuthUser.getOAuth2AuthInfo().getAccessToken();
             Http.Context.current().session().put("accessToken", accessToken);
         }
 
@@ -51,11 +52,13 @@ public class MyUserServicePlugin extends UserServicePlugin {
         System.out.println("UPDATE");
         if (knownUser instanceof OAuth2AuthUser){
             OAuth2AuthUser oAuth2AuthUser = (OAuth2AuthUser) knownUser;
+            String accessToken = oAuth2AuthUser.getOAuth2AuthInfo().getAccessToken();
             User u = User.find.ref(knownUser.getId());
+            u.accessToken = accessToken;
             u.refreshToken = oAuth2AuthUser.getOAuth2AuthInfo().getRefreshToken();
             u.lastUpdate = new Date().getTime();
             u.update();
-            String accessToken = oAuth2AuthUser.getOAuth2AuthInfo().getAccessToken();
+
             Http.Context.current().session().put("accessToken", accessToken);
         }
 

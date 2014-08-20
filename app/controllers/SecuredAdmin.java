@@ -30,16 +30,20 @@ import java.util.List;
  */
 public class SecuredAdmin extends Security.Authenticator{
 
+    public static final String ADMIN_ID = "104577664461666247347"; //michal.jumaj
+
     @Override
     public String getUsername(final Http.Context ctx) {
         final AuthUser u = PlayAuthenticate.getUser(ctx.session());
         if (u == null) return null;
-        if ("104577664461666247347".equals(u.getId()) || "111607400690713539816".equals(u.getId())) {
+        if (ADMIN_ID.equals(u.getId()) || "111607400690713539816".equals(u.getId())) {
             System.out.println("SECURED ADMIN nech sa paci");
             final User user = User.find.ref(u.getId());
             if (new Date().getTime() - user.lastUpdate > 3_500_000){
                 System.out.println("-------------------******************************************-----Som tu idem robit POST");
-                ctx.session().put("accessToken", Application.getNewAccessToken(user.refreshToken));
+                String accessToken = Application.getNewAccessToken(user.refreshToken);
+                ctx.session().put("accessToken",accessToken);
+                user.accessToken = accessToken;
                 user.lastUpdate = new Date().getTime();
                 user.update();
                 return u.getId();

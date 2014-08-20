@@ -57,7 +57,7 @@ public class Kalendar extends Controller {
 
     private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
     private static final JsonFactory JSON_FACTORY = new JacksonFactory();
-    private static final Map<EventType, String> calIds =  ImmutableMap.of(
+    public static final Map<EventType, String> calIds =  ImmutableMap.of(
             EventType.ACTION, "o776rmha219v92fvejs0hahsso@group.calendar.google.com",
             EventType.RESERVATION, "3jg1lna270kjsjb0jjrhhqo5m8@group.calendar.google.com",
             EventType.INSTALLATION, "gehqh0ptgh0i2hkh3f1l4tlerg@group.calendar.google.com",
@@ -196,6 +196,12 @@ public class Kalendar extends Controller {
             for(EventEntry e: entries){
                 e.eventType = to;
                 e.update(e.id);
+            }
+            if (to.equals(EventType.RESERVATION)){
+                final List<Installation> installs = Installation.find.where().eq("actionId", event.getId()).findList();
+                for (Installation i : installs){
+                    i.delete();
+                }
             }
         }catch(IOException e){
             e.printStackTrace();
