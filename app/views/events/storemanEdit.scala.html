@@ -1,0 +1,123 @@
+@(eventType: String)(id: String)(eventForm: Form[EventTO])
+
+@import helper._
+@import views.html.helpers._
+    @implicitField = @{ FieldConstructor(plainElement.f) }
+
+    @entryGroup(field: Field, className: String = "entryGroup", style: String = "") = {
+        <tr class="@className" style="@style">
+            <td>
+            @if(style.equals("")) {
+                @select(
+                    field("item.id"),
+                    options(Item.options( field("item.category").value.toString)),
+                    'id -> "itemSelect0", 'class -> "form-control itemSelect", 'required -> "true"
+                )(implicitField, null)
+            }else{
+                @select(
+                    field("item.id"),
+                    options(Item.options( field("item.category").value.toString)),
+                    'id -> "itemSelect0", 'class -> "form-control itemSelect"
+                )(implicitField, null)
+            }
+            </td>
+            <td>
+            @if(style.equals("")) {
+                @inputText(
+                    field("amount"),
+                    'type -> "number", 'class -> "form-control amountInput", 'min -> "0.01", 'step -> "0.01", 'required -> "true"
+                )
+            }else{
+                @inputText(
+                    field("amount"),
+                    'class -> "form-control amountInput"
+                )
+            }
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger removeEntry">
+                    <i class="fa fa-times"></i>
+                </button>
+            </td>
+        </tr>
+    }
+
+@masters.calendar("IS Klost | " + Messages(eventType)){
+
+}{
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="box box-primary" style="width:960px;">
+
+                <div class="box-header">
+                    <h3 class="box-title" >@eventForm.apply("name").value</h3>
+                    <div class="pull-right box-tools">
+                        <a class="btn btn-primary" href='@routes.Kalendar.contract(eventType, id)'>
+                            <i class="fa fa-download"></i>
+                            @if(EventType.SELFTRANSPORT.toString.equals(eventType)){
+                                Zmluva
+                            }else{
+                                Výkaz
+                            }
+                        </a>
+                    </div>
+                </div>
+                @form(routes.Kalendar.storemanUpdate(eventType, id), 'id -> "form", 'class -> "form-horizontal"){
+                    <div class="box-body">
+                        <ul class="list-unstyled">
+                            @repeat(eventForm("entries")) { entry =>
+                                @if(entry.apply("item.category").value != None && entry.apply("item.category").value.get != "CARPETS"){
+                                    <li>
+                                       <b>@entry.apply("amount").value.get.split('.')(0)
+                                        KS</b>
+                                        @entry.apply("item.name").value.get
+                                    </li>
+                                }
+                            }
+                        </ul>
+                        <hr>
+                        <h4>Potrebné koberce</h4>
+                    </div>
+
+                    <div class="box-body no-padding">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width:820px;">Koberec</th>
+                                    <th>Dlžka</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @repeat(eventForm("entries")) { entry =>
+                                    @if(entry.apply("item.category").value != None && entry.apply("item.category").value.get == "CARPETS"){
+                                        @entryGroup(entry)
+                                    }
+                                }
+                                @entryGroup(
+                                    eventForm("entries[x]"),
+                                    "entryGroupTemplate",
+                                    "display:none;"
+                                )
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="box-footer">
+
+                        <button type="submit" class="btn btn-primary">Uložiť</button>
+                        <a type="button" class="btn btn-default" href="@routes.Kalendar.list()">Späť</a>
+                        <button type="button" style="margin-right: -2px;" class="pull-right btn btn-info" id="addEntry">
+                            <i class="fa fa-plus"></i>
+                        </button>
+
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+}{
+    <script type="text/javascript" src='@routes.Assets.at("js/storeman/event.js")'></script>
+}
