@@ -30,11 +30,18 @@
         </td>
         <td>
         @if(style.equals("")) {
-            @inputText(
-                field("amount"),
-                'type -> "number", 'class -> "form-control amountInput", 'min -> "1", 'required -> "true"
-            )
-        }else{
+            @if(field("item.category").value.toString == "Some(CARPETS)") {
+                @inputText(
+                    field("amount"),
+                    'type -> "number", 'class -> "form-control amountInput", 'min -> "0.01", 'step -> "0.01", 'required -> "true"
+                )
+            }else {
+                @inputText(
+                    field("amount"),
+                    'type -> "number", 'class -> "form-control amountInput", 'min -> "1", 'required -> "true"
+                )
+            }
+        }else {
             @inputText(
                 field("amount"),
                 'class -> "form-control amountInput"

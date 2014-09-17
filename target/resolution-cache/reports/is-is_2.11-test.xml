@@ -7,7 +7,7 @@
 		revision="1.0-SNAPSHOT"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, echo-trace-compile, echo-trace-test, echo-weave, echo-sigar"
-		date="20140818224322"/>
+		date="20140917112356"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="play-java-ebean_2.11">
 			<revision name="2.3.1" status="release" pubdate="20140715073054" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="84">
@@ -114,14 +114,14 @@
 			</revision>
 		</module>
 		<module organisation="org.json" name="json">
-			<revision name="20140107" status="release" pubdate="20140107193602" resolver="public" artresolver="public" homepage="https://github.com/douglascrockford/JSON-java" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master, master(*), compile(*), runtime(*)" position="78">
+			<revision name="20140107" status="release" pubdate="20140107193602" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/douglascrockford/JSON-java" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master, master(*), compile(*), runtime(*)" position="78">
 				<license name="The JSON License" url="http://json.org/license.html"/>
-				<metadata-artifact status="successful" details="" size="4188" time="376" location="C:\Users\MiHu\.ivy2\cache\org.json\json\ivy-20140107.xml" searched="true" original-local-location="C:\Users\MiHu\.ivy2\cache\org.json\json\ivy-20140107.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/json/json/20140107/json-20140107.pom"/>
+				<metadata-artifact status="no" details="" size="3585" time="0" location="C:\Users\MiHu\.ivy2\cache\org.json\json\ivy-20140107.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/json/json/20140107/json-20140107.pom"/>
 				<caller organisation="org.seleniumhq.selenium" name="selenium-api" conf="compile, runtime" rev="20080701" rev-constraint-default="20080701" rev-constraint-dynamic="20080701" callerrev="2.39.0"/>
 				<caller organisation="org.seleniumhq.selenium" name="selenium-remote-driver" conf="compile, runtime" rev="20080701" rev-constraint-default="20080701" rev-constraint-dynamic="20080701" callerrev="2.39.0"/>
 				<caller organisation="is" name="is_2.11" conf="test, compile, runtime" rev="20140107" rev-constraint-default="20140107" rev-constraint-dynamic="20140107" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="json" type="jar" ext="jar" status="successful" details="" size="64952" time="487" location="C:\Users\MiHu\.ivy2\cache\org.json\json\jars\json-20140107.jar">
+					<artifact name="json" type="jar" ext="jar" status="no" details="" size="64952" time="0" location="C:\Users\MiHu\.ivy2\cache\org.json\json\jars\json-20140107.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/json/json/20140107/json-20140107.jar"/>
 					</artifact>
 				</artifacts>

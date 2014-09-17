@@ -43,7 +43,7 @@ Seq[Any](format.raw/*1.47*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Aug 18 15:03:25 CEST 2014
+                  DATE: Wed Sep 17 11:24:01 BST 2014
                   SOURCE: C:/Users/MiHu/Documents/projects-Idea/my-first-app/app/views/modals/eventDelete.scala.html
                   HASH: b5df5ad76bf6054e54bc49052c23986ee71f6322
                   MATRIX: 750->1|914->46|944->84|972->87|1004->111|1023->122|1070->161|1092->175|1130->176|1162->182|1200->194|1224->198

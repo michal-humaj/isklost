@@ -54,17 +54,24 @@ Seq[Any](format.raw/*7.84*/("""
         """),format.raw/*30.9*/("""</td>
         <td>
         """),_display_(/*32.10*/if(style.equals(""))/*32.30*/ {_display_(Seq[Any](format.raw/*32.32*/("""
-            """),_display_(/*33.14*/inputText(
-                field("amount"),
-                'type -> "number", 'class -> "form-control amountInput", 'min -> "1", 'required -> "true"
-            )),format.raw/*36.14*/("""
-        """)))}/*37.10*/else/*37.14*/{_display_(Seq[Any](format.raw/*37.15*/("""
-            """),_display_(/*38.14*/inputText(
+            """),_display_(/*33.14*/if(field("item.category").value.toString == "Some(CARPETS)")/*33.74*/ {_display_(Seq[Any](format.raw/*33.76*/("""
+                """),_display_(/*34.18*/inputText(
+                    field("amount"),
+                    'type -> "number", 'class -> "form-control amountInput", 'min -> "0.01", 'step -> "0.01", 'required -> "true"
+                )),format.raw/*37.18*/("""
+            """)))}/*38.14*/else/*38.19*/{_display_(Seq[Any](format.raw/*38.20*/("""
+                """),_display_(/*39.18*/inputText(
+                    field("amount"),
+                    'type -> "number", 'class -> "form-control amountInput", 'min -> "1", 'required -> "true"
+                )),format.raw/*42.18*/("""
+            """)))}),format.raw/*43.14*/("""
+        """)))}/*44.10*/else/*44.15*/{_display_(Seq[Any](format.raw/*44.16*/("""
+            """),_display_(/*45.14*/inputText(
                 field("amount"),
                 'class -> "form-control amountInput"
-            )),format.raw/*41.14*/("""
-        """)))}),format.raw/*42.10*/("""
-        """),format.raw/*43.9*/("""</td>
+            )),format.raw/*48.14*/("""
+        """)))}),format.raw/*49.10*/("""
+        """),format.raw/*50.9*/("""</td>
         <td>
             <button type="button" class="btn btn-danger removeEntry">
                 <i class="fa fa-times"></i>
@@ -76,40 +83,40 @@ Seq[Any](format.raw/*1.59*/("""
 
 """),format.raw/*5.55*/("""
 
-"""),format.raw/*50.2*/("""
+"""),format.raw/*57.2*/("""
 
-"""),_display_(/*52.2*/masters/*52.9*/.calendar("IS Klost | " + Messages(eventType))/*52.55*/{_display_(Seq[Any](format.raw/*52.56*/("""
+"""),_display_(/*59.2*/masters/*59.9*/.calendar("IS Klost | " + Messages(eventType))/*59.55*/{_display_(Seq[Any](format.raw/*59.56*/("""
 
-""")))}/*54.2*/{_display_(Seq[Any](format.raw/*54.3*/("""
-    """),format.raw/*55.5*/("""<div class="row">
+""")))}/*61.2*/{_display_(Seq[Any](format.raw/*61.3*/("""
+    """),format.raw/*62.5*/("""<div class="row">
         <div class="col-md-12">
 
             <div class="box box-solid box-primary" style="width:960px;">
 
                 <div class="box-header">
-                    <h3 class="box-title">"""),_display_(/*61.44*/Messages(eventType)),format.raw/*61.63*/("""</h3>
+                    <h3 class="box-title">"""),_display_(/*68.44*/Messages(eventType)),format.raw/*68.63*/("""</h3>
                 </div>
 
-                """),_display_(/*64.18*/form(routes.Kalendar.update(eventType, id), 'id -> "form", 'class -> "form-horizontal")/*64.105*/{_display_(Seq[Any](format.raw/*64.106*/("""
-                    """),format.raw/*65.21*/("""<div class="box-body">
+                """),_display_(/*71.18*/form(routes.Kalendar.update(eventType, id), 'id -> "form", 'class -> "form-horizontal")/*71.105*/{_display_(Seq[Any](format.raw/*71.106*/("""
+                    """),format.raw/*72.21*/("""<div class="box-body">
 
                         <div class="form-group">
                             <label class="col-sm-1 control-label">Názov</label>
                             <div class="col-sm-11">
-                                """),_display_(/*70.34*/inputText(eventForm("name"), 'class -> "form-control", 'required -> "true")),format.raw/*70.109*/("""
-                            """),format.raw/*71.29*/("""</div>
+                                """),_display_(/*77.34*/inputText(eventForm("name"), 'class -> "form-control", 'required -> "true")),format.raw/*77.109*/("""
+                            """),format.raw/*78.29*/("""</div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-1 control-label"></label>
                             <div class="col-sm-11">
                                 <div class="checkbox">
                                     <label id="checkboxAllDay">
-                                        """),_display_(/*78.42*/if(eventForm.apply("allDay").value.equals("true"))/*78.92*/{_display_(Seq[Any](format.raw/*78.93*/("""
-                                            """),_display_(/*79.46*/inputText(eventForm("allDay"), 'type -> "checkbox", 'checked -> "true")),format.raw/*79.117*/("""
-                                        """)))}/*80.42*/else/*80.47*/{_display_(Seq[Any](format.raw/*80.48*/("""
-                                            """),_display_(/*81.46*/inputText(eventForm("allDay"), 'type -> "checkbox")),format.raw/*81.97*/("""
-                                        """)))}),format.raw/*82.42*/("""
-                                        """),format.raw/*83.41*/("""Celý deň
+                                        """),_display_(/*85.42*/if(eventForm.apply("allDay").value.equals("true"))/*85.92*/{_display_(Seq[Any](format.raw/*85.93*/("""
+                                            """),_display_(/*86.46*/inputText(eventForm("allDay"), 'type -> "checkbox", 'checked -> "true")),format.raw/*86.117*/("""
+                                        """)))}/*87.42*/else/*87.47*/{_display_(Seq[Any](format.raw/*87.48*/("""
+                                            """),_display_(/*88.46*/inputText(eventForm("allDay"), 'type -> "checkbox")),format.raw/*88.97*/("""
+                                        """)))}),format.raw/*89.42*/("""
+                                        """),format.raw/*90.41*/("""Celý deň
                                     </label>
                                 </div>
                             </div>
@@ -117,20 +124,20 @@ Seq[Any](format.raw/*1.59*/("""
                         <div class="form-group">
                             <label class="col-sm-1 control-label">Začiatok</label>
                             <div class="col-sm-3">
-                                """),_display_(/*91.34*/inputText(eventForm("startDate"), 'id -> "startDate", 'type -> "date", 'class -> "form-control", 'required -> "true")),format.raw/*91.151*/("""
-                            """),format.raw/*92.29*/("""</div>
+                                """),_display_(/*98.34*/inputText(eventForm("startDate"), 'id -> "startDate", 'type -> "date", 'class -> "form-control", 'required -> "true")),format.raw/*98.151*/("""
+                            """),format.raw/*99.29*/("""</div>
                             <div class="col-sm-2">
-                                """),_display_(/*94.34*/inputText(eventForm("startTime"), 'id -> "timeInputStart", 'type -> "time", 'class -> "form-control", 'required -> "true")),format.raw/*94.156*/("""
-                            """),format.raw/*95.29*/("""</div>
+                                """),_display_(/*101.34*/inputText(eventForm("startTime"), 'id -> "timeInputStart", 'type -> "time", 'class -> "form-control", 'required -> "true")),format.raw/*101.156*/("""
+                            """),format.raw/*102.29*/("""</div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-1 control-label">Koniec</label>
                             <div class="col-sm-3">
-                                """),_display_(/*100.34*/inputText(eventForm("endDate"), 'id -> "endDate",  'type -> "date", 'class -> "form-control", 'required -> "true")),format.raw/*100.148*/("""
-                            """),format.raw/*101.29*/("""</div>
+                                """),_display_(/*107.34*/inputText(eventForm("endDate"), 'id -> "endDate",  'type -> "date", 'class -> "form-control", 'required -> "true")),format.raw/*107.148*/("""
+                            """),format.raw/*108.29*/("""</div>
                             <div class="col-sm-2">
-                                """),_display_(/*103.34*/inputText(eventForm("endTime"), 'id -> "timeInputEnd", 'type -> "time", 'class -> "form-control", 'required -> "true")),format.raw/*103.152*/("""
-                            """),format.raw/*104.29*/("""</div>
+                                """),_display_(/*110.34*/inputText(eventForm("endTime"), 'id -> "timeInputEnd", 'type -> "time", 'class -> "form-control", 'required -> "true")),format.raw/*110.152*/("""
+                            """),format.raw/*111.29*/("""</div>
                         </div>
                         <hr>
                         <h4>Potrebné položky</h4>
@@ -148,34 +155,34 @@ Seq[Any](format.raw/*1.59*/("""
                                 </tr>
                             </thead>
                             <tbody>
-                                """),_display_(/*122.34*/repeat(eventForm("entries"))/*122.62*/ { entry =>_display_(Seq[Any](format.raw/*122.73*/("""
-                                    """),_display_(/*123.38*/entryGroup(entry)),format.raw/*123.55*/("""
-                                """)))}),format.raw/*124.34*/("""
-                                """),_display_(/*125.34*/entryGroup(
+                                """),_display_(/*129.34*/repeat(eventForm("entries"))/*129.62*/ { entry =>_display_(Seq[Any](format.raw/*129.73*/("""
+                                    """),_display_(/*130.38*/entryGroup(entry)),format.raw/*130.55*/("""
+                                """)))}),format.raw/*131.34*/("""
+                                """),_display_(/*132.34*/entryGroup(
                                     eventForm("entries[x]"),
                                     "entryGroupTemplate",
                                     "display:none;"
-                                )),format.raw/*129.34*/("""
-                            """),format.raw/*130.29*/("""</tbody>
+                                )),format.raw/*136.34*/("""
+                            """),format.raw/*137.29*/("""</tbody>
                         </table>
                     </div>
 
                     <div class="box-footer">
 
                         <button type="submit" class="btn btn-primary">Uložiť</button>
-                        <a type="button" class="btn btn-default" href=""""),_display_(/*137.73*/routes/*137.79*/.Kalendar.list()),format.raw/*137.95*/("""">Späť</a>
+                        <a type="button" class="btn btn-default" href=""""),_display_(/*144.73*/routes/*144.79*/.Kalendar.list()),format.raw/*144.95*/("""">Späť</a>
                         <button type="button" style="margin-right: -2px;" class="pull-right btn btn-info" id="addEntry">
                             <i class="fa fa-plus"></i>
                         </button>
 
                     </div>
-                """)))}),format.raw/*143.18*/("""
-            """),format.raw/*144.13*/("""</div>
+                """)))}),format.raw/*150.18*/("""
+            """),format.raw/*151.13*/("""</div>
 
         </div>
     </div>
-""")))}/*148.2*/{_display_(Seq[Any](format.raw/*148.3*/("""
-    """),format.raw/*149.5*/("""<script type="text/javascript" src='"""),_display_(/*149.42*/routes/*149.48*/.Assets.at("js/event.js")),format.raw/*149.73*/("""'></script>
+""")))}/*155.2*/{_display_(Seq[Any](format.raw/*155.3*/("""
+    """),format.raw/*156.5*/("""<script type="text/javascript" src='"""),_display_(/*156.42*/routes/*156.48*/.Assets.at("js/event.js")),format.raw/*156.73*/("""'></script>
 """)))}))}
   }
 
@@ -188,11 +195,11 @@ Seq[Any](format.raw/*1.59*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Aug 18 15:03:25 CEST 2014
+                  DATE: Wed Sep 17 11:24:00 BST 2014
                   SOURCE: C:/Users/MiHu/Documents/projects-Idea/my-first-app/app/views/events/eventEdit.scala.html
-                  HASH: c4f98c40b197f173a933bdc9fd7d80183509f785
-                  MATRIX: 755->1|926->169|944->179|1092->251|1124->257|1162->269|1191->278|1227->288|1252->293|1306->320|1494->499|1536->520|1573->530|1630->560|1659->580|1699->582|1741->597|1983->830|2025->851|2055->862|2068->866|2107->867|2149->882|2370->1094|2412->1115|2454->1126|2491->1136|2548->1166|2577->1186|2617->1188|2659->1203|2846->1369|2876->1380|2889->1384|2928->1385|2970->1400|3104->1513|3146->1524|3183->1534|3401->111|3422->124|3492->58|3523->164|3554->1721|3585->1726|3600->1733|3655->1779|3694->1780|3717->1785|3755->1786|3788->1792|4030->2007|4070->2026|4147->2076|4244->2163|4284->2164|4334->2186|4604->2429|4701->2504|4759->2534|5167->2915|5226->2965|5265->2966|5339->3013|5432->3084|5494->3127|5507->3132|5546->3133|5620->3180|5692->3231|5766->3274|5836->3316|6246->3699|6385->3816|6443->3846|6563->3939|6707->4061|6765->4091|7050->4348|7187->4462|7246->4492|7367->4585|7508->4703|7567->4733|8323->5461|8361->5489|8411->5500|8478->5539|8517->5556|8584->5591|8647->5626|8889->5846|8948->5876|9257->6157|9273->6163|9311->6179|9615->6451|9658->6465|9716->6504|9755->6505|9789->6511|9854->6548|9870->6554|9917->6579
-                  LINES: 26->1|29->7|29->7|31->7|32->8|32->8|32->8|32->8|32->8|34->10|38->14|38->14|39->15|41->17|41->17|41->17|42->18|46->22|46->22|47->23|47->23|47->23|48->24|52->28|52->28|53->29|54->30|56->32|56->32|56->32|57->33|60->36|61->37|61->37|61->37|62->38|65->41|66->42|67->43|74->5|74->5|75->1|77->5|79->50|81->52|81->52|81->52|81->52|83->54|83->54|84->55|90->61|90->61|93->64|93->64|93->64|94->65|99->70|99->70|100->71|107->78|107->78|107->78|108->79|108->79|109->80|109->80|109->80|110->81|110->81|111->82|112->83|120->91|120->91|121->92|123->94|123->94|124->95|129->100|129->100|130->101|132->103|132->103|133->104|151->122|151->122|151->122|152->123|152->123|153->124|154->125|158->129|159->130|166->137|166->137|166->137|172->143|173->144|177->148|177->148|178->149|178->149|178->149|178->149
+                  HASH: bb51c17c4d93de48d403f2356741c4d35a96cefb
+                  MATRIX: 755->1|926->169|944->179|1092->251|1124->257|1162->269|1191->278|1227->288|1252->293|1306->320|1494->499|1536->520|1573->530|1630->560|1659->580|1699->582|1741->597|1983->830|2025->851|2055->862|2068->866|2107->867|2149->882|2370->1094|2412->1115|2454->1126|2491->1136|2548->1166|2577->1186|2617->1188|2659->1203|2728->1263|2768->1265|2814->1284|3033->1482|3067->1497|3080->1502|3119->1503|3165->1522|3364->1700|3410->1715|3440->1726|3453->1731|3492->1732|3534->1747|3668->1860|3710->1871|3747->1881|3965->111|3986->124|4056->58|4087->164|4118->2068|4149->2073|4164->2080|4219->2126|4258->2127|4281->2132|4319->2133|4352->2139|4594->2354|4634->2373|4711->2423|4808->2510|4848->2511|4898->2533|5168->2776|5265->2851|5323->2881|5731->3262|5790->3312|5829->3313|5903->3360|5996->3431|6058->3474|6071->3479|6110->3480|6184->3527|6256->3578|6330->3621|6400->3663|6810->4046|6949->4163|7007->4193|7128->4286|7273->4408|7332->4438|7617->4695|7754->4809|7813->4839|7934->4932|8075->5050|8134->5080|8890->5808|8928->5836|8978->5847|9045->5886|9084->5903|9151->5938|9214->5973|9456->6193|9515->6223|9824->6504|9840->6510|9878->6526|10182->6798|10225->6812|10283->6851|10322->6852|10356->6858|10421->6895|10437->6901|10484->6926
+                  LINES: 26->1|29->7|29->7|31->7|32->8|32->8|32->8|32->8|32->8|34->10|38->14|38->14|39->15|41->17|41->17|41->17|42->18|46->22|46->22|47->23|47->23|47->23|48->24|52->28|52->28|53->29|54->30|56->32|56->32|56->32|57->33|57->33|57->33|58->34|61->37|62->38|62->38|62->38|63->39|66->42|67->43|68->44|68->44|68->44|69->45|72->48|73->49|74->50|81->5|81->5|82->1|84->5|86->57|88->59|88->59|88->59|88->59|90->61|90->61|91->62|97->68|97->68|100->71|100->71|100->71|101->72|106->77|106->77|107->78|114->85|114->85|114->85|115->86|115->86|116->87|116->87|116->87|117->88|117->88|118->89|119->90|127->98|127->98|128->99|130->101|130->101|131->102|136->107|136->107|137->108|139->110|139->110|140->111|158->129|158->129|158->129|159->130|159->130|160->131|161->132|165->136|166->137|173->144|173->144|173->144|179->150|180->151|184->155|184->155|185->156|185->156|185->156|185->156
                   -- GENERATED --
               */
           

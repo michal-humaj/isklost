@@ -1,5 +1,9 @@
 [0m[[0minfo[0m] [0mPackaging C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\is_2.11-1.0-SNAPSHOT-sources.jar ...[0m
 [0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	models\User.java[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\app\models\User.java[0m
+[0m[[0mdebug[0m] [0m	controllers\Cron.java[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\app\controllers\Cron.java[0m
 [0m[[0mdebug[0m] [0m	controllers\Store.java[0m
 [0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\app\controllers\Store.java[0m
 [0m[[0mdebug[0m] [0m	initial-data.yml[0m

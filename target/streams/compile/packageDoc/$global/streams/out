@@ -8,6 +8,8 @@
 [0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\lib\remove.png[0m
 [0m[[0mdebug[0m] [0m	com\feth\play\module\package.html[0m
 [0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\com\feth\play\module\package.html[0m
+[0m[[0mdebug[0m] [0m	views\html\events\storemanEdit$.html[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\views\html\events\storemanEdit$.html[0m
 [0m[[0mdebug[0m] [0m	views\html\helpers\package.html[0m
 [0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\views\html\helpers\package.html[0m
 [0m[[0mdebug[0m] [0m	lib\package_big.png[0m
@@ -82,6 +84,8 @@
 [0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\com\feth\play\module\pa\controllers\javascript[0m
 [0m[[0mdebug[0m] [0m	models\Accessory.html[0m
 [0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\models\Accessory.html[0m
+[0m[[0mdebug[0m] [0m	models\User.html[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\models\User.html[0m
 [0m[[0mdebug[0m] [0m	com\feth\play\module\pa\controllers\package.html[0m
 [0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\com\feth\play\module\pa\controllers\package.html[0m
 [0m[[0mdebug[0m] [0m	views\html\helpers\horizontalForm$.html[0m
@@ -258,6 +262,8 @@
 [0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\models[0m
 [0m[[0mdebug[0m] [0m	views[0m
 [0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\views[0m
+[0m[[0mdebug[0m] [0m	controllers\Cron.html[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\controllers\Cron.html[0m
 [0m[[0mdebug[0m] [0m	lib\class_to_object_big.png[0m
 [0m[[0mdebug[0m] [0m	  C:\Users\MiHu\Documents\projects-Idea\my-first-app\target\scala-2.11\api\lib\class_to_object_big.png[0m
 [0m[[0mdebug[0m] [0m	controllers\ref\ReverseTents.html[0m

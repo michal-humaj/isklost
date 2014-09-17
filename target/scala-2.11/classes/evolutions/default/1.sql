@@ -40,6 +40,7 @@ create table item (
 
 create table user (
   user_id                   varchar(255) not null,
+  access_token              varchar(255),
   refresh_token             varchar(255),
   last_update               bigint,
   constraint pk_user primary key (user_id))

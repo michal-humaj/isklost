@@ -28,8 +28,9 @@ public class SecuredStoreman extends Security.Authenticator{
             System.out.println("SECURED ADMIN nech sa paci");
             final User user = User.find.ref(u.getId());
             if (new Date().getTime() - user.lastUpdate > 3_500_000){
-                System.out.println("-------------------******************************************-----Som tu idem robit POST");
+                System.out.println("-------------------******************************************-----Som tu idem robit POST, zatial ubehlo " + (new Date().getTime() - user.lastUpdate));
                 String accessToken = Application.getNewAccessToken(user.refreshToken);
+                System.out.println("----- Accesstoken som ziskal  " +accessToken);
                 ctx.session().put("accessToken",accessToken);
                 user.accessToken = accessToken;
                 user.lastUpdate = new Date().getTime();

@@ -81,11 +81,11 @@
   };
 
   loadItems = function(e) {
-    var cat, itemSelect, selectedIndex;
+    var a, cat, itemSelect, selectedIndex;
     cat = e.options[e.selectedIndex].value;
     itemSelect = document.getElementById("itemSelect" + e.id.substr(14));
     selectedIndex = itemSelect.selectedIndex;
-    return $.get("/store/items/" + cat, function(items) {
+    $.get("/store/items/" + cat, function(items) {
       $("#itemSelect" + e.id.substr(14)).html("");
       $.each(items, function(index, item) {
         var opt;
@@ -95,6 +95,14 @@
       });
       return itemSelect.selectedIndex = selectedIndex;
     });
+    a = $(e.parentNode.parentNode).find(".amountInput");
+    if (cat === "CARPETS") {
+      a.attr("min", "0.01");
+      return a.attr("step", "0.01");
+    } else {
+      a.attr("min", "1");
+      return a.attr("step", "1");
+    }
   };
 
 }).call(this);

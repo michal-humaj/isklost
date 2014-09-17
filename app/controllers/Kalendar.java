@@ -136,6 +136,46 @@ public class Kalendar extends Controller {
         }
     }
 
+    public static Result storemanEdit(String eventType, String id, String name) {
+        String parseId = id.split("@")[0];
+        EventType type = EventType.valueOf(eventType);
+        EventTO eventTO = new EventTO(null, null, null, null, null, name);
+        eventTO.entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
+        Form<EventTO> eventForm = form(EventTO.class).fill(eventTO);
+        return ok(views.html.events.storemanEdit.render(eventType, id, eventForm));
+    }
+
+    public static Result storemanUpdate(String eventType, String id) throws IOException {
+        String parseId = id.split("@")[0];
+        EventType type = EventType.valueOf(eventType);
+        EventTO eventTO = form(EventTO.class).bindFromRequest().get();
+        final List<EventEntry> list = EventEntry.find.where().eq("eventType", type)
+                .eq("eventId", parseId)
+                .eq("item.category", Category.CARPETS)
+                .findList();
+        for (EventEntry e: list){
+            e.delete();
+        }
+        for (EventEntry e : eventTO.entries) {
+            e.eventId = parseId;
+            e.eventType = type;
+            e.save();
+        }
+        Event e = findEvent(parseId, type);
+        BigDecimal weight = new BigDecimal("0.00");
+        StringBuilder name = new StringBuilder(e.getSummary().split("#")[0]).append(" #");
+        final List<EventEntry> entries = EventEntry.find.where().eq("eventType", type).eq("eventId", parseId).findList();
+        for(EventEntry entry: entries){
+            entry.item = Item.find.ref(entry.item.id);
+            name.append(entry.getInfo());
+            weight = weight.add(entry.getWeight());
+        }
+        name.append(" | ").append(EventEntry.df.format(weight)).append(" kg");
+        e.setSummary(name.toString());
+        updateEvent(e, type);
+        return HOME;
+    }
+
     public static Result update(String eventType, String id) {
         try {
             EventTO eventTO = form(EventTO.class).bindFromRequest().get();
@@ -253,7 +293,6 @@ public class Kalendar extends Controller {
     }
 
     public static Result toDateEvents(String millis){
-        System.out.println("Method to Date events with param " + millis);
         try {
             long findAtMillis = Long.parseLong(millis);
             List<EventInfoTO> events = new ArrayList<>();
@@ -285,7 +324,6 @@ public class Kalendar extends Controller {
 
                         long minMillis;
                         long maxMillis;
-                        System.out.println("----EVENT " + eventType + " " + e.getSummary().split("#")[0]);
                         if(eventType.equals(EventType.ACTION)){//if event is action look for its installations
                             List<Long> startMillis = new ArrayList<>();
                             List<Long> endMillis = new ArrayList<>();
@@ -294,9 +332,6 @@ public class Kalendar extends Controller {
                                 Event instEvent = findEvent(inst.installationId, EventType.INSTALLATION);
                                 DateTime start = instEvent.getStart().getDateTime();
                                 DateTime end = instEvent.getEnd().getDateTime();
-                                System.out.println("----its install-- " + instEvent.getSummary() );
-                                System.out.println("----start-- " + start);
-                                System.out.println("----end-- " + end);
                                 if (start != null){
                                     startMillis.add(start.getValue());
                                 }
@@ -306,24 +341,15 @@ public class Kalendar extends Controller {
                             }
                             startMillis.add(e.getStart().getDateTime().getValue());
                             endMillis.add(e.getEnd().getDateTime().getValue());
-                            System.out.println("------ACTION date time start --- " + e.getStart().getDateTime());
-                            System.out.println("------ACTION date time end --- " + e.getEnd().getDateTime());
                             minMillis = Collections.min(startMillis);
                             maxMillis = Collections.max(endMillis);
                         }else {
                             minMillis = e.getStart().getDateTime().getValue();
                             maxMillis = e.getEnd().getDateTime().getValue();
-                            System.out.println("------event date time start --- " + e.getStart().getDateTime());
-                            System.out.println("------event date time end --- " + e.getEnd().getDateTime());
                         }
-                        System.out.println("min millis " + minMillis);
-                        System.out.println("max millis " + maxMillis);
                         LocalDate jodaStart = new LocalDate(minMillis + 7_200_000, FixedDateTimeZone.UTC);
                         LocalDate jodaEnd = new LocalDate(maxMillis + 7_200_000, FixedDateTimeZone.UTC);
                         LocalDate jodaFind = new LocalDate(findAtMillis + 7_200_000, FixedDateTimeZone.UTC);
-                        System.out.println("joda start " + jodaStart);
-                        System.out.println("joda end " +jodaEnd);
-                        System.out.println("joda find " + jodaFind);
                         if(jodaStart.equals(jodaFind)){
                             LocalTime time = new LocalTime(minMillis + 7_200_000, FixedDateTimeZone.UTC);
                             sStart = time.toString("HH:mm");
@@ -333,9 +359,6 @@ public class Kalendar extends Controller {
                             sEnd = time.toString("HH:mm");
                         }
                     }
-
-                    System.out.println("---sStart " + sStart);
-                    System.out.println("---sEnd " + sEnd);
                     events.add(
                             new EventInfoTO(
                                     eventType,
@@ -491,20 +514,13 @@ public class Kalendar extends Controller {
         if (eventTO.allDay){
             start = event.getStart().getDate();
             end = event.getEnd().getDate();
-            System.out.println("all day event start value " + start.getValue());
-            System.out.println("all day event end value " + end.getValue());
             eventTO.startDate = new Date(start.getValue());
             eventTO.endDate = new Date(end.getValue() - 86_400_000);
         }else{
             start = event.getStart().getDateTime();
             end = event.getEnd().getDateTime();
-            System.out.println("GOOGLE datetim start " + start + " its value " + start.getValue());
-            System.out.println("GOOGLE datetime end  " + end + " its  value " +end.getValue());
-
             eventTO.startDate = new Date(start.getValue() + 7_200_000);
             eventTO.endDate = new Date(end.getValue() + 7_200_000);
-            System.out.println("created Java start date " + eventTO.startDate);
-            System.out.println("created Java end date " + eventTO.endDate);
         }
         DateFormat df = new SimpleDateFormat("HH:mm");
         eventTO.startTime = df.format(eventTO.startDate);
@@ -530,15 +546,10 @@ public class Kalendar extends Controller {
         if (eventTO.allDay != null) {
             DateTime start = new DateTime(true, eventTO.startDate.getTime(), 0);
             DateTime end = new DateTime(true, eventTO.endDate.getTime() + 86_400_000, 0);
-            System.out.println("all day event start value " +eventTO.startDate.getTime());
-            System.out.println("all day event end value " +eventTO.endDate.getTime());
-
             eventStart = new EventDateTime().setDate(start);
             eventEnd = new EventDateTime().setDate(end);
         } else {//day scheduled event
             DateFormat df = new SimpleDateFormat("HH:mm");
-            System.out.println(" day sche event start date value " +eventTO.startDate.getTime() + " parsed startime value " +df.parse(eventTO.startTime).getTime());
-            System.out.println("day sche event end date value " +eventTO.endDate.getTime() + " parsed end time value " +df.parse(eventTO.endTime).getTime());
             DateTime start = new DateTime(eventTO.startDate.getTime() + df.parse(eventTO.startTime).getTime() - 7_200_000);
             DateTime end = new DateTime(eventTO.endDate.getTime() + df.parse(eventTO.endTime).getTime() - 7_200_000);
 
@@ -576,7 +587,7 @@ public class Kalendar extends Controller {
         }
     }
 
-    public static Result ferko(String eventType, String id) {
+    public static Result contract(String eventType, String id) {
         String parseId = id.split("@")[0];
         EventType type = EventType.valueOf(eventType);
         response().setContentType("application/x-download");
@@ -600,7 +611,7 @@ public class Kalendar extends Controller {
                 XSSFCell cell = row.getCell(nameColnum);
                 cell.setCellValue(e.item.name);
                 cell = row.getCell(amountColnum);
-                cell.setCellValue(e.amount.intValue());
+                cell.setCellValue(EventEntry.df.format(e.amount));
                 rowCounter++;
             }
             ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -611,4 +622,6 @@ public class Kalendar extends Controller {
             return null;
         }
     }
+
+
 }
