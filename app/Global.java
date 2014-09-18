@@ -35,12 +35,12 @@ public class Global extends GlobalSettings {
             Ebean.save((List) Yaml.load("initial-data.yml"));
         }
 
-        /*Akka.system().scheduler().schedule(
+        Akka.system().scheduler().schedule(
                 Duration.create(20, TimeUnit.MINUTES),
                 Duration.create(20, TimeUnit.MINUTES),
                 new Cron(),
                 Akka.system().dispatcher()
-        );*/
+        );
 
         PlayAuthenticate.setResolver(new Resolver() {
 
