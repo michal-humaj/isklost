@@ -61,7 +61,7 @@ Seq[Any](_display_(/*3.2*/form(routes.Kalendar.create(), 'class -> "form-horizon
 }
               /*
                   -- GENERATED --
-                  DATE: Thu Sep 18 17:39:48 BST 2014
+                  DATE: Mon Sep 29 11:02:17 BST 2014
                   SOURCE: C:/Users/MiHu/Documents/projects-Idea/my-first-app/app/views/forms/newEventPopover.scala.html
                   HASH: d5e8ae6a6ded34ae1108e6dd7eba83ea7f525d92
                   MATRIX: 829->21|936->119|975->120|1007->126|2022->1111

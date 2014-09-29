@@ -50,7 +50,7 @@
           return false;
         }
         title = event.title.split("#");
-        window.open("" + window.location + "storeman/event/" + type + "/" + event.id + "/" + title[0], "_self");
+        window.open("" + window.location + " storeman/event/" + type + "/" + event.id + "/" + title[0], "_self");
         return false;
       }
     });

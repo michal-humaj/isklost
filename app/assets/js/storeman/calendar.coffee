@@ -51,7 +51,7 @@ $(document).ready ->
       type = calUrlToEventType event.source.url
       return false if type is "INSTALLATION"
       title = event.title.split "#"
-      window.open "#{window.location}storeman/event/#{type}/#{event.id}/#{title[0]}", "_self"
+      window.open "#{window.location} storeman/event/#{type}/#{event.id}/#{title[0]}", "_self"
       false
 
   $("#datepicker").datepicker(

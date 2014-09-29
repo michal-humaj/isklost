@@ -32,7 +32,7 @@ public class Cron implements Runnable {
             return;
         }
         final User user = User.find.ref(SecuredAdmin.ADMIN_ID);
-        if (new Date().getTime() - user.lastUpdate > 3_500_000) {
+        if (new Date().getTime() - user.lastUpdate > 1_700_000) {
             System.out.println("-------------------******************************************-----Som tu idem robit POST");
             user.accessToken = Application.getNewAccessToken(user.refreshToken);
             user.lastUpdate = new Date().getTime();

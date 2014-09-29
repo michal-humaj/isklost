@@ -61,8 +61,6 @@ public class Application extends Controller {
             System.out.println("Ziskany access token jee : " + obj.get("access_token") );
             System.out.println("--------RESPONSE JE " + obj);
             return obj.get("access_token").toString();
-
-
         } catch(IOException | JSONException e){
             e.printStackTrace();
             return null;
