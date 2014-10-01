@@ -26,6 +26,13 @@ import java.util.concurrent.TimeUnit;
 
 public class Global extends GlobalSettings {
 
+    /**
+     * sets timezone to default
+     * if there are no items in store, loads exapmple items from file to DB
+     * setup Cron deleting CARPETS and PBs from store
+     * setup Play Authenticate resolver
+     * @param app
+     */
     public void onStart(final Application app) {
 
         System.setProperty("user.timezone", "UTC");
@@ -99,5 +106,4 @@ public class Global extends GlobalSettings {
             }
         });
     }
-
 }

@@ -6,7 +6,7 @@
 
 @select(
     itemForm("category"),
-    options(Category.options),
+    options(Category.storeOptions),
     'id -> "categorySelect", '_label -> "Kategória", 'class -> "form-control categorySelect", 'required -> "true"
 )
 @inputText(itemForm("name"), '_label -> "Názov", 'class -> "form-control", 'placeholder -> "Stolička ratan", 'required -> "true")

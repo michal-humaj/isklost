@@ -23,13 +23,13 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu nav">
                     @for(cat <- Category.values()) {
-                            @if(!cat.equals(Category.TENTS)) {
-                                <li>
+                        @if(!cat.equals(Category.TENTS)) {
+                            <li>
                                 <a href="#@cat">
                                     <span>@Messages(cat.toString())</span>
                                 </a>
-                                </li>
-                            }
+                            </li>
+                        }
                     }
                 </ul>
             </section>
