@@ -25,21 +25,25 @@ $(document).ready ->
         url: ACTIONS_URL
         color: ACTIONS_COLOR
         borderColor: ACTIONS_BORDER_COLOR
+        editable: true
       }
       {
         url: INSTALLATIONS_URL
         color: INSTALLATIONS_COLOR
         borderColor: INSTALLATIONS_BORDER_COLOR
+        editable: true
       }
       {
         url: RESERVATIONS_URL
         color: RESERVATIONS_COLOR
         borderColor: RESERVATIONS_BORDER_COLOR
+        editable: true
       }
       {
-        url: SELF_TRANSPORTS_URL
-        backgroundColor: SELF_TRANSPORTS_COLOR
-        borderColor: SELF_TRANSPORTS_BORDER_COLOR
+        url: SELFTRANSPORTS_URL
+        backgroundColor: SELFTRANSPORTS_COLOR
+        borderColor: SELFTRANSPORTS_BORDER_COLOR
+        editable: true
       }
     ]
     defaultView: "agendaWeek"
@@ -114,24 +118,10 @@ $(document).ready ->
       false
 
     eventResize: (event, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view) ->
-      $.post("/event/drag",
-        id: event.id
-        eventType: calUrlToEventType event.source.url
-        allDay: event.allDay
-        startDate: event.start.getTime()
-        endDate: event.end.getTime()
-      ).done (data) ->
-        console.log data
+      drag event
 
     eventDrop: (event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view) ->
-      $.post("/event/drag",
-        id: event.id
-        eventType: calUrlToEventType event.source.url
-        allDay: event.allDay
-        startDate: event.start.getTime()
-        endDate: event.end.getTime()
-      ).done (data) ->
-        console.log data
+      drag event
 
   $("#datepicker").datepicker(
     format: "mm.dd. yyyy"
@@ -143,14 +133,16 @@ $(document).ready ->
     date = ev.date
     $("#calendar").fullCalendar "gotoDate", date.getFullYear(), date.getMonth(), date.getDate()
 
-calUrlToEventType = (url) ->
-  if url is "https://www.google.com/calendar/feeds/o776rmha219v92fvejs0hahsso%40group.calendar.google.com/private-6968d2f0aa2dee4823410b8e47fa040c/basic"
-    "ACTION"
-  else if url is "https://www.google.com/calendar/feeds/gehqh0ptgh0i2hkh3f1l4tlerg%40group.calendar.google.com/private-65a3820d5b7a4aa1ac390d21d85d93fc/basic"
-    "INSTALLATION"
-  else if url is "https://www.google.com/calendar/feeds/3jg1lna270kjsjb0jjrhhqo5m8%40group.calendar.google.com/private-57e4356bbde4ecb5ba981a2eedb4dd91/basic"
-    "RESERVATION"
-  else "SELFTRANSPORT"  if url is "https://www.google.com/calendar/feeds/hq8a7ru1eh0qoj7bpn05amtsg8%40group.calendar.google.com/private-14076798185cd1615e25439fbd969ae8/basic"
-
-
-
+# function to handle resize and drag and drop events
+drag = (event) ->
+  jsRoutes.controllers.Kalendar.drag().ajax
+    data:
+      id: event.id
+      eventType: calUrlToEventType event.source.url
+      allDay: event.allDay
+      startDate: event.start.getTime()
+      endDate: event.end.getTime()
+    success: (data) ->
+      console.log data
+    error: (data) ->
+      console.log  "error"
