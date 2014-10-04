@@ -35,9 +35,9 @@ $(document).ready ->
         borderColor: RESERVATIONS_BORDER_COLOR
       }
       {
-        url: SELF_TRANSPORTS_URL
-        backgroundColor: SELF_TRANSPORTS_COLOR
-        borderColor: SELF_TRANSPORTS_BORDER_COLOR
+        url: SELFTRANSPORTS_URL
+        backgroundColor: SELFTRANSPORTS_COLOR
+        borderColor: SELFTRANSPORTS_BORDER_COLOR
       }
     ]
     defaultView: "agendaWeek"

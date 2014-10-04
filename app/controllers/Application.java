@@ -40,4 +40,20 @@ public class Application extends Controller {
         return redirect(routes.Application.login());
     }
 
+    public static Result javascriptRoutes() {
+        response().setContentType("text/javascript");
+        return ok(
+                Routes.javascriptRouter("jsRoutes",
+                        routes.javascript.Kalendar.drag(),
+                        routes.javascript.Kalendar.create(),
+                        routes.javascript.Kalendar.upcomingActions(),
+                        routes.javascript.Kalendar.priceOffer(),
+                        routes.javascript.Kalendar.contract(),
+                        routes.javascript.Kalendar.deleteModal(),
+                        routes.javascript.Kalendar.move(),
+                        routes.javascript.Kalendar.edit()
+                )
+        );
+    }
+
 }

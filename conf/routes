@@ -62,4 +62,5 @@ GET         /authenticate/:provider                     com.feth.play.module.pa.
 GET         /authenticate/:provider/denied              controllers.Application.oAuthDenied(provider: String)
 
 # Map static resources from the /public folder to the /assets URL path
+GET         /assets/javascripts/routes                  controllers.Application.javascriptRoutes()
 GET         /assets/*file                               controllers.Assets.at(path="/public", file)

@@ -104,6 +104,7 @@ public class Kalendar extends Controller {
             e.printStackTrace();
             return badRequest("NO");
         }
+        System.out.println("------------- DRAG OK");
         return ok("OK");
     }
 

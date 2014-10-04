@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/MiHu/Documents/projects-Idea/my-first-app/conf/routes
-// @HASH:4c67d795f216f4342b4dc53c2f3f2af78e6f7bfe
-// @DATE:Mon Sep 29 11:02:10 BST 2014
+// @HASH:0526d9d31c441c6af1249a48f61ddc2120bc5ecf
+// @DATE:Sat Oct 04 16:46:52 UTC 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -43,6 +43,7 @@ def authenticate(provider:String): Call = {
 }
                   
 
+// @LINE:66
 // @LINE:65
 // @LINE:62
 // @LINE:59
@@ -84,11 +85,11 @@ def authenticate(provider:String): Call = {
 // @LINE:2
 package controllers {
 
-// @LINE:65
+// @LINE:66
 class ReverseAssets {
 
 
-// @LINE:65
+// @LINE:66
 def at(file:String): Call = {
    implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
@@ -224,6 +225,7 @@ def storemanEdit(eventType:String, id:String, name:String): Call = {
 }
                           
 
+// @LINE:65
 // @LINE:62
 // @LINE:59
 class ReverseApplication {
@@ -233,6 +235,13 @@ class ReverseApplication {
 def oAuthDenied(provider:String): Call = {
    import ReverseRouteContext.empty
    Call("GET", _prefix + { _defaultPrefix } + "authenticate/" + implicitly[PathBindable[String]].unbind("provider", dynamicString(provider)) + "/denied")
+}
+                        
+
+// @LINE:65
+def javascriptRoutes(): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "assets/javascripts/routes")
 }
                         
 
@@ -466,6 +475,7 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
 }
         
 
+// @LINE:66
 // @LINE:65
 // @LINE:62
 // @LINE:59
@@ -508,11 +518,11 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.javascript {
 import ReverseRouteContext.empty
 
-// @LINE:65
+// @LINE:66
 class ReverseAssets {
 
 
-// @LINE:65
+// @LINE:66
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -712,6 +722,7 @@ def storemanEdit : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:65
 // @LINE:62
 // @LINE:59
 class ReverseApplication {
@@ -723,6 +734,17 @@ def oAuthDenied : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function(provider) {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "authenticate/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("provider", encodeURIComponent(provider)) + "/denied"})
+      }
+   """
+)
+                        
+
+// @LINE:65
+def javascriptRoutes : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.javascriptRoutes",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/javascripts/routes"})
       }
    """
 )
@@ -1036,6 +1058,7 @@ def authenticate(provider:String): play.api.mvc.HandlerRef[_] = new play.api.mvc
 }
         
 
+// @LINE:66
 // @LINE:65
 // @LINE:62
 // @LINE:59
@@ -1078,13 +1101,13 @@ def authenticate(provider:String): play.api.mvc.HandlerRef[_] = new play.api.mvc
 package controllers.ref {
 
 
-// @LINE:65
+// @LINE:66
 class ReverseAssets {
 
 
-// @LINE:65
+// @LINE:66
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Assets.at(path, file), HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
+   controllers.Assets.at(path, file), HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """""", _prefix + """assets/$file<.+>""")
 )
                       
 
@@ -1202,6 +1225,7 @@ def storemanEdit(eventType:String, id:String, name:String): play.api.mvc.Handler
 }
                           
 
+// @LINE:65
 // @LINE:62
 // @LINE:59
 class ReverseApplication {
@@ -1210,6 +1234,12 @@ class ReverseApplication {
 // @LINE:62
 def oAuthDenied(provider:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.oAuthDenied(provider), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "oAuthDenied", Seq(classOf[String]), "GET", """""", _prefix + """authenticate/$provider<[^/]+>/denied""")
+)
+                      
+
+// @LINE:65
+def javascriptRoutes(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.javascriptRoutes(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "javascriptRoutes", Seq(), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/javascripts/routes""")
 )
                       
 

@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/MiHu/Documents/projects-Idea/my-first-app/conf/routes
-// @HASH:4c67d795f216f4342b4dc53c2f3f2af78e6f7bfe
-// @DATE:Mon Sep 29 11:02:10 BST 2014
+// @HASH:0526d9d31c441c6af1249a48f61ddc2120bc5ecf
+// @DATE:Sat Oct 04 16:46:52 UTC 2014
 
 package com.feth.play.module.pa.controllers;
 

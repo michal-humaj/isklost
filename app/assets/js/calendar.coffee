@@ -50,7 +50,7 @@ $(document).ready ->
     firstDay: 1
     selectable: true
     selectHelper: true
-    eventTextColor: '#000000'
+    eventTextColor: EVENT_TEXT_COLOR
     unselectCancel: ".form-horizontal"
     select: (startDate, endDate, allDay, jsEvent, view) ->
       $(".popover").remove()
@@ -71,16 +71,16 @@ $(document).ready ->
         s = e.currentTarget
         eventType = s.options[s.selectedIndex].value
         if eventType is 'INSTALLATION'
-          $.get "/events", (events) ->
-            $(".selectAction").html '<option class="blank" value="">-- Priradená akcia --</option>'
-            $.each events, (index, event) ->
-              opt = $("<option>").text(event.name)
-              opt.prop "value", event.id
-              $(".selectAction").append opt
-            $(".selectActionContainer").html $("#selectActionGroup").html()
+          jsRoutes.controllers.Kalendar.upcomingActions().ajax
+            success: (events) ->
+              $(".selectAction").html '<option class="blank" value="">-- Priradená akcia --</option>'
+              $.each events, (index, event) ->
+                opt = $("<option>").text(event.name)
+                opt.prop "value", event.id
+                $(".selectAction").append opt
+              $(".selectActionContainer").html $("#selectActionGroup").html()
         else
           $(".selectActionContainer").html ""
-
 
     unselect: (view, jsEvent) ->
       $(".popover").remove()
@@ -100,21 +100,22 @@ $(document).ready ->
       $("h4").html event.title
       type = calUrlToEventType event.source.url
       if type is "ACTION"
-        $("#eventClickUl").html '<li><a class="linkMove" href="#" >Zmenit na rezervaciu</a></li><li><a href="/event/priceOffer/' + type + '/' + event.id + '">Cenova ponuka</a></li>'
+        $("#eventClickUl").html '<li><a class="linkMove" href="#" >Zmenit na rezervaciu</a></li><li><a href="' + jsRoutes.controllers.Kalendar.priceOffer(type, event.id).url + '">Cenova ponuka</a></li>'
       if type is "RESERVATION"
-        $("#eventClickUl").html '<li><a class="linkMove" href="#">Zmenit na akciu</a></li><li><a href="/event/priceOffer/' + type + '/' + event.id + '">Cenova ponuka</a></li>'
+        $("#eventClickUl").html '<li><a class="linkMove" href="#">Zmenit na akciu</a></li><li><a href="' + jsRoutes.controllers.Kalendar.priceOffer(type, event.id).url + '">Cenova ponuka</a></li>'
       if type is "SELFTRANSPORT"
-        $("#eventClickUl").html '<li><a href="/event/priceOffer/' + type + '/' + event.id + '">Cenova ponuka</a></li>'
+        $("#eventClickUl").html '<li><a href="' + jsRoutes.controllers.Kalendar.priceOffer(type, event.id).url + '">Cenova ponuka</a></li>'
       if type is "INSTALLATION"
         $("#eventClickUl").html ''
-      $(".btnDelete").attr "href", "/event/delete/#{type}/#{event.id}"
+      $(".btnDelete").attr "href", jsRoutes.controllers.Kalendar.deleteModal(type, event.id).url
       $(jsEvent.target).popover "show"
       $(".linkMove").click ->
-        $.post("/event/move/#{type}/#{event.id}").done (data) ->
-          $(".popover").remove()
-          $("#calendar").fullCalendar "refetchEvents"
+        jsRoutes.controllers.Kalendar.move(type, event.id).ajax
+          success: (events) ->
+            $(".popover").remove()
+            $("#calendar").fullCalendar "refetchEvents"
 
-      $(".btnEdit").attr "href", "/event/#{type}/#{event.id}"
+      $(".btnEdit").attr "href", jsRoutes.controllers.Kalendar.edit(type, event.id).url
       false
 
     eventResize: (event, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view) ->
