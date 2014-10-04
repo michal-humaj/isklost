@@ -29,7 +29,7 @@ public class Tent extends Item {
     public BigDecimal getWeight() {
         BigDecimal ret = new BigDecimal("0.00");
         for(Accessory a: accessories){
-            String s = a.item.name;
+            //String s = a.item.name; //TODO pozor na lazy load
             ret = ret.add(a.item.weight.multiply(a.amount));
         }
         return ret;

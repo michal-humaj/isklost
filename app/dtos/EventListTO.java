@@ -9,6 +9,6 @@ import java.util.List;
  */
 public class EventListTO {
 
-    public List<EventType> types;
+    public List<EventType> types; //TODO zmenit na jeden objekt ktory obsahuje id a typ
     public List<String> ids;
 }

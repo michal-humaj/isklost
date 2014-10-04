@@ -30,22 +30,27 @@ public class Item extends Model {
 
     public static Finder<Long, Item> find = new Finder<>(Long.class, Item.class);
 
-    public static Map<String,String> options(String sCat) {
+    /**
+     * Retrieves all items in DB for specified category
+     * @param sCat String in form Some(CATEGORY)
+     * @return map key:id , value:name of items
+     */
+    public static Map<String,String> getMapOfItemsForCategory(String sCat) {
         LinkedHashMap<String, String> options = new LinkedHashMap<>();
         if ("Some(TENTS)".equals(sCat)){
-            final List<Tent> items = Tent.find.all();
+            List<Tent> items = Tent.find.all();
             for (Tent item : items) {
                 options.put(item.id.toString(), item.name);
             }
             return options;
         }else {
-            Category category;
+            Category category = null;
             try {
                 category = Category.valueOf(sCat.substring(5, sCat.length() - 1));
             } catch (StringIndexOutOfBoundsException | IllegalArgumentException e) {
-                return options;
+                e.printStackTrace();
             }
-            final List<StoredItem> items = StoredItem.find.where().eq("category", category).findList();
+            List<StoredItem> items = StoredItem.find.where().eq("category", category).findList();
             for (StoredItem item : items) {
                 options.put(item.id.toString(), item.name);
             }

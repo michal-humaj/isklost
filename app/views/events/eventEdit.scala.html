@@ -17,13 +17,13 @@
         @if(style.equals("")) {
             @select(
                 field("item.id"),
-                options(Item.options( field("item.category").value.toString)),
+                options(Item.getMapOfItemsForCategory( field("item.category").value.toString)),
                 'id -> "itemSelect0", 'class -> "form-control itemSelect", 'required -> "true"
             )(implicitField, null)
         }else{
             @select(
                 field("item.id"),
-                options(Item.options( field("item.category").value.toString)),
+                options(Item.getMapOfItemsForCategory( field("item.category").value.toString)),
                 'id -> "itemSelect0", 'class -> "form-control itemSelect"
             )(implicitField, null)
         }
