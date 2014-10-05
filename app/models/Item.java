@@ -36,7 +36,9 @@ public class Item extends Model {
      * @return map key:id , value:name of items
      */
     public static Map<String,String> getMapOfItemsForCategory(String sCat) {
+        System.out.println("----------getMapOfItemsForCategory-- sCat " + sCat);
         LinkedHashMap<String, String> options = new LinkedHashMap<>();
+        if ("None".equals(sCat)) return options;
         if ("Some(TENTS)".equals(sCat)){
             List<Tent> items = Tent.find.all();
             for (Tent item : items) {

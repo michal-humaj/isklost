@@ -51,7 +51,18 @@ public class Application extends Controller {
                         routes.javascript.Kalendar.contract(),
                         routes.javascript.Kalendar.deleteModal(),
                         routes.javascript.Kalendar.move(),
-                        routes.javascript.Kalendar.edit()
+                        routes.javascript.Kalendar.edit(),
+                        routes.javascript.Store.listInCategory(),
+                        routes.javascript.Kalendar.toDateEvents(),
+                        routes.javascript.Kalendar.sinceNowToDateEvents(),
+                        routes.javascript.Store.availability(),
+                        routes.javascript.Store.editModal(),
+                        routes.javascript.Store.deleteModal(),
+                        routes.javascript.Store.increaseModal(),
+                        routes.javascript.Store.decreaseModal(),
+                        routes.javascript.Store.carpetsPbAvailability()
+
+
                 )
         );
     }
