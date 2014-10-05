@@ -43,21 +43,3 @@ renumber = ->
 
     $(".amountInput", this).each ->
       $(this).attr "name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]")
-
-loadItems = (e) ->
-  cat = e.options[e.selectedIndex].value
-  itemSelect = document.getElementById("itemSelect" + e.id.substr(14))
-  selectedIndex = itemSelect.selectedIndex
-  jsRoutes.controllers.Store.listInCategory(cat).ajax
-    success: (items) ->
-      $("#itemSelect" + e.id.substr(14)).html ""
-      $.each items, (index, item) ->
-        opt = $("<option>").text(item.name)
-        opt.prop "value", item.id
-        $("#itemSelect" + e.id.substr(14)).append opt
-      itemSelect.selectedIndex = selectedIndex
-
-
-
-
-

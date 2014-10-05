@@ -92,21 +92,7 @@ loadAvailability = ->
     success: (items) ->
       $("#scroll-table").html ""
       $.each items, (i, item) ->
-        if item.available < 0
-          tr = $('<tr class="bg-red">')
-        else
-          tr = $('<tr>')
-        tr.attr "id", item.category
-        tr.append $("<td style='width: 390px;'>").text item.name
-        tr.append $('<td>').text item.available
-        tr.append $('<td>').text item.reserved
-        tr.append $('<td>').text item.rented
-        $("#btnInc").attr "href", jsRoutes.controllers.Store.increaseModal(item.id).url
-        $("#linkDec").attr "href", jsRoutes.controllers.Store.decreaseModal(item.id).url
-        $("#linkEdit").attr "href", jsRoutes.controllers.Store.editModal(item.id).url
-        $("#linkDelete").attr "href", jsRoutes.controllers.Store.deleteModal(item.id).url
-        tr.append $("<td style='width: 133px;'>").html $("#itemManipulationBtnsDiv").html()
-        $("#scroll-table").append tr
+        appendItemRow i, item
       typesSinceNow = new Array()
       idsSinceNow = new Array()
       $(".eventSinceNow").each (i, obj) ->
@@ -117,23 +103,27 @@ loadAvailability = ->
           types: typesSinceNow.concat types
           ids: idsSinceNow.concat ids
         success: (carpets) ->
-          $.each carpets, (i, item) ->
-            if item.available < 0
-              tr = $('<tr class="bg-red">')
-            else
-              tr = $('<tr>')
-            tr.attr "id", item.category
-            tr.append $("<td style='width: 390px;'>").text item.name
-            tr.append $('<td>').text item.available
-            tr.append $('<td>').text item.reserved
-            tr.append $('<td>').text item.rented
-            $("#btnInc").attr "href", jsRoutes.controllers.Store.increaseModal(item.id).url
-            $("#linkDec").attr "href", jsRoutes.controllers.Store.decreaseModal(item.id).url
-            $("#linkEdit").attr "href", jsRoutes.controllers.Store.editModal(item.id).url
-            $("#linkDelete").attr "href", jsRoutes.controllers.Store.deleteModal(item.id).url
-            tr.append $("<td style='width: 133px;'>").html $("#itemManipulationBtnsDiv").html()
-            $("#scroll-table").append tr
+          $.each carpets, (i, carpet) ->
+            appendItemRow i, carpet
           $("#overlayItems").attr "class", ""
           $("#loadingItems").attr "class", ""
           $("#scroll-table").scrollspy target: "#scroll-target"
+
+appendItemRow = (i, item) ->
+  if item.available < 0
+    tr = $('<tr class="bg-red">')
+  else
+    tr = $('<tr>')
+  tr.attr "id", item.category
+  tr.append $("<td style='width: 390px;'>").text item.name
+  tr.append $('<td>').text item.available
+  tr.append $('<td>').text item.reserved
+  tr.append $('<td>').text item.rented
+  $("#btnInc").attr "href", jsRoutes.controllers.Store.increaseModal(item.id).url
+  $("#linkDec").attr "href", jsRoutes.controllers.Store.decreaseModal(item.id).url
+  $("#linkEdit").attr "href", jsRoutes.controllers.Store.editModal(item.id).url
+  $("#linkDelete").attr "href", jsRoutes.controllers.Store.deleteModal(item.id).url
+  tr.append $("<td style='width: 133px;'>").html $("#itemManipulationBtnsDiv").html()
+  $("#scroll-table").append tr
+
 
