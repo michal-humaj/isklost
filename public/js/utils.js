@@ -37,17 +37,35 @@ function loadItems(e){
                 var opt;
                 opt = $("<option>").text(item.name);
                 opt.prop("value", item.id);
-                return $("#itemSelect" + e.id.substr(14)).append(opt);
+                $("#itemSelect" + e.id.substr(14)).append(opt);
             });
-            return itemSelect.selectedIndex = selectedIndex;
+            itemSelect.selectedIndex = selectedIndex;
         }
     });
     a = $(e.parentNode.parentNode).find(".amountInput");
     if (cat === "CARPETS") {
         a.attr("min", "0.01");
-        return a.attr("step", "0.01");
+        a.attr("step", "0.01");
     } else {
         a.attr("min", "1");
-        return a.attr("step", "1");
+        a.attr("step", "1");
     }
+}
+
+function renumber(groupName, itemsName){
+    console.log("renumber");
+    var re = new RegExp(itemsName+"..+?\]", "g");
+    $(groupName).each(function(i) {
+        $(".categorySelect", this).each(function() {
+            $(this).attr("id", "categorySelect" + i);
+            $(this).attr("name", $(this).attr("name").replace(re, itemsName + "[" + i + "]"));
+        });
+        $(".itemSelect", this).each(function() {
+            $(this).attr("name", $(this).attr("name").replace(re, itemsName + "[" + i + "]"));
+            $(this).attr("id", "itemSelect" + i);
+        });
+        $(".amountInput", this).each(function() {
+            $(this).attr("name", $(this).attr("name").replace(re, itemsName + "[" + i + "]"));
+        });
+    });
 }

@@ -1,5 +1,5 @@
 $(document).ready ->
-  renumber();
+  renumber ".entryGroup", "entries"
 
   $("#addEntry").click (e) ->
     template = $(".entryGroupTemplate")
@@ -12,7 +12,7 @@ $(document).ready ->
           opt.prop "value", item.id
           itemSelect.append opt
         template.before '<tr class="entryGroup">' + template.html() + "</tr>"
-        renumber()
+        renumber ".entryGroup", "entries"
         $(".entryGroup").find(".amountInput").each (i) ->
           $(this).attr "required", "true"
           $(this).attr "min", "0.01"
@@ -22,7 +22,7 @@ $(document).ready ->
           $(this).attr "required", "true"
         $(".removeEntry").click (a) ->
           a.currentTarget.parentNode.parentNode.remove()
-          renumber()
+          renumber ".entryGroup", "entries"
 
 
   $("#form").submit ->
@@ -30,13 +30,4 @@ $(document).ready ->
 
   $(".removeEntry").click (e) ->
     e.currentTarget.parentNode.parentNode.remove()
-    renumber()
-
-renumber = ->
-  $(".entryGroup").each (i) ->
-    $(".itemSelect", this).each ->
-      $(this).attr "name", $(this).attr("name").replace(/entries\[.+?\]/g, "entries[" + i + "]")
-      $(this).attr "id", "itemSelect" + i
-    $(".amountInput", this).each ->
-      $(this).attr "name", $(this).attr("name").replace(/entries\[.+?\]/g, "entries[" + i + "]")
-
+    renumber ".entryGroup", "entries"

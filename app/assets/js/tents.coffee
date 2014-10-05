@@ -1,11 +1,11 @@
 $(document).ready ->
   loadItems document.getElementById("categorySelect0")
-  renumber();
+  renumber ".accessoryGroup", "accessories"
 
   $("#addAccessory").click (e) ->
     template = $(".accessoryGroupTemplate")
     template.before '<tr class="accessoryGroup">' + template.html() + "</tr>"
-    renumber()
+    renumber ".accessoryGroup", "accessories"
     $(".accessoryGroup").find(".amountInput").each (i) ->
       $(this).attr "required", "true"
       $(this).attr "min", "1"
@@ -19,27 +19,14 @@ $(document).ready ->
       loadItems a.currentTarget
     $(".removeAccessory").click (a) ->
       a.currentTarget.parentNode.parentNode.remove()
-      renumber();
+      renumber ".accessoryGroup", "accessories"
 
   $("#form").submit ->
     $(".accessoryGroupTemplate").remove()
 
   $(".removeAccessory").click (e) ->
     e.currentTarget.parentNode.parentNode.remove()
-    renumber();
+    renumber ".accessoryGroup", "accessories"
 
   $(".categorySelect").change (e) ->
     loadItems e.currentTarget
-
-renumber = ->
-  $(".accessoryGroup").each (i) ->
-    $(".categorySelect", this).each ->
-      $(this).attr "id", "categorySelect" + i
-      $(this).attr "name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]")
-
-    $(".itemSelect", this).each ->
-      $(this).attr "name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]")
-      $(this).attr "id", "itemSelect" + i
-
-    $(".amountInput", this).each ->
-      $(this).attr "name", $(this).attr("name").replace(/accessories\[.+?\]/g, "accessories[" + i + "]")

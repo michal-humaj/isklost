@@ -10,12 +10,12 @@ $(document).ready ->
     allDayChange()
 
   loadItems document.getElementById("categorySelect0")
-  renumber();
+  renumber ".entryGroup", "entries"
 
   $("#addEntry").click (e) ->
     template = $(".entryGroupTemplate")
     template.before '<tr class="entryGroup">' + template.html() + "</tr>"
-    renumber()
+    renumber ".entryGroup", "entries"
     $(".entryGroup").find(".amountInput").each (i) ->
       $(this).attr "required", "true"
       $(this).attr "min", "1"
@@ -29,14 +29,14 @@ $(document).ready ->
       loadItems a.currentTarget
     $(".removeEntry").click (a) ->
       a.currentTarget.parentNode.parentNode.remove()
-      renumber();
+      renumber ".entryGroup", "entries"
 
   $("#form").submit ->
     $(".entryGroupTemplate").remove()
 
   $(".removeEntry").click (e) ->
     e.currentTarget.parentNode.parentNode.remove()
-    renumber();
+    renumber ".entryGroup", "entries"
 
   $(".categorySelect").change (e) ->
     loadItems e.currentTarget
@@ -49,19 +49,3 @@ allDayChange = ->
   else
     $("#timeInputStart").show()
     $("#timeInputEnd").show()
-
-renumber = ->
-  $(".entryGroup").each (i) ->
-    $(".categorySelect", this).each ->
-      $(this).attr "id", "categorySelect" + i
-      $(this).attr "name", $(this).attr("name").replace(/entries\[.+?\]/g, "entries[" + i + "]")
-
-    $(".itemSelect", this).each ->
-      $(this).attr "name", $(this).attr("name").replace(/entries\[.+?\]/g, "entries[" + i + "]")
-      $(this).attr "id", "itemSelect" + i
-
-    $(".amountInput", this).each ->
-      $(this).attr "name", $(this).attr("name").replace(/entries\[.+?\]/g, "entries[" + i + "]")
-
-
-
