@@ -60,9 +60,8 @@ public class Application extends Controller {
                         routes.javascript.Store.deleteModal(),
                         routes.javascript.Store.increaseModal(),
                         routes.javascript.Store.decreaseModal(),
-                        routes.javascript.Store.carpetsPbAvailability()
-
-
+                        routes.javascript.Store.carpetsPbAvailability(),
+                        routes.javascript.Kalendar.storemanEdit()
                 )
         );
     }

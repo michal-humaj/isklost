@@ -38,6 +38,7 @@ $(document).ready ->
         url: SELFTRANSPORTS_URL
         backgroundColor: SELFTRANSPORTS_COLOR
         borderColor: SELFTRANSPORTS_BORDER_COLOR
+        borderColor: SELFTRANSPORTS_BORDER_COLOR
       }
     ]
     defaultView: "agendaWeek"
@@ -47,7 +48,7 @@ $(document).ready ->
       type = calUrlToEventType event.source.url
       return false if type is "INSTALLATION"
       title = event.title.split "#"
-      window.open "#{window.location} storeman/event/#{type}/#{event.id}/#{title[0]}", "_self"
+      document.location.href = jsRoutes.controllers.Kalendar.storemanEdit(type, event.id, title[0]).url
       false
 
   $("#datepicker").datepicker(
@@ -59,14 +60,3 @@ $(document).ready ->
   ).on "changeDate", (ev) ->
     date = ev.date
     $("#calendar").fullCalendar "gotoDate", date.getFullYear(), date.getMonth(), date.getDate()
-
-calUrlToEventType = (url) ->
-  if url is "https://www.google.com/calendar/feeds/o776rmha219v92fvejs0hahsso%40group.calendar.google.com/private-6968d2f0aa2dee4823410b8e47fa040c/basic"
-    "ACTION"
-  else if url is "https://www.google.com/calendar/feeds/gehqh0ptgh0i2hkh3f1l4tlerg%40group.calendar.google.com/private-65a3820d5b7a4aa1ac390d21d85d93fc/basic"
-    "INSTALLATION"
-  else if url is "https://www.google.com/calendar/feeds/3jg1lna270kjsjb0jjrhhqo5m8%40group.calendar.google.com/private-57e4356bbde4ecb5ba981a2eedb4dd91/basic"
-    "RESERVATION"
-  else "SELFTRANSPORT"  if url is "https://www.google.com/calendar/feeds/hq8a7ru1eh0qoj7bpn05amtsg8%40group.calendar.google.com/private-14076798185cd1615e25439fbd969ae8/basic"
-
-

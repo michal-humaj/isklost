@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="750c8945-a4d7-4b82-8600-06ed5de90041" name="Default" comment="">
+    <list default="true" id="750c8945-a4d7-4b82-8600-06ed5de90041" name="Default" comment="Add more JS routes to store.coffee">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Application.java" afterPath="$PROJECT_DIR$/app/controllers/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Item.java" afterPath="$PROJECT_DIR$/app/models/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/js/event.coffee" afterPath="$PROJECT_DIR$/app/assets/js/event.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/js/storeman/calendar.coffee" afterPath="$PROJECT_DIR$/app/assets/js/storeman/calendar.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/js/storeman/event.coffee" afterPath="$PROJECT_DIR$/app/assets/js/storeman/event.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/my-first-app.time" afterPath="$PROJECT_DIR$/.idea/my-first-app.time" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/js/store.coffee" afterPath="$PROJECT_DIR$/app/assets/js/store.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/js/tents.coffee" afterPath="$PROJECT_DIR$/app/assets/js/tents.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="my-first-app.iws" />
@@ -33,18 +33,18 @@
       <file leaf-file-name="Kalendar.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Kalendar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1479" max-vertical-offset="10778">
+            <state vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="9945">
               <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Application.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="299" max-vertical-offset="1258">
-              <caret line="62" column="42" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.3072687" vertical-offset="299" max-vertical-offset="1241">
+              <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,29 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="store.coffee" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/js/store.coffee">
+      <file leaf-file-name="utils.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.84597963" vertical-offset="1582" max-vertical-offset="2465">
-              <caret line="137" column="63" selection-start-line="137" selection-start-column="63" selection-end-line="137" selection-end-column="63" />
-              <folding>
-                <marker date="1412508998559" expanded="true" signature="1466:1522" placeholder="..." />
-                <marker date="1412508998559" expanded="true" signature="1651:1712" placeholder="..." />
-                <marker date="1412508998559" expanded="true" signature="1808:1871" placeholder="..." />
-                <marker date="1412508998559" expanded="false" signature="3838:3851" placeholder="..." />
-                <marker date="1412508998559" expanded="false" signature="4396:4409" placeholder="..." />
-                <marker date="1412508998559" expanded="true" signature="5129:5142" placeholder="..." />
-                <marker date="1412508998559" expanded="false" signature="5719:5732" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="calendar.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/js/calendar.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1417" max-vertical-offset="2618">
-              <caret line="112" column="37" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+              <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -84,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/conf/routes">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
-              <caret line="28" column="97" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="97" />
+              <caret line="6" column="134" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="134" />
               <folding />
             </state>
           </provider>
@@ -116,7 +98,6 @@
         <option value="$PROJECT_DIR$/app/views/calendar.scala.html" />
         <option value="$PROJECT_DIR$/public/css/AdminLTE.css" />
         <option value="$PROJECT_DIR$/app/views/store.scala.html" />
-        <option value="$PROJECT_DIR$/app/assets/js/storeman/event.coffee" />
         <option value="$PROJECT_DIR$/conf/application.conf" />
         <option value="$PROJECT_DIR$/app/views/masters/store.scala.html" />
         <option value="$PROJECT_DIR$/app/models/User.java" />
@@ -135,13 +116,15 @@
         <option value="$PROJECT_DIR$/app/views/masters/main.scala.html" />
         <option value="$PROJECT_DIR$/app/controllers/Kalendar.java" />
         <option value="$PROJECT_DIR$/public/js/utils.js" />
-        <option value="$PROJECT_DIR$/app/assets/js/storeman/calendar.coffee" />
         <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/app/assets/js/calendar.coffee" />
         <option value="$PROJECT_DIR$/app/models/Item.java" />
         <option value="$PROJECT_DIR$/app/assets/js/event.coffee" />
-        <option value="$PROJECT_DIR$/app/controllers/Application.java" />
         <option value="$PROJECT_DIR$/app/assets/js/store.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/js/tents.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/js/storeman/event.coffee" />
+        <option value="$PROJECT_DIR$/app/controllers/Application.java" />
+        <option value="$PROJECT_DIR$/app/assets/js/storeman/calendar.coffee" />
       </list>
     </option>
   </component>
@@ -819,7 +802,7 @@
       <workItem from="1412159160726" duration="12072000" />
       <workItem from="1412420096932" duration="40000" />
       <workItem from="1412424432836" duration="11073000" />
-      <workItem from="1412503540852" duration="1927000" />
+      <workItem from="1412503540852" duration="3385000" />
     </task>
     <task id="LOCAL-00001" summary="Carpets can be added to event">
       <created>1408450059871</created>
@@ -857,12 +840,16 @@
       <created>1412449975958</created>
       <updated>1412449975958</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add more JS routes to store.coffee">
+      <created>1412509129674</created>
+      <updated>1412509129674</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="104066000" />
+    <option name="totallyTimeSpent" value="105524000" />
     <option name="suspendDelayInSeconds" value="120" />
   </component>
   <component name="ToolWindowManager">
@@ -882,6 +869,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21246007" sideWeight="0.36830837" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -896,7 +884,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993576" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -925,7 +912,8 @@
     <MESSAGE value="Cal URLs as constatnts in other file" />
     <MESSAGE value="JS routes added for drag n drop and resize" />
     <MESSAGE value="Add more JS routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add more JS routes" />
+    <MESSAGE value="Add more JS routes to store.coffee" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add more JS routes to store.coffee" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -938,20 +926,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1207">
           <caret line="36" column="70" selection-start-line="36" selection-start-column="70" selection-end-line="36" selection-end-column="70" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/js/storeman/event.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/js/storeman/store.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20594713" vertical-offset="0" max-vertical-offset="908">
-          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -1031,6 +1005,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.21428572" vertical-offset="189" max-vertical-offset="1479">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1197,13 +1172,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/masters/calendar.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
@@ -1215,6 +1183,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.438326" vertical-offset="146" max-vertical-offset="1054">
           <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1240,24 +1209,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/js/storeman/calendar.coffee">
+    <entry file="file://$PROJECT_DIR$/app/assets/js/store.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.561674" vertical-offset="153" max-vertical-offset="1326">
-          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.8471121" vertical-offset="0" max-vertical-offset="2465">
+          <caret line="44" column="133" selection-start-line="44" selection-start-column="132" selection-end-line="44" selection-end-column="133" />
+          <folding>
+            <marker date="1412508998559" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1412508998559" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1412508998559" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1412508998559" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/js/tents.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1123348" vertical-offset="0" max-vertical-offset="1156">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/js/event.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1540204" vertical-offset="188" max-vertical-offset="1547">
-          <caret line="71" column="48" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.78822196" vertical-offset="273" max-vertical-offset="1173">
+          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1269,13 +1238,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
+    <entry file="file://$PROJECT_DIR$/app/assets/js/event.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="299" max-vertical-offset="1258">
-          <caret line="62" column="42" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="1547">
+          <caret line="63" column="57" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/js/storeman/event.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7123443" vertical-offset="0" max-vertical-offset="883">
+          <caret line="37" column="57" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1285,31 +1260,49 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
-          <caret line="28" column="97" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="97" />
+          <caret line="6" column="134" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="134" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/js/calendar.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1417" max-vertical-offset="2618">
-          <caret line="112" column="37" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="37" />
+        <state vertical-scroll-proportion="-1.6972067" vertical-offset="1723" max-vertical-offset="2618">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/js/store.coffee">
+    <entry file="file://$PROJECT_DIR$/public/js/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84597963" vertical-offset="1582" max-vertical-offset="2465">
-          <caret line="137" column="63" selection-start-line="137" selection-start-column="63" selection-end-line="137" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/js/storeman/calendar.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19252548" vertical-offset="0" max-vertical-offset="1139">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/js/storeman/store.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20594713" vertical-offset="0" max-vertical-offset="908">
+          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3072687" vertical-offset="299" max-vertical-offset="1241">
+          <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
           <folding>
-            <marker date="1412508998559" expanded="true" signature="1466:1522" placeholder="..." />
-            <marker date="1412508998559" expanded="true" signature="1651:1712" placeholder="..." />
-            <marker date="1412508998559" expanded="true" signature="1808:1871" placeholder="..." />
-            <marker date="1412508998559" expanded="false" signature="3838:3851" placeholder="..." />
-            <marker date="1412508998559" expanded="false" signature="4396:4409" placeholder="..." />
-            <marker date="1412508998559" expanded="true" signature="5129:5142" placeholder="..." />
-            <marker date="1412508998559" expanded="false" signature="5719:5732" placeholder="..." />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
